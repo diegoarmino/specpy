@@ -1,5 +1,5 @@
 program read_gaus
-   integer,parameter          :: nqmatoms=24, nclatoms=0
+   integer,parameter          :: nqmatoms=14, nclatoms=0
    integer          :: at_numbers(nqmatoms) ! Atomic numbers of QM atoms.
    double precision :: qmcoords(3,nqmatoms) ! QM atom coordinates
    double precision :: atmass(nqmatoms)
