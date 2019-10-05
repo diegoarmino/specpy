@@ -116,9 +116,9 @@ def uvvis(delta_nm,omega_nm_in,omega0_in,gamma_in):
     inv2pi= 1/pi2
 
 #    dt = 1e-2/np.amax(omega_nm)
-    dt = 5e-2/np.amax(omega_nm)
+    dt = 1e-2/np.amax(omega_nm)
     period = pi2/np.amin(omega_nm)
-    tmax = 20*period
+    tmax = 50*period
 
     ovlap=[]
 
@@ -165,9 +165,9 @@ def fluorescence(delta_nm,omega_nm_in,omega0_in,gamma_in):
     inv2pi= 1/pi2
 
 #    dt = 1e-2/np.amax(omega_nm)
-    dt = 5e-2/np.amax(omega_nm)
+    dt = 1e-2/np.amax(omega_nm)
     period = pi2/np.amin(omega_nm)
-    tmax = 20*period
+    tmax = 50*period
 
     ovlap=[]
 

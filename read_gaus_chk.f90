@@ -3,7 +3,7 @@ program read_gaus
    integer          :: at_numbers(nqmatoms) ! Atomic numbers of QM atoms.
    double precision :: qmcoords(3,nqmatoms) ! QM atom coordinates
    double precision :: atmass(nqmatoms)
-   double precision :: nmodes(3*nqmatoms,3*nqmatoms-6)
+   double precision :: nmodes(3*nqmatoms-6,3*nqmatoms)
    double precision :: dxyzqm(3,nqmatoms)
    double precision :: freq(3*nqmatoms-6)
    call read_gaus_chekpoint(nqmatoms,nclatoms,at_numbers,qmcoords,atmass,nmodes,dxyzqm,freq)
@@ -18,10 +18,19 @@ end program read_gaus
       integer,          intent(in)  :: at_numbers(nqmatoms) ! Atomic numbers of QM atoms.
       double precision, intent(out) :: qmcoords(3,nqmatoms) ! QM atom coordinates
       double precision, intent(out) :: atmass(nqmatoms)
-      double precision, intent(out) :: nmodes(3*nqmatoms,3*nqmatoms-6)
+      double precision, intent(out) :: nmodes(3*nqmatoms-6,3*nqmatoms)
       double precision, intent(out) :: dxyzqm(3,nqmatoms)
       double precision, intent(out) :: freq(3*nqmatoms-6)
 
+      double precision              :: excoords(3,nqmatoms) ! QM atom coordinates
+      double precision              :: del0(3,nqmatoms) ! QM atom coordinates
+      double precision              :: delv(3*nqmatoms) ! QM atom coordinates
+      double precision              :: del_nc(3*nqmatoms-6) ! QM atom coordinates
+      double precision              :: gnd_coords_v(3*nqmatoms) ! QM atom coordinates
+      double precision              :: exc_coords_v(3*nqmatoms) ! QM atom coordinates
+      double precision              :: gnd_nc(3*nqmatoms-6)
+      double precision              :: exc_nc(3*nqmatoms-6)
+      double precision              :: del(3*nqmatoms-6)
       double precision              :: orth(3*nqmatoms-6,3*nqmatoms-6)
       double precision              :: gnc(3*nqmatoms-6)
       double precision              :: grad0(3*nqmatoms-6)
@@ -35,7 +44,7 @@ end program read_gaus
       character (len=18)            :: keygrad
       character (len=6)             :: keyfreq
       integer                       :: estat,ios,exitstat
-      integer                       :: i,j,k,m,nm,at,nat,count
+      integer                       :: i,j,k,r,s,m,nm,at,nat,count
       integer                       :: ndf, nvdf
 
 
@@ -78,6 +87,8 @@ end program read_gaus
       if ( ios /= 0 ) stop "Error opening fchk file to read."
       open(unit=235, file="td.fchk", iostat=ios, action="read")
       if ( ios /= 0 ) stop "Error opening fchk file to read."
+      open(unit=236, file="td-opt.fchk", iostat=ios, action="read")
+      if ( ios /= 0 ) stop "Error opening fchk file to read."
 
 !     Reading Cartesian Coordinates.
       read(234,'(A17)') keycoords
@@ -119,14 +130,14 @@ end program read_gaus
       k=1
       do m=1,nvdf
          do i=1,ndf
-            nmodes(i,m) = nmd(k)
+            nmodes(m,i) = nmd(k)
             k=k+1
          end do
       end do
 
       do nm=1,nvdf
          write(77,*)
-         write(77,*) nmodes(:,nm)
+         write(77,*) nmodes(nm,:)
       end do
 
       deallocate(nmd)
@@ -141,15 +152,16 @@ end program read_gaus
           do at=1,nqmatoms
              do j=1,3
                 k=j+3*(at-1)
-                nmodes(k,nm) = nmodes(k,nm)*Sqrt(atmass(at))
+                nmodes(nm,k) = nmodes(nm,k)*Sqrt(atmass(at))
              end do
           end do
        end do
        write(77,*) (sqrt(atmass(at)),at=1,nqmatoms)
 
+
  !     NORMALIZE MASS-WEIGHTED NORMAL MODES
        do nm=1,nvdf
-          nmt=nmodes(:,nm)
+          nmt=nmodes(nm,:)
 !          write(77,'(99D16.8)') nmodes(:,nm)
           write(77,*) 'Not normal'
           write(77,'(99D16.8)') nmt
@@ -158,8 +170,9 @@ end program read_gaus
           write(77,*) 'Yes normal'
           write(77,'(99D16.8)') nmt
 !          write(77,'(F16.8)') dnrm2(ndf,nmt,1)
-          nmodes(:,nm)=nmt
+          nmodes(nm,:)=nmt
        end do
+
 
        call dgemm('T','N',nvdf,nvdf,ndf,1d0,nmodes,ndf,nmodes,ndf,0d0,orth,nvdf)
        write(77,'(A)') 'DEBUG> Writing normal modes product matrix (should be identity)'
@@ -190,6 +203,26 @@ end program read_gaus
       read(234,*) ( freq(j),j=1,nvdf )
 
       write(77,*) 'Frequencies= ', freq
+      write(77,*)
+      write(77,*)             '%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%'
+      write(77,*)             '           WRITING NORMAL MODES            '
+      write(77,*)             '%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%'
+      write(77,*)
+      do j=7,ndf
+         write(77,'(A,i3)')   'MODE =',j-6
+         write(77,'(A,F9.2)') 'FREQUENCY (CM-1) =',freq(j)
+         write(77,'(A)')      '-------------------------------------------'
+         write(77,'(A)')      ' AT       X            Y            Z      '
+         write(77,'(A)')      '-------------------------------------------'
+         do k=1,nqmatoms
+            r=3*(k-1)+1
+            s=r+2
+            write(77,'(i3,3F13.8)')  k, nmodes(r:s,j)
+         end do
+         write(77,*)
+         write(77,*)
+      end do
+
 
       !-------------------------------------------------------------------------------
       !     GRADIENT
@@ -211,7 +244,7 @@ end program read_gaus
          if (abs(grad0(i))<1d-10) THEN
             grad0(i) = 0d0
          else
-            grad0(i) = gfac * grad0(i) / Sqrt(freq(i))
+            grad0(i) = hbarsqrt * gfac * grad0(i) / Sqrt(freq(i))
          end if
       end do
 
@@ -236,7 +269,64 @@ end program read_gaus
         write(77,'(2f14.6)') delta(i), freq(i)
       end do
 
+!     Reading Cartesian Coordinates of TD excited state optimization.
+      read(236,'(A17)') keycoords
+      count=1
+      do while (trim(keycoords) /= 'Current cartesian')
+         read(236,'(A17)') keycoords
+         count=count+1
+      end do
+      write(77,*) 'Number of lines skipped in fchk file is = ', count
+      read(236,*) ( ( excoords(i,j),i=1,3 ), j=1,nqmatoms )
+      excoords=excoords*a0
+      write(77,*) excoords
+      rewind 236
+
+      del0 = excoords-qmcoords
+      !-------------------------------------------------------------------------------
+      !     CONVERT CARTESIAN COORDS INTO ADIMENSIONAL NORMAL COORDS
+      !-------------------------------------------------------------------------------
+!     Mass weight
+      do i=1,nqmatoms
+          do j=1,3
+              gnd_coords_v(3*(i-1)+j)=qmcoords(j,i)*sqrt(atmass(i))
+              exc_coords_v(3*(i-1)+j)=excoords(j,i)*sqrt(atmass(i))
+              delv(3*(i-1)+j)=del0(j,i)*sqrt(atmass(i))
+          end do
+      end do
+
+      write(77,'(A)') 'MASAS ATOMICAS'
+      write(77,'(999F8.3)') atmass
+      write(77,'(999F8.3)') sqrt(atmass)
+
+!     Convert to normal coordinates.
+      call dgemv('T',ndf,nvdf,1d0,nmodes,ndf,gnd_coords_v,1,0d0,gnd_nc,1)
+      call dgemv('T',ndf,nvdf,1d0,nmodes,ndf,exc_coords_v,1,0d0,exc_nc,1)
+      call dgemv('T',ndf,nvdf,1d0,nmodes,ndf,delv,1,0d0,del_nc,1)
+
+!     Gradient is considered zero if less than 10d-10
+      do i=1,nvdf
+         gnd_nc(i) = gnd_nc(i) * Sqrt(freq(i))/hbarsqrt
+         exc_nc(i) = exc_nc(i) * Sqrt(freq(i))/hbarsqrt
+         del_nc(i) = exc_nc(i) * Sqrt(freq(i))/hbarsqrt
+      end do
+
+
+      write(77,*) 'Normal coords of ground state'
+      write(77,'(999F8.3)') gnd_nc
+      write(77,*) 'Normal coords of excited state'
+      write(77,'(999F8.3)') exc_nc
+
+      del=gnd_nc-exc_nc
+
+      write(77,*) 'Displacements in adimensional normal cartesian coordinates'
+      write(77,*) 'difference    gradient     frequency (cm-1)'
+      do i=1,nvdf
+        write(77,'(4f14.6)') del_nc(i), del(i), delta(i),freq(i)
+      end do
+
       close(234)
       close(235)
+      close(236)
 
    end subroutine

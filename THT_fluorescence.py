@@ -5,8 +5,11 @@ import cmath as cmth
 import scipy.constants as cnst
 from scipy.fftpack import fft, ifft,  fftfreq, fftshift,dct,idct
 import matplotlib.pyplot as plt
-
-from ramanlib import fluorescence,uvvis
+import sys
+import os.path
+sys.path.append(os.path.abspath('.'))
+sys.path.insert(0, "/home/diegoa/dev/specpy")
+from ramanlib import fluorescence,uvvis,read_table
 ##############################################################################
 #     APPLICATIONS: hexatriene
 #     Petrenko & Neese 2007
@@ -18,18 +21,47 @@ omega0=39805
 states_list = np.identity(9)
 states_list.tolist()
 ffreq,fluo = fluorescence(delta_nm,omega_nm,omega0,gamma)
-ufreq,uvvis = uvvis(delta_nm,omega_nm,omega0,gamma)
+ufreq,uuvvis = uvvis(delta_nm,omega_nm,omega0,gamma)
 
 
 fig1,ax = plt.subplots(ncols=1,nrows=1,figsize=(8,8))
 xmax=52000
 xmin=28000
-ymax=300
+ymax=100
 ymin=0
 plt.xlim(xmin,xmax)
 plt.ylim(ymin,ymax)
 ax.plot(ffreq, fluo)
-ax.plot(ufreq, uvvis)
+ax.plot(ufreq, uuvvis)
+ax.set_xlim(xmin,xmax)
+ax.set_ylim(ymin,ymax)
+ax.set_xlabel(r'$\omega_I$ (cm$^{-1}$)')
+ax.set_aspect((xmax-xmin)/(ymax-ymin),'box')
+
+ax.set_ylabel(r'ABSORPTION/FLUORESCENCE INTENSITY')
+plt.show()
+
+##############################################################################
+#  BP86 TZVP PARAMETRS
+##############################################################################
+delta_nm, omega_nm = read_table('/home/diegoa/dev/specpy/disp.dat')
+gamma    = 160.
+omega0=39805
+states_list = np.identity(len(omega_nm))
+states_list.tolist()
+ffreq,fluo = fluorescence(delta_nm,omega_nm,omega0,gamma)
+ufreq,uuvvis = uvvis(delta_nm,omega_nm,omega0,gamma)
+
+
+fig1,ax = plt.subplots(ncols=1,nrows=1,figsize=(8,8))
+xmax=52000
+xmin=28000
+ymax=400
+ymin=0
+plt.xlim(xmin,xmax)
+plt.ylim(ymin,ymax)
+ax.plot(ffreq, fluo)
+ax.plot(ufreq, uuvvis)
 ax.set_xlim(xmin,xmax)
 ax.set_ylim(ymin,ymax)
 ax.set_xlabel(r'$\omega_I$ (cm$^{-1}$)')
