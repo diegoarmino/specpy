@@ -22,6 +22,7 @@ end program read_gaus
       double precision, intent(out) :: dxyzqm(3,nqmatoms)
       double precision, intent(out) :: freq(3*nqmatoms-6)
 
+      double precision              :: gaus_nm(3*nqmatoms,3*nqmatoms-6)
       double precision              :: excoords(3,nqmatoms) ! QM atom coordinates
       double precision              :: del0(3,nqmatoms) ! QM atom coordinates
       double precision              :: delv(3*nqmatoms) ! QM atom coordinates
@@ -37,6 +38,7 @@ end program read_gaus
       double precision              :: delta(3*nqmatoms-6)
       double precision              :: nmt(3*nqmatoms)
       double precision              :: gtmp(3*nqmatoms)
+      double precision              :: tmp
       character (len=4)             :: cfx,cfy,cfz
       character (len=17)            :: keycoords
       character (len=19)            :: keymass
@@ -44,12 +46,13 @@ end program read_gaus
       character (len=18)            :: keygrad
       character (len=6)             :: keyfreq
       integer                       :: estat,ios,exitstat
-      integer                       :: i,j,k,r,s,m,nm,at,nat,count
+      integer                       :: i,j,k,r,s,m,nm,at,nat,count,xi
       integer                       :: ndf, nvdf
 
 
 !     Constants
       double precision, parameter :: hbarjs    =  1.05457187d-34        ! J.s
+      double precision, parameter :: hjs       =  6.62607015d-34        ! J.s
       double precision, parameter :: ccm       =  2.99792458d10         ! Speed of light cm/s
       double precision, parameter :: A0        =  0.52917710d00         ! Angstrms/bohr
       double precision, parameter :: he2j      =  4.35974394d-18        ! hartree/J
@@ -75,7 +78,8 @@ end program read_gaus
       gfac = he2j/(ccm**2 * b2m**2 * kg2da)
       b2msq = b2m**2
       ccmsq = ccm**2
-      hbar  = hbarjs/(ccm * b2m**2 * kg2da)
+      !hbar  = hbarjs/(ccm * b2m**2 * kg2da)
+      hbar  = hjs/(ccm * b2m**2 * kg2da)
       hbarsqrt = sqrt(hbar)
       write(*,*) 'hbar = ', hbar, 'hbarsqrt = ', hbarsqrt
 
@@ -90,22 +94,6 @@ end program read_gaus
       open(unit=236, file="td-opt.fchk", iostat=ios, action="read")
       if ( ios /= 0 ) stop "Error opening fchk file to read."
 
-!     Reading Cartesian Coordinates.
-!@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-!     CARTESIAN COORDINATES
-!@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-      read(234,'(A17)') keycoords
-      count=1
-      do while (trim(keycoords) /= 'Current cartesian')
-         read(234,'(A17)') keycoords
-         count=count+1
-      end do
-      write(77,*) 'Number of lines skipped in fchk file is = ', count
-      read(234,*) ( ( qmcoords(i,j),i=1,3 ), j=1,nqmatoms )
-      qmcoords=qmcoords*a0
-      write(77,*) qmcoords
-      rewind 234
-
 !@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 !     MASSES
 !@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
@@ -118,22 +106,6 @@ end program read_gaus
       write(77,*) 'Number of lines skipped in fchk file is = ', count
       read(234,*) ( atmass(i),i=1,nqmatoms )
       rewind 234
-
-!@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-!     GRADIENTS
-!@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-
-      rewind 235
-      read(235,'(A18)') keygrad
-      count=1
-      do while (trim(keygrad) /= 'Cartesian Gradient')
-         read(235,'(A18)') keygrad
-         count=count+1
-      end do
-      write(77,*) 'Number of lines skipped in fchk file is = ', count
-      read(235,*) ( ( dxyzqm(j,i),j=1,3 ), i=1,nqmatoms )
-
-      write(77,*) 'Gradient Vector = \n', dxyzqm
 
 !@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 !     FREQUENCIES
@@ -159,7 +131,6 @@ end program read_gaus
       end do
 
       allocate(nmd(ndf*nvdf))
-
       write(77,*) 'NMODES Number of lines skipped in fchk file is = ', count
       read(234,*) ( nmd(j),j=1,ndf*nvdf )
 
@@ -178,6 +149,7 @@ end program read_gaus
  !     So we have to moltiply them by M^1/2 in order to obtain
  !     pure normal modes.
 
+       gaus_nm=nmodes
        do nm=1,nvdf
           do at=1,nqmatoms
              do j=1,3
@@ -186,22 +158,18 @@ end program read_gaus
              end do
           end do
        end do
-       write(*,*) 'sqrt(atmass)',sqrt(atmass)
 
-
-
- !     NORMALIZE MASS-WEIGHTED NORMAL MODES
+ !     NORMALIZE NORMAL MODES
        do nm=1,nvdf
           nmt=nmodes(:,nm)
           nmt=nmt/dnrm2(ndf,nmt,1)
           nmodes(:,nm)=nmt
        end do
 
-
        call dgemm('T','N',nvdf,nvdf,ndf,1d0,nmodes,ndf,nmodes,ndf,0d0,orth,nvdf)
        write(77,'(A)') 'DEBUG> Writing normal modes product matrix (should be identity)'
        do i=1,nvdf
-          write(77,'(99F15.6)') orth(i,:)
+          write(77,'(99F8.3)') orth(i,:)
        end do
 
       write(77,*) 'Frequencies= ', freq
@@ -225,10 +193,22 @@ end program read_gaus
          write(77,*)
       end do
 
+!@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+!     GRADIENTS
+!@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
-      !-------------------------------------------------------------------------------
-      !     GRADIENT
-      !-------------------------------------------------------------------------------
+!     Read gradient
+      rewind 235
+      read(235,'(A18)') keygrad
+      count=1
+      do while (trim(keygrad) /= 'Cartesian Gradient')
+         read(235,'(A18)') keygrad
+         count=count+1
+      end do
+      read(235,*) ( ( dxyzqm(j,i),j=1,3 ), i=1,nqmatoms )
+
+      !write(77,*) 'Gradient Vector = \n', dxyzqm
+
 !     Mass weight gradient
       do i=1,nqmatoms
           do j=1,3
@@ -236,42 +216,46 @@ end program read_gaus
           end do
       end do
 
-!     Convert Gradient to normal coordinates.
-      gtmp=gtmp*1d6
-      call dgemv('T',ndf,nvdf,1d0,nmodes,ndf,gtmp,1,0d0,gnc,1)
-      grad0=gnc*1d-6   ! Gradient without electric field.
-
-!     Gradient is considered zero if less than 10d-10
-      do i=1,nvdf
-         if (abs(grad0(i))<1d-10) THEN
-            grad0(i) = 0d0
-         else
-            grad0(i) = hbarsqrt * gfac * grad0(i) / Sqrt(freq(i))
-         end if
+!     Convert gradient to mass-weighted normal coordinates
+      grad0=0d0
+      do nm = 1,nvdf
+         tmp = 0d0
+         do xi = 1,ndf
+            grad0(nm) = grad0(nm) + nmodes(xi,nm) * gtmp(xi)
+         end do
       end do
 
+!     Convert gradient to adimensional coordinates
+      grad0 = hbarsqrt * gfac * grad0 / Sqrt(freq)
 
-      write(77,*) 'Mass-Weighted Gradient in cartesians'
-      write(77,*) gtmp
-      write(77,*) 'Normal modes L ='
-      write(77,*) nmodes
-      write(77,*) 'Mass-weighted Gradient in normal coordinates with no electric field.'
-      do i=1,nvdf
-        write(77,*) grad0(i)
+!     @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+!                   COMPUTING DISPLACEMENTS FROM GRADIENTS
+!     @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+      delta  = - grad0 / (freq * hbar)
+
+!     @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+!         COMPUTING DISPLACEMENTS FROM EXCITED AND GROUND STATE GEOMETRIES.
+!     @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+!     READING GROUND STATE EQUILIBRIUM GEOMETRY
+!     --------------------------------------------------------------------------
+      rewind 235
+      read(235,'(A17)') keycoords
+      count=1
+      do while (trim(keycoords) /= 'Current cartesian')
+         read(235,'(A17)') keycoords
+         count=count+1
       end do
-      !-------------------------------------------------------------------------------
-      !     COMPUTING DISPLACEMENTS
-      !-------------------------------------------------------------------------------
+      write(77,*) 'Number of lines skipped in fchk file is = ', count
+      read(235,*) ( ( qmcoords(i,j),i=1,3 ), j=1,nqmatoms )
+      qmcoords=qmcoords*a0
+      write(77,*) qmcoords
+      rewind 235
 
-      delta  = - grad0 / freq
-      delta  =   delta / hbar
 
-      write(77,*) 'Displacements in adimensional normal cartesian coordinates'
-      do i=1,nvdf
-        write(77,'(2f14.6)') delta(i), freq(i)
-      end do
-
-!     Reading Cartesian Coordinates of TD excited state optimization.
+!     READING EXCITED STATE EQUILIBRIUM GEOMETRY (TD OPTIMIZATION)
+!     --------------------------------------------------------------------------
       read(236,'(A17)') keycoords
       count=1
       do while (trim(keycoords) /= 'Current cartesian')
@@ -284,36 +268,50 @@ end program read_gaus
       write(77,*) excoords
       rewind 236
 
-      del0 = excoords-qmcoords
-      !-------------------------------------------------------------------------------
-      !     CONVERT CARTESIAN COORDS INTO ADIMENSIONAL NORMAL COORDS
-      !-------------------------------------------------------------------------------
-!     Mass weight
+!     TAKING DIFFERENCE BETWEEN EXCITED AND GROUND STATE GEOMETRIES IN CARTESIAN
+!     --------------------------------------------------------------------------
+!      del0 = excoords-qmcoords
       do i=1,nqmatoms
           do j=1,3
-              gnd_coords_v(3*(i-1)+j)=qmcoords(j,i)*sqrt(atmass(i))
-              exc_coords_v(3*(i-1)+j)=excoords(j,i)*sqrt(atmass(i))
-              delv(3*(i-1)+j)=del0(j,i)*sqrt(atmass(i))
+              del0(j,i)         = qmcoords(j,i) - excoords(j,i)
           end do
       end do
 
-      write(77,'(A)') 'MASAS ATOMICAS'
-      write(77,'(999F8.3)') atmass
-      write(77,'(999F8.3)') sqrt(atmass)
+!     NONDIMENSIONALIZATION OF GEOMETRIES AND DISPLACEMENTS
+!     --------------------------------------------------------------------------
 
-!     Convert to normal coordinates.
-      call dgemv('T',ndf,nvdf,1d0,nmodes,ndf,gnd_coords_v,1,0d0,gnd_nc,1)
-      call dgemv('T',ndf,nvdf,1d0,nmodes,ndf,exc_coords_v,1,0d0,exc_nc,1)
-      call dgemv('T',ndf,nvdf,1d0,nmodes,ndf,delv,1,0d0,del_nc,1)
-
-!     Gradient is considered zero if less than 10d-10
-      do i=1,nvdf
-         gnd_nc(i) = gnd_nc(i) * Sqrt(freq(i))/hbarsqrt
-         exc_nc(i) = exc_nc(i) * Sqrt(freq(i))/hbarsqrt
-         del_nc(i) = exc_nc(i) * Sqrt(freq(i))/hbarsqrt
+!     MASS WEIGHT
+      do i=1,nqmatoms
+          do j=1,3
+              gnd_coords_v(3*(i-1)+j) = qmcoords(j,i) * sqrt(atmass(i))
+              exc_coords_v(3*(i-1)+j) = excoords(j,i) * sqrt(atmass(i))
+              delv(3*(i-1)+j)         = del0(j,i)     * sqrt(atmass(i))
+          end do
       end do
 
+!     CONVERT TO MASS-WEIGHTED NORMAL COORDINATES
+      gnd_nc=0d0
+      exc_nc=0d0
+      del_nc=0d0
+      do nm = 1,nvdf
+         do xi = 1,ndf
+            gnd_nc(nm) = gnd_nc(nm) + nmodes(xi,nm) * gnd_coords_v(xi)
+            exc_nc(nm) = exc_nc(nm) + nmodes(xi,nm) * exc_coords_v(xi)
+            del_nc(nm) = del_nc(nm) + nmodes(xi,nm) * delv(xi)
+         end do
+      end do
 
+!     CONVERT TO ADIMENSIONAL NORMAL COORDINATES
+      gnd_nc = gnd_nc * Sqrt(freq/hbar)
+      exc_nc = exc_nc * Sqrt(freq/hbar)
+      del_nc = exc_nc * Sqrt(freq/hbar)
+
+      write(77,*) 'Coords of ground state'
+      write(77,'(999F8.3)') qmcoords
+      write(77,*) 'Coords of excited state'
+      write(77,'(999F8.3)') excoords
+      write(77,*) 'Coords of delta'
+      write(77,'(999F8.3)') del0
       write(77,*) 'Normal coords of ground state'
       write(77,'(999F8.3)') gnd_nc
       write(77,*) 'Normal coords of excited state'
@@ -322,7 +320,7 @@ end program read_gaus
       del=gnd_nc-exc_nc
 
       write(77,*) 'Displacements in adimensional normal cartesian coordinates'
-      write(77,*) 'difference    gradient     frequency (cm-1)'
+      write(77,*) '    LM(Xg-Xex)    LMXg-LMXex     gradient     frequency (cm-1)'
       do i=1,nvdf
         write(77,'(4f14.6)') del_nc(i), del(i), delta(i),freq(i)
       end do
