@@ -18,7 +18,7 @@ end program read_gaus
       integer,          intent(in)  :: at_numbers(nqmatoms) ! Atomic numbers of QM atoms.
       double precision, intent(out) :: qmcoords(3,nqmatoms) ! QM atom coordinates
       double precision, intent(out) :: atmass(nqmatoms)
-      double precision, intent(out) :: nmodes(3*nqmatoms-6,3*nqmatoms)
+      double precision, intent(out) :: nmodes(3*nqmatoms,3*nqmatoms-6)
       double precision, intent(out) :: dxyzqm(3,nqmatoms)
       double precision, intent(out) :: freq(3*nqmatoms-6)
 
@@ -91,6 +91,9 @@ end program read_gaus
       if ( ios /= 0 ) stop "Error opening fchk file to read."
 
 !     Reading Cartesian Coordinates.
+!@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+!     CARTESIAN COORDINATES
+!@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
       read(234,'(A17)') keycoords
       count=1
       do while (trim(keycoords) /= 'Current cartesian')
@@ -103,7 +106,9 @@ end program read_gaus
       write(77,*) qmcoords
       rewind 234
 
-!     Reading Masses
+!@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+!     MASSES
+!@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
       read(234,'(A18)') keymass
       count=1
       do while (trim(keymass) /= 'Real atomic weight')
@@ -114,71 +119,9 @@ end program read_gaus
       read(234,*) ( atmass(i),i=1,nqmatoms )
       rewind 234
 
-!     Reading Normal Modes.
-      read(234,'(A9)') keynmodes
-      count=1
-      do while (trim(keynmodes) /= 'Vib-Modes')
-         read(234,'(A9)') keynmodes
-         count=count+1
-      end do
-
-      allocate(nmd(ndf*nvdf))
-
-      write(77,*) 'Number of lines skipped in fchk file is = ', count
-      read(234,*) ( nmd(j),j=1,ndf*nvdf )
-
-      k=1
-      do m=1,nvdf
-         do i=1,ndf
-            nmodes(m,i) = nmd(k)
-            k=k+1
-         end do
-      end do
-
-      do nm=1,nvdf
-         write(77,*)
-         write(77,*) nmodes(nm,:)
-      end do
-
-      deallocate(nmd)
-
- !     UN-MASS-WEIGHT NORMAL MODES
- !     Normal modes come mass weighted from Gaussian.
- !     To be more precise, l = M^-1/2 L
- !     So we have to moltiply them by M^1/2 in order to obtain
- !     pure normal modes.
-
-       do nm=1,nvdf
-          do at=1,nqmatoms
-             do j=1,3
-                k=j+3*(at-1)
-                nmodes(nm,k) = nmodes(nm,k)*Sqrt(atmass(at))
-             end do
-          end do
-       end do
-       write(77,*) (sqrt(atmass(at)),at=1,nqmatoms)
-
-
- !     NORMALIZE MASS-WEIGHTED NORMAL MODES
-       do nm=1,nvdf
-          nmt=nmodes(nm,:)
-!          write(77,'(99D16.8)') nmodes(:,nm)
-          write(77,*) 'Not normal'
-          write(77,'(99D16.8)') nmt
-!          write(77,'(F16.8)') dnrm2(ndf,nmt,1)
-          nmt=nmt/dnrm2(ndf,nmt,1)
-          write(77,*) 'Yes normal'
-          write(77,'(99D16.8)') nmt
-!          write(77,'(F16.8)') dnrm2(ndf,nmt,1)
-          nmodes(nm,:)=nmt
-       end do
-
-
-       call dgemm('T','N',nvdf,nvdf,ndf,1d0,nmodes,ndf,nmodes,ndf,0d0,orth,nvdf)
-       write(77,'(A)') 'DEBUG> Writing normal modes product matrix (should be identity)'
-       do i=1,nvdf
-          write(77,'(99F15.6)') orth(i,:)
-       end do
+!@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+!     GRADIENTS
+!@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
       rewind 235
       read(235,'(A18)') keygrad
@@ -192,6 +135,9 @@ end program read_gaus
 
       write(77,*) 'Gradient Vector = \n', dxyzqm
 
+!@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+!     FREQUENCIES
+!@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
       rewind 234
       read(234,'(A6)') keyfreq
       count=1
@@ -202,14 +148,70 @@ end program read_gaus
       write(77,*) 'Number of lines skipped in fchk file is = ', count
       read(234,*) ( freq(j),j=1,nvdf )
 
+!@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+!     NORMAL MODES
+!@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+      read(234,'(A9)') keynmodes
+      count=1
+      do while (trim(keynmodes) /= 'Vib-Modes')
+         read(234,'(A9)') keynmodes
+         count=count+1
+      end do
+
+      allocate(nmd(ndf*nvdf))
+
+      write(77,*) 'NMODES Number of lines skipped in fchk file is = ', count
+      read(234,*) ( nmd(j),j=1,ndf*nvdf )
+
+      k=1
+      do m=1,nvdf
+         do i=1,ndf
+            nmodes(i,m) = nmd(k)
+            k=k+1
+         end do
+      end do
+      deallocate(nmd)
+
+ !     UN-MASS-WEIGHT NORMAL MODES
+ !     Normal modes come mass weighted from Gaussian.
+ !     To be more precise, l = M^-1/2 L
+ !     So we have to moltiply them by M^1/2 in order to obtain
+ !     pure normal modes.
+
+       do nm=1,nvdf
+          do at=1,nqmatoms
+             do j=1,3
+                k=j+3*(at-1)
+                nmodes(k,nm) = nmodes(k,nm)*Sqrt(atmass(at))
+             end do
+          end do
+       end do
+       write(*,*) 'sqrt(atmass)',sqrt(atmass)
+
+
+
+ !     NORMALIZE MASS-WEIGHTED NORMAL MODES
+       do nm=1,nvdf
+          nmt=nmodes(:,nm)
+          nmt=nmt/dnrm2(ndf,nmt,1)
+          nmodes(:,nm)=nmt
+       end do
+
+
+       call dgemm('T','N',nvdf,nvdf,ndf,1d0,nmodes,ndf,nmodes,ndf,0d0,orth,nvdf)
+       write(77,'(A)') 'DEBUG> Writing normal modes product matrix (should be identity)'
+       do i=1,nvdf
+          write(77,'(99F15.6)') orth(i,:)
+       end do
+
       write(77,*) 'Frequencies= ', freq
       write(77,*)
       write(77,*)             '%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%'
       write(77,*)             '           WRITING NORMAL MODES            '
       write(77,*)             '%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%'
       write(77,*)
-      do j=7,ndf
-         write(77,'(A,i3)')   'MODE =',j-6
+      do j=1,nvdf
+         write(77,'(A,i3)')   'MODE =',j
          write(77,'(A,F9.2)') 'FREQUENCY (CM-1) =',freq(j)
          write(77,'(A)')      '-------------------------------------------'
          write(77,'(A)')      ' AT       X            Y            Z      '
