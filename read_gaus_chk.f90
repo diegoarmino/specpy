@@ -249,7 +249,7 @@ end program read_gaus
       end do
       write(77,*) 'Number of lines skipped in fchk file is = ', count
       read(235,*) ( ( qmcoords(i,j),i=1,3 ), j=1,nqmatoms )
-      qmcoords=qmcoords*a0
+      qmcoords=qmcoords!*a0
       write(77,*) qmcoords
       rewind 235
 
@@ -264,7 +264,7 @@ end program read_gaus
       end do
       write(77,*) 'Number of lines skipped in fchk file is = ', count
       read(236,*) ( ( excoords(i,j),i=1,3 ), j=1,nqmatoms )
-      excoords=excoords*a0
+      excoords=excoords!*a0
       write(77,*) excoords
       rewind 236
 
