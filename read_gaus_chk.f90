@@ -285,7 +285,8 @@ end program read_gaus
           do j=1,3
               gnd_coords_v(3*(i-1)+j) = qmcoords(j,i) * sqrt(atmass(i))
               exc_coords_v(3*(i-1)+j) = excoords(j,i) * sqrt(atmass(i))
-              delv(3*(i-1)+j)         = del0(j,i)     * sqrt(atmass(i))
+              !delv(3*(i-1)+j)         = del0(j,i)     * sqrt(atmass(i))
+              delv(3*(i-1)+j)         = (qmcoords(j,i) - excoords(j,i)) * sqrt(atmass(i))
           end do
       end do
 
