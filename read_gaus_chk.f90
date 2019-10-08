@@ -271,11 +271,11 @@ end program read_gaus
 !     TAKING DIFFERENCE BETWEEN EXCITED AND GROUND STATE GEOMETRIES IN CARTESIAN
 !     --------------------------------------------------------------------------
 !      del0 = excoords-qmcoords
-      do i=1,nqmatoms
-          do j=1,3
-              del0(j,i)         = qmcoords(j,i) - excoords(j,i)
-          end do
-      end do
+!      do i=1,nqmatoms
+!          do j=1,3
+!              del0(j,i)         = qmcoords(j,i) - excoords(j,i)
+!          end do
+!      end do
 
 !     NONDIMENSIONALIZATION OF GEOMETRIES AND DISPLACEMENTS
 !     --------------------------------------------------------------------------
