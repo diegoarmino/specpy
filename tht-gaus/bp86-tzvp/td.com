@@ -1,6 +1,6 @@
 %chk=td.chk
 %nProcShared=4
-# bp86/TZVP TD(root=1) force
+# bp86/TZVP TD(root=1) force nosymm
 
  Title
 

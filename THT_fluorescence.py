@@ -44,7 +44,38 @@ plt.show()
 ##############################################################################
 #  BP86 TZVP PARAMETRS
 ##############################################################################
-delta_nm, omega_nm = read_table('/home/diegoa/dev/specpy/disp.dat')
+delta_nm, omega_nm = read_table('/home/diegoa/dev/specpy/tht-gaus/bp86-tzvp/disp.dat')
+gamma    = 160.
+omega0=39805
+states_list = np.identity(len(omega_nm))
+states_list.tolist()
+ffreq,fluo = fluorescence(delta_nm,omega_nm,omega0,gamma)
+ufreq,uuvvis = uvvis(delta_nm,omega_nm,omega0,gamma)
+
+
+fig1,ax = plt.subplots(ncols=1,nrows=1,figsize=(8,8))
+xmax=52000
+xmin=28000
+ymax=400
+ymin=0
+plt.xlim(xmin,xmax)
+plt.ylim(ymin,ymax)
+ax.plot(ffreq, fluo)
+ax.plot(ufreq, uuvvis)
+ax.set_xlim(xmin,xmax)
+ax.set_ylim(ymin,ymax)
+ax.set_xlabel(r'$\omega_I$ (cm$^{-1}$)')
+ax.set_aspect((xmax-xmin)/(ymax-ymin),'box')
+
+ax.set_ylabel(r'ABSORPTION/FLUORESCENCE INTENSITY')
+plt.show()
+
+
+
+##############################################################################
+#  BP86 TZVP PARAMETRS excited state optimization
+##############################################################################
+delta_nm, omega_nm = read_table('/home/diegoa/dev/specpy/tht-gaus/bp86-tzvp/disp-opt.dat')
 gamma    = 160.
 omega0=39805
 states_list = np.identity(len(omega_nm))

@@ -1,11 +1,23 @@
 program read_gaus
-   integer,parameter          :: nqmatoms=14, nclatoms=0
-   integer          :: at_numbers(nqmatoms) ! Atomic numbers of QM atoms.
-   double precision :: qmcoords(3,nqmatoms) ! QM atom coordinates
-   double precision :: atmass(nqmatoms)
-   double precision :: nmodes(3*nqmatoms-6,3*nqmatoms)
-   double precision :: dxyzqm(3,nqmatoms)
-   double precision :: freq(3*nqmatoms-6)
+   integer,parameter          :: nclatoms=0
+   integer          :: nqmatoms,mode
+   integer,allocatable           :: at_numbers(:) ! Atomic numbers of QM atoms.
+   double precision,allocatable  :: qmcoords(:,:) ! QM atom coordinates
+   double precision,allocatable  :: atmass(:)
+   double precision,allocatable  :: nmodes(:,:)
+   double precision,allocatable  :: dxyzqm(:,:)
+   double precision,allocatable  :: freq(:)
+
+   character(100)   :: numchar
+   character(100)   :: modechar
+
+   call GET_COMMAND_ARGUMENT(1,numchar)
+   read(numchar,*) nqmatoms
+
+   allocate( at_numbers(nqmatoms), qmcoords(3,nqmatoms) , atmass(nqmatoms),  &
+             nmodes(3*nqmatoms-6,3*nqmatoms), dxyzqm(3,nqmatoms),            &
+             freq(3*nqmatoms-6) )
+
    call read_gaus_chekpoint(nqmatoms,nclatoms,at_numbers,qmcoords,atmass,nmodes,dxyzqm,freq)
 
 end program read_gaus
@@ -69,30 +81,37 @@ end program read_gaus
       double precision :: ccmsq                              ! Speed of light cm^2/s^2
       double precision :: hbar                               ! h bar in Da a0^2 cm-1
 
+      character(100)                :: modechar
+      integer                       :: mode
+
 !     Allocatable variables
       double precision,ALLOCATABLE  :: nmd(:)
 !     External functions
       double precision, external :: dnrm2
       double precision, external :: ddot
 
+      call GET_COMMAND_ARGUMENT(2,modechar)
+      read(modechar,*) mode
+
       gfac = he2j/(ccm**2 * b2m**2 * kg2da)
       b2msq = b2m**2
       ccmsq = ccm**2
-      !hbar  = hbarjs/(ccm * b2m**2 * kg2da)
-      hbar  = hjs/(ccm * b2m**2 * kg2da)
+      hbar  = hbarjs/(ccm * b2m**2 * kg2da)
+!      hbar  = hjs/(ccm * b2m**2 * kg2da)
       hbarsqrt = sqrt(hbar)
-      write(*,*) 'hbar = ', hbar, 'hbarsqrt = ', hbarsqrt
 
       ndf=3*nqmatoms
       nvdf=ndf-6
 
 !     Opening checkpoint file.
       open(unit=234, file="freq.fchk", iostat=ios, action="read")
-      if ( ios /= 0 ) stop "Error opening fchk file to read."
+      if ( ios /= 0 ) stop "Error opening freq.fchk file to read."
       open(unit=235, file="td.fchk", iostat=ios, action="read")
-      if ( ios /= 0 ) stop "Error opening fchk file to read."
-      open(unit=236, file="td-opt.fchk", iostat=ios, action="read")
-      if ( ios /= 0 ) stop "Error opening fchk file to read."
+      if ( ios /= 0 ) stop "Error opening td.fchk file to read."
+      if (mode==1) then
+         open(unit=236, file="td-opt.fchk", iostat=ios, action="read")
+         if ( ios /= 0 ) stop "Error opening fchk file to read."
+      endif
 
 !@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 !     MASSES
@@ -226,7 +245,8 @@ end program read_gaus
       end do
 
 !     Convert gradient to adimensional coordinates
-      grad0 = hbarsqrt * gfac * grad0 / Sqrt(freq)
+      !grad0 = hbarsqrt * gfac * grad0 / Sqrt(freq) ! DANGER
+      grad0 = gfac * grad0 / Sqrt(freq)
 
 !     @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 !                   COMPUTING DISPLACEMENTS FROM GRADIENTS
@@ -238,96 +258,109 @@ end program read_gaus
 !         COMPUTING DISPLACEMENTS FROM EXCITED AND GROUND STATE GEOMETRIES.
 !     @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
-!     READING GROUND STATE EQUILIBRIUM GEOMETRY
-!     --------------------------------------------------------------------------
-      rewind 235
-      read(235,'(A17)') keycoords
-      count=1
-      do while (trim(keycoords) /= 'Current cartesian')
+      if (mode==1) then
+   !     READING GROUND STATE EQUILIBRIUM GEOMETRY
+   !     --------------------------------------------------------------------------
+         rewind 235
          read(235,'(A17)') keycoords
-         count=count+1
-      end do
-      write(77,*) 'Number of lines skipped in fchk file is = ', count
-      read(235,*) ( ( qmcoords(i,j),i=1,3 ), j=1,nqmatoms )
-      qmcoords=qmcoords!*a0
-      write(77,*) qmcoords
-      rewind 235
-
-
-!     READING EXCITED STATE EQUILIBRIUM GEOMETRY (TD OPTIMIZATION)
-!     --------------------------------------------------------------------------
-      read(236,'(A17)') keycoords
-      count=1
-      do while (trim(keycoords) /= 'Current cartesian')
-         read(236,'(A17)') keycoords
-         count=count+1
-      end do
-      write(77,*) 'Number of lines skipped in fchk file is = ', count
-      read(236,*) ( ( excoords(i,j),i=1,3 ), j=1,nqmatoms )
-      excoords=excoords!*a0
-      write(77,*) excoords
-      rewind 236
-
-!     TAKING DIFFERENCE BETWEEN EXCITED AND GROUND STATE GEOMETRIES IN CARTESIAN
-!     --------------------------------------------------------------------------
-!      del0 = excoords-qmcoords
-!      do i=1,nqmatoms
-!          do j=1,3
-!              del0(j,i)         = qmcoords(j,i) - excoords(j,i)
-!          end do
-!      end do
-
-!     NONDIMENSIONALIZATION OF GEOMETRIES AND DISPLACEMENTS
-!     --------------------------------------------------------------------------
-
-!     MASS WEIGHT
-      do i=1,nqmatoms
-          do j=1,3
-              gnd_coords_v(3*(i-1)+j) = qmcoords(j,i) * sqrt(atmass(i))
-              exc_coords_v(3*(i-1)+j) = excoords(j,i) * sqrt(atmass(i))
-              !delv(3*(i-1)+j)         = del0(j,i)     * sqrt(atmass(i))
-              delv(3*(i-1)+j)         = (qmcoords(j,i) - excoords(j,i)) * sqrt(atmass(i))
-          end do
-      end do
-
-!     CONVERT TO MASS-WEIGHTED NORMAL COORDINATES
-      gnd_nc=0d0
-      exc_nc=0d0
-      del_nc=0d0
-      do nm = 1,nvdf
-         do xi = 1,ndf
-            gnd_nc(nm) = gnd_nc(nm) + nmodes(xi,nm) * gnd_coords_v(xi)
-            exc_nc(nm) = exc_nc(nm) + nmodes(xi,nm) * exc_coords_v(xi)
-            del_nc(nm) = del_nc(nm) + nmodes(xi,nm) * delv(xi)
+         count=1
+         do while (trim(keycoords) /= 'Current cartesian')
+            read(235,'(A17)') keycoords
+            count=count+1
          end do
-      end do
+         write(77,*) 'Number of lines skipped in fchk file is = ', count
+         read(235,*) ( ( qmcoords(i,j),i=1,3 ), j=1,nqmatoms )
+         qmcoords=qmcoords/a0  !DANGER a0 should not be there
+         write(77,*) qmcoords
+         rewind 235
 
-!     CONVERT TO ADIMENSIONAL NORMAL COORDINATES
-      gnd_nc = gnd_nc * Sqrt(freq/hbar)
-      exc_nc = exc_nc * Sqrt(freq/hbar)
-      del_nc = exc_nc * Sqrt(freq/hbar)
 
-      write(77,*) 'Coords of ground state'
-      write(77,'(999F8.3)') qmcoords
-      write(77,*) 'Coords of excited state'
-      write(77,'(999F8.3)') excoords
-      write(77,*) 'Coords of delta'
-      write(77,'(999F8.3)') del0
-      write(77,*) 'Normal coords of ground state'
-      write(77,'(999F8.3)') gnd_nc
-      write(77,*) 'Normal coords of excited state'
-      write(77,'(999F8.3)') exc_nc
+   !     READING EXCITED STATE EQUILIBRIUM GEOMETRY (TD OPTIMIZATION)
+   !     --------------------------------------------------------------------------
+         read(236,'(A17)') keycoords
+         count=1
+         do while (trim(keycoords) /= 'Current cartesian')
+            read(236,'(A17)') keycoords
+            count=count+1
+         end do
+         write(77,*) 'Number of lines skipped in fchk file is = ', count
+         read(236,*) ( ( excoords(i,j),i=1,3 ), j=1,nqmatoms )
+         excoords=excoords/a0  !DANGER a0 should not be there
+         write(77,*) excoords
+         rewind 236
 
-      del=gnd_nc-exc_nc
+   !     TAKING DIFFERENCE BETWEEN EXCITED AND GROUND STATE GEOMETRIES IN CARTESIAN
+   !     --------------------------------------------------------------------------
+   !      del0 = excoords-qmcoords
+   !      do i=1,nqmatoms
+   !          do j=1,3
+   !              del0(j,i)         = qmcoords(j,i) - excoords(j,i)
+   !          end do
+   !      end do
 
-      write(77,*) 'Displacements in adimensional normal cartesian coordinates'
-      write(77,*) '    LM(Xg-Xex)    LMXg-LMXex     gradient     frequency (cm-1)'
+   !     NONDIMENSIONALIZATION OF GEOMETRIES AND DISPLACEMENTS
+   !     --------------------------------------------------------------------------
+
+   !     MASS WEIGHT
+         do i=1,nqmatoms
+             do j=1,3
+                 gnd_coords_v(3*(i-1)+j) = qmcoords(j,i) * sqrt(atmass(i))
+                 exc_coords_v(3*(i-1)+j) = excoords(j,i) * sqrt(atmass(i))
+                 !delv(3*(i-1)+j)         = del0(j,i)     * sqrt(atmass(i))
+                 delv(3*(i-1)+j)         = (qmcoords(j,i) - excoords(j,i)) * sqrt(atmass(i))
+             end do
+         end do
+
+   !     CONVERT TO MASS-WEIGHTED NORMAL COORDINATES
+         gnd_nc=0d0
+         exc_nc=0d0
+         del_nc=0d0
+         do nm = 1,nvdf
+            do xi = 1,ndf
+               gnd_nc(nm) = gnd_nc(nm) + nmodes(xi,nm) * gnd_coords_v(xi)
+               exc_nc(nm) = exc_nc(nm) + nmodes(xi,nm) * exc_coords_v(xi)
+               del_nc(nm) = del_nc(nm) + nmodes(xi,nm) * delv(xi)
+            end do
+         end do
+
+   !     CONVERT TO ADIMENSIONAL NORMAL COORDINATES
+         gnd_nc = gnd_nc * Sqrt(freq/hbar)
+         exc_nc = exc_nc * Sqrt(freq/hbar)
+         del_nc = del_nc * Sqrt(freq/hbar)
+
+         write(77,*) 'Coords of ground state'
+         write(77,'(999F8.3)') qmcoords
+         write(77,*) 'Coords of excited state'
+         write(77,'(999F8.3)') excoords
+         write(77,*) 'Coords of delta'
+         write(77,'(999F8.3)') del0
+         write(77,*) 'Normal coords of ground state'
+         write(77,'(999F8.3)') gnd_nc
+         write(77,*) 'Normal coords of excited state'
+         write(77,'(999F8.3)') exc_nc
+
+         del=gnd_nc-exc_nc
+
+         write(77,*) 'Displacements in adimensional normal cartesian coordinates'
+         write(77,*) '    LMXg-LMXex     frequency (cm-1)'
+         do i=1,nvdf
+           !write(77,'(4f14.6)') 2d0*del_nc(i), 2d0*del(i), 2d0*delta(i),freq(i)
+           !write(77,'(4f14.6)') del_nc(i), del(i), delta(i)/a0,freq(i) ! DANGER, A0 MAYBE SHOULD NOT BE HERE
+           write(77,'(4f14.6)') del_nc(i), freq(i) ! DANGER, A0 MAYBE SHOULD NOT BE HERE
+         end do
+      end if
+
+
+        write(77,'(4f14.6)')
+        write(77,*) '    gradient     frequency (cm-1)'
       do i=1,nvdf
-        write(77,'(4f14.6)') del_nc(i), del(i), delta(i),freq(i)
+        write(77,'(4f14.6)') delta(i)/a0, freq(i) ! DANGER, A0 MAYBE SHOULD NOT BE HERE
       end do
 
       close(234)
       close(235)
-      close(236)
+      if (mode==1) then
+         close(236)
+      end if
 
    end subroutine
