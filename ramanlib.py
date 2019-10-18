@@ -377,5 +377,5 @@ def raman_ex_disp(delta_nm,omega_nm_in,omega0_in,gamma_in,states_extra,gamma_sca
         # Accumulate with previous vibrational transitions.
         lineshape = lineshape + lineshape_tmp
         lineshape_tmp = None
-
+    print('FINNISHED SPECTRA CALCULATION!!!')
     return ex_spectrums,sc_ax,lineshape

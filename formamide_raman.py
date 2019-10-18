@@ -100,11 +100,13 @@ plt.show()
 
 xmax=exmax
 xmin=exmin
+xmin=45000.
+xmax=55000.
 #ymax=5000
 ymin=0
 fig1,ax = plt.subplots(ncols=3,nrows=3,figsize=(8,8),sharex=True, gridspec_kw={'hspace': 0})
 cnt=1
-for i in range(3):
+for i in range(4):
     for j in range(3):
         ax[i,j].plot(ex_spec_list[0], ex_spec_list[cnt])
         ymax=np.amax(ex_spec_list[cnt])
