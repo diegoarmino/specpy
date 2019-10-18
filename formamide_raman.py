@@ -6,29 +6,41 @@ import scipy.constants as cnst
 from scipy.fftpack import fft, ifft,  fftfreq, fftshift,dct,idct
 import matplotlib.pyplot as plt
 
-from ramanlib import raman_ex_disp
+import sys
+import os.path
+sys.path.append(os.path.abspath('.'))
+sys.path.insert(0, "/home/diegoa/dev/specpy")
+
+from ramanlib import raman_ex_disp,read_table
 
 
 ##############################################################################
 #     RAMAN SHIFT SPECTRA
 ##############################################################################
-delta_nm, omega_nm = read_table('/home/diegoa/dev/specpy/formamide/b3lyp-631/disp.dat')
+delta_nm, omega_nm = read_table('/home/diegoa/dev/specpy/formamide/b3lyp-631/displacements.dat')
 
-ex_lambdas = np.array([24570.02457,30769.23077,39682.53968,43668.12227,45871.55963,47846.88995,50000.00000,52083.33333])
-ex_lambdas = np.flip(ex_lambdas)
+ex_lambdas = np.array([192.,200.,209.,218.,229.,252.,325.,407.])
+ex_lambdas = 10**7/ex_lambdas
+print(ex_lambdas)
+#ex_lambdas = np.flip(ex_lambdas,axis=None)
+
 gamma      = 160.
-omega0     = 39805.
 
-states_list = np.identity(9)
+omega0     = [5.76,6.17,6.45] # in units of eV
+omega0     = np.asarray(omega0)
+omega0     = omega0*8065.540107 # convert to cm-1
+
+states_list = np.identity(len(omega_nm))
 states_list.tolist()
 
-exmax=48000.
-exmin=38000.
+exmax=55000.
+exmin=20000.
 ex_range = [exmin,exmax]
 sc_range = [0.,4000.]
 gamma_scat = 10.
 
-states_list = [[1,1,9,1],[4,2],[4,1,9,1],[9,2],[9,2,1,1]]
+#states_list = [[1,1,9,1],[4,2],[4,1,9,1],[9,2],[9,2,1,1]]
+states_list = []
 
 ex_spec_list,freq,spec_array = raman_ex_disp(delta_nm,omega_nm,omega0,gamma,states_list,gamma_scat,sc_range,ex_range,ex_lambdas)
 
