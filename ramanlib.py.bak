@@ -19,6 +19,8 @@ def read_table(path):
     colums=tsn1.astype(float)
     displacements = np.asarray(colums[0:-1])
     frequencies = np.asarray(colums[len(colums)-1])
+    print(displacements)
+    print(frequencies)
     return ( displacements, frequencies )
 
 
@@ -103,61 +105,6 @@ def raman_simple(delta_nm,omega_nm_in,omega0_in,gamma_in,state):
 #    freq = freq / ccmfs
     return freq,spec
 
-def uvvis_multi_electronic_state(delta_nm,omega_nm_in,omega0_in,gamma_in):
-    c = cnst.c
-    ccmfs = c*100.0/1e15 # speed of light in cm/fs
-
-    omega_nm = omega_nm_in #* ccmfs # convert omega form cm-1 to fs-1
-    omega0   = omega0_in   #* ccmfs # convert to frequency fs-1
-    gamma    = gamma_in    #* ccmfs
-
-    hbar = cnst.hbar
-    pi = mth.pi
-    pi2= 2*pi
-    inv2pi= 1/pi2
-
-#    dt = 1e-2/np.amax(omega_nm)
-    dt = 1e-2/np.amax(omega_nm)
-    period = pi2/np.amin(omega_nm)
-    tmax = 5.*period
-
-#    ovlap=np.array([])
-    ovlap=[]
-
-    t=0.0
-    s=0.5*delta_nm**2
-    trans_dip=np.asarray([0.0071,0.0689,0.0107/2.0]) # DAMGER!!!
-    print('starting time series...')
-    nstep=0
-    while (t < tmax):
-        Inm0 = 0.0
-        for j in range(len(omega0_in)):
-            arg  = 0.0
-            for i in range(len(omega_nm)):
-                arg1 = 1.0j * omega_nm[i] * t
-                arg2 = -s[(j,i)] * ( 1.0 - cmth.exp(-arg1) )
-                arg  = arg + arg2
-            arg0 = 1.0j * omega0[j] * t
-            arg  = arg - gamma[j] * t
-            Inm0 = Inm0 + trans_dip[j] * cmth.exp( arg - arg0 )
-        ovlap.append(Inm0)
-        #ovlap = np.append(ovlap,[Inm0],axis=0)
-        t = t + dt
-        if (nstep%20000==0):
-            print('Done with step ',nstep,'out of ',int(tmax/dt))
-        nstep = nstep + 1
-        if (nstep%(int(tmax/dt)-10)==0):
-            print('LAST STEP')
-    print('END OF TIME SERIES')
-#    ovlap = np.array(ovlap)
-    print('computing Fourier Transform')
-    spec = fft(ovlap)
-    #n=ovlap.size
-    n=len(ovlap)
-    freq = np.arange(-n/2,n/2)*2*np.pi/(np.amax(tmax))
-    freq = -fftshift(freq)
-
-    return freq,spec
 
 def uvvis(delta_nm,omega_nm_in,omega0_in,gamma_in):
     c = cnst.c
