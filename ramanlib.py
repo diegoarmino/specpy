@@ -271,9 +271,9 @@ def raman_amplitude_mes(delta_nm,omega_nm_in,omega0_in,gamma_in,state,trans_dip)
     inv2pi= 1/pi2
 
 #    dt = 1e-2/np.amax(omega_nm)
-    dt = 1e-2/np.amax(omega_nm_in)
+    dt = 2e-2/np.amax(omega_nm_in)
     period = pi2/np.amin(omega_nm)
-    tmax = 50.*period
+    tmax = 5.*period
 
     ovlap=[]
 
@@ -307,7 +307,6 @@ def raman_amplitude_mes(delta_nm,omega_nm_in,omega0_in,gamma_in,state,trans_dip)
 #    ovlap = np.array(ovlap)
     print('computing Fourier Transform')
 
-    n=len(ovlap)
     #ovlap=([0.0]*n)+ovlap
     n=len(ovlap)
     #freq = np.arange(-n/2,n/2)*2*np.pi/(2*tmax)
@@ -316,13 +315,7 @@ def raman_amplitude_mes(delta_nm,omega_nm_in,omega0_in,gamma_in,state,trans_dip)
 
     #spec = abs(fft(ovlap)*np.sqrt(inv2pi) )**2
     spec = fft(ovlap)*np.sqrt(inv2pi)
-    plt.plot(freq,np.square(np.absolute(spec)))
-    plt.plot(freq,np.absolute(spec))
-    plt.plot(freq,np.real(spec))
-    plt.plot(freq,np.imag(spec))
-    plt.xlim(30000,80000)
-    #plt.yscale('log')
-    plt.show()
+
     return freq,spec
 
 def raman_amplitude(delta_nm,omega_nm_in,omega0_in,gamma_in,state):
@@ -414,10 +407,12 @@ def raman_ex_disp(delta_nm,omega_nm_in,omega0_in,gamma_in,states_extra,gamma_sca
     lineshape     = []
     exlambda_idxs = []
     ex_spectrums  = []
+    re_spectrums  = []
+    im_spectrums  = []
 
     # Loop over the rest of vibrational transitions.
     for i in range(0,len(state)):
-    #for i in range(1,len(state)): # DANGER!!!
+#    for i in range(1,4): # DANGER!!!
         print('Computing Raman intensities for transition to state = ', state[i])
         # Compute square Raman amplitude (excitation spectrum) for the first
         # vibrational transition in the list.
@@ -432,18 +427,26 @@ def raman_ex_disp(delta_nm,omega_nm_in,omega0_in,gamma_in,states_extra,gamma_sca
         ex_ax = None
         ex_ls = None
 
-        # Squaring absolute value of Raman amplitude.
-        tex_ls = np.square(np.absolute(tex_ls))
 
         # Get the closest indices to the target excitation wavelengths.
-        if i == 0:
+        if i == 0: # DANGER!!
+        #if i == 1: # DANGER!!
             for lex in ex_lambdas:
                 exlambda_idxs.append(np.abs(lex - tex_ax).argmin())
             # Create an x-axis for the dispersion Raman spectra.
             sc_ax = np.arange(sc_range[0],sc_range[1],0.2)
 
         # Append excitation spectra to list
-        if i == 0: ex_spectrums.append(tex_ax)
+        if i == 0: # DANGER!!!
+        #if i == 1: # DANGER!!!
+            ex_spectrums.append(tex_ax)
+            re_spectrums.append(tex_ax)
+            im_spectrums.append(tex_ax)
+
+        # Squaring absolute value of Raman amplitude.
+        im_spectrums.append(np.imag(tex_ls))
+        re_spectrums.append(np.real(tex_ls))
+        tex_ls = np.square(np.absolute(tex_ls))
         ex_spectrums.append(tex_ls)
 
         # Compute lorentzian functions for each vibrational transition over such x-axis.
@@ -460,13 +463,14 @@ def raman_ex_disp(delta_nm,omega_nm_in,omega0_in,gamma_in,states_extra,gamma_sca
 
         # Accumulate with previous vibrational transitions.
         if (i == 0):
+        #if (i == 1):
             lineshape = lineshape_tmp.copy()
         else:
             lineshape = np.add(lineshape , lineshape_tmp)
         lineshape_tmp = None
 
     print('FINNISHED SPECTRA CALCULATION!!!')
-    return ex_spectrums,sc_ax,lineshape
+    return re_spectrums,im_spectrums,ex_spectrums,sc_ax,lineshape
     #
     # a=[1+1j,2+2j,3+3j,4+4j]
     # b=[5,6,7,8]
