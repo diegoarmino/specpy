@@ -1,3 +1,4 @@
+<<<<<<< HEAD
  Number of lines skipped in fchk file is =           34
  Number of lines skipped in fchk file is =        13537
  NMODES Number of lines skipped in fchk file is =           30
@@ -205,6 +206,8 @@ FREQUENCY (CM-1) =  3743.34
       0.283708   3607.008200
      -0.158864   3743.339860
 
+=======
+>>>>>>> 3820f820c29ccdb16cc5933d9541e85bd36f6023
      gradient     frequency (cm-1)
       0.000373    271.627157
       0.158122    574.502902
