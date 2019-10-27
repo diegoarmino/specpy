@@ -1,6 +1,6 @@
 %chk=eom.chk
 %NProcShared=4
-# eomccsd(nstates=5,root=1)/6-31G*  nosymm 
+# eomccsd(nstates=10,root=1)/6-31G*  nosymm 
 
  Title
 

@@ -1,6 +1,6 @@
 %chk=freq.chk
 %NProcShared=4
-# cam-b3lyp/6-31G*  opt Freq=(savenormalmodes,raman) 
+# cam-b3lyp/6-31G**  opt Freq=(savenormalmodes,raman) 
 
  Title
 
