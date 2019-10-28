@@ -1,6 +1,6 @@
 %chk=td4-opt.chk
 %NProcShared=4
-# cam-b3lyp/aug-cc-pvdz  opt nosymm td(root=4,nstates=20) SCRF=PCM int(grid=ultrafine)
+# cam-b3lyp/aug-cc-pvdz  opt(maxCycle=100) nosymm td(root=4,nstates=20) SCRF=PCM int(grid=ultrafine)
 
  Title
 

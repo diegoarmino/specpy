@@ -1,0 +1,101 @@
+         Item               Value     Threshold  Converged?
+ Maximum Force            0.090426     0.000450     NO 
+ RMS     Force            0.029555     0.000300     NO 
+ Maximum Displacement     0.137627     0.001800     NO 
+ RMS     Displacement     0.073165     0.001200     NO 
+--
+         Item               Value     Threshold  Converged?
+ Maximum Force            0.036826     0.000450     NO 
+ RMS     Force            0.012798     0.000300     NO 
+ Maximum Displacement     0.065133     0.001800     NO 
+ RMS     Displacement     0.028212     0.001200     NO 
+--
+         Item               Value     Threshold  Converged?
+ Maximum Force            0.017537     0.000450     NO 
+ RMS     Force            0.006586     0.000300     NO 
+ Maximum Displacement     0.099951     0.001800     NO 
+ RMS     Displacement     0.051702     0.001200     NO 
+--
+         Item               Value     Threshold  Converged?
+ Maximum Force            0.003052     0.000450     NO 
+ RMS     Force            0.001028     0.000300     NO 
+ Maximum Displacement     0.011123     0.001800     NO 
+ RMS     Displacement     0.005782     0.001200     NO 
+--
+         Item               Value     Threshold  Converged?
+ Maximum Force            0.002543     0.000450     NO 
+ RMS     Force            0.000732     0.000300     NO 
+ Maximum Displacement     0.010897     0.001800     NO 
+ RMS     Displacement     0.005740     0.001200     NO 
+--
+         Item               Value     Threshold  Converged?
+ Maximum Force            0.001162     0.000450     NO 
+ RMS     Force            0.000410     0.000300     NO 
+ Maximum Displacement     0.006703     0.001800     NO 
+ RMS     Displacement     0.002735     0.001200     NO 
+--
+         Item               Value     Threshold  Converged?
+ Maximum Force            0.000827     0.000450     NO 
+ RMS     Force            0.000415     0.000300     NO 
+ Maximum Displacement     0.009430     0.001800     NO 
+ RMS     Displacement     0.004169     0.001200     NO 
+--
+         Item               Value     Threshold  Converged?
+ Maximum Force            0.001133     0.000450     NO 
+ RMS     Force            0.000571     0.000300     NO 
+ Maximum Displacement     0.280910     0.001800     NO 
+ RMS     Displacement     0.093193     0.001200     NO 
+--
+         Item               Value     Threshold  Converged?
+ Maximum Force            0.013336     0.000450     NO 
+ RMS     Force            0.005986     0.000300     NO 
+ Maximum Displacement     0.462349     0.001800     NO 
+ RMS     Displacement     0.277577     0.001200     NO 
+--
+         Item               Value     Threshold  Converged?
+ Maximum Force            0.083379     0.000450     NO 
+ RMS     Force            0.036688     0.000300     NO 
+ Maximum Displacement     0.405591     0.001800     NO 
+ RMS     Displacement     0.239768     0.001200     NO 
+--
+         Item               Value     Threshold  Converged?
+ Maximum Force            0.020230     0.000450     NO 
+ RMS     Force            0.006305     0.000300     NO 
+ Maximum Displacement     0.195327     0.001800     NO 
+ RMS     Displacement     0.100372     0.001200     NO 
+--
+         Item               Value     Threshold  Converged?
+ Maximum Force            0.072532     0.000450     NO 
+ RMS     Force            0.025220     0.000300     NO 
+ Maximum Displacement     0.164956     0.001800     NO 
+ RMS     Displacement     0.085421     0.001200     NO 
+--
+         Item               Value     Threshold  Converged?
+ Maximum Force            0.008071     0.000450     NO 
+ RMS     Force            0.003865     0.000300     NO 
+ Maximum Displacement     0.118432     0.001800     NO 
+ RMS     Displacement     0.042945     0.001200     NO 
+--
+         Item               Value     Threshold  Converged?
+ Maximum Force            0.008144     0.000450     NO 
+ RMS     Force            0.004634     0.000300     NO 
+ Maximum Displacement     0.104767     0.001800     NO 
+ RMS     Displacement     0.047104     0.001200     NO 
+--
+         Item               Value     Threshold  Converged?
+ Maximum Force            0.018790     0.000450     NO 
+ RMS     Force            0.006645     0.000300     NO 
+ Maximum Displacement     0.064855     0.001800     NO 
+ RMS     Displacement     0.029525     0.001200     NO 
+--
+         Item               Value     Threshold  Converged?
+ Maximum Force            0.010310     0.000450     NO 
+ RMS     Force            0.003593     0.000300     NO 
+ Maximum Displacement     0.025270     0.001800     NO 
+ RMS     Displacement     0.012460     0.001200     NO 
+--
+         Item               Value     Threshold  Converged?
+ Maximum Force            0.006651     0.000450     NO 
+ RMS     Force            0.002673     0.000300     NO 
+ Maximum Displacement     0.049852     0.001800     NO 
+ RMS     Displacement     0.024359     0.001200     NO 

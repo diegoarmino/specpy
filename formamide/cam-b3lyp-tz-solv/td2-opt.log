@@ -2358,3 +2358,2611 @@
  FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
  Iteration     3 Dimension   120 NMult   120
  FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ Iteration     4 Dimension   160 NMult   160
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ Iteration     5 Dimension   200 NMult   200
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ Iteration     6 Dimension   238 NMult   238
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ Iteration     7 Dimension   254 NMult   254
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ Iteration     8 Dimension   262 NMult   262
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ ***********************************************************************
+ Excited states from <AA,BB:AA,BB> singles matrix:
+ ***********************************************************************
+ 
+ Ground to excited state transition electric dipole moments (Au):
+       state          X           Y           Z        Dip. S.      Osc.
+         1         0.0000      0.0003      0.0780      0.0061      0.0008
+         2        -0.1508      0.1810      0.0000      0.0555      0.0091
+         3         0.0020      0.0004      0.1465      0.0215      0.0037
+         4         0.9284      0.4896     -0.0003      1.1015      0.1952
+         5        -0.7725      0.7258      0.0001      1.1236      0.2064
+         6         1.0627      0.1674     -0.0001      1.1574      0.2200
+         7        -0.0014     -0.0003      0.1657      0.0275      0.0052
+         8        -0.0007     -0.0002     -0.5136      0.2638      0.0520
+         9         0.0000     -0.0001      0.1768      0.0313      0.0062
+        10        -0.1327     -0.0167      0.0000      0.0179      0.0038
+        11         0.0642     -0.1252      0.0001      0.0198      0.0042
+        12         0.0355     -0.0072     -0.0003      0.0013      0.0003
+        13         0.0005      0.0001      0.1738      0.0302      0.0068
+        14         0.0001      0.0000     -0.1597      0.0255      0.0059
+        15         0.1891      0.1006     -0.0001      0.0459      0.0109
+        16         0.0007      0.0000      0.0052      0.0000      0.0000
+        17         0.0002     -0.0017     -0.0840      0.0071      0.0018
+        18        -0.0325     -0.3833      0.0005      0.1480      0.0372
+        19         0.0000      0.0007      0.1778      0.0316      0.0080
+        20        -0.5418      0.1309     -0.0002      0.3107      0.0792
+ Ground to excited state transition velocity dipole moments (Au):
+       state          X           Y           Z        Dip. S.      Osc.
+         1         0.0000     -0.0001     -0.0200      0.0004      0.0013
+         2         0.0377     -0.0460      0.0000      0.0035      0.0096
+         3        -0.0005     -0.0001     -0.0365      0.0013      0.0034
+         4        -0.2416     -0.1273      0.0001      0.0746      0.1871
+         5         0.2097     -0.1969      0.0000      0.0828      0.2003
+         6        -0.2993     -0.0465      0.0000      0.0917      0.2145
+         7         0.0004      0.0001     -0.0475      0.0023      0.0053
+         8         0.0002      0.0000      0.1478      0.0218      0.0492
+         9         0.0000      0.0000     -0.0549      0.0030      0.0067
+        10         0.0339      0.0025      0.0000      0.0012      0.0024
+        11        -0.0199      0.0391      0.0000      0.0019      0.0040
+        12        -0.0239      0.0036      0.0001      0.0006      0.0012
+        13        -0.0002      0.0000     -0.0554      0.0031      0.0061
+        14         0.0000      0.0000      0.0553      0.0031      0.0059
+        15        -0.0657     -0.0318      0.0000      0.0053      0.0099
+        16        -0.0003      0.0000      0.0001      0.0000      0.0000
+        17        -0.0001      0.0007      0.0360      0.0013      0.0023
+        18         0.0092      0.1478     -0.0002      0.0219      0.0387
+        19         0.0000     -0.0003     -0.0653      0.0043      0.0075
+        20         0.2055     -0.0489      0.0001      0.0446      0.0778
+ Ground to excited state transition magnetic dipole moments (Au):
+       state          X           Y           Z
+         1        -0.9892     -0.2524      0.0003
+         2         0.0005      0.0003      0.4912
+         3         0.0047      0.5835      0.0002
+         4         0.0002     -0.0008      0.1564
+         5        -0.0001      0.0002     -0.1488
+         6         0.0001      0.0002      0.5714
+         7         0.0615     -0.0131     -0.0006
+         8        -0.0171      0.2748     -0.0004
+         9        -0.0516      0.1188     -0.0001
+        10         0.0001     -0.0001      0.0842
+        11        -0.0001     -0.0001      0.0274
+        12        -0.0002      0.0001      0.2223
+        13         0.0925     -0.2940      0.0004
+        14        -0.1091     -0.4770      0.0002
+        15        -0.0004      0.0000     -0.4018
+        16        -0.9251      0.9904      0.0002
+        17         0.0584     -0.4703      0.0004
+        18        -0.0002      0.0011      0.0081
+        19        -0.0124     -0.1191     -0.0001
+        20         0.0001     -0.0010     -0.1903
+ <0|del|b> * <b|rxdel|0> + <0|del|b> * <b|delr+rdel|0>
+ Rotatory Strengths (R) in cgs (10**-40 erg-esu-cm/Gauss)
+       state          XX          YY          ZZ    R(velocity)
+         1         0.0144     -0.0116      0.0215      0.0081
+ Total R(velocity) tensor for State=          1
+                 1             2             3 
+      1   0.144111D-01 -0.135842D-03  0.264166D-05
+      2  -0.116735D+00 -0.115985D-01  0.171639D-04
+      3  -0.286747D+02 -0.854254D+01  0.215055D-01
+         2        -0.0259      0.0353      0.0095      0.0063
+ Total R(velocity) tensor for State=          2
+                 1             2             3 
+      1  -0.258896D-01 -0.250895D-01 -0.245219D+02
+      2   0.444099D-01  0.352546D-01 -0.757156D+01
+      3   0.666303D+01  0.546754D+01  0.950460D-02
+         3        -0.1521     -0.0284     -0.0006     -0.0604
+ Total R(velocity) tensor for State=          3
+                 1             2             3 
+      1  -0.152125D+00  0.767520D+00  0.973803D-04
+      2   0.204158D-01 -0.284438D-01 -0.213458D-03
+      3  -0.106133D+01  0.583425D+01 -0.609380D-03
+         4         0.2871     -0.0771     -0.0684      0.0472
+ Total R(velocity) tensor for State=          4
+                 1             2             3 
+      1   0.287111D+00 -0.525208D+00  0.316529D+02
+      2   0.335985D-01 -0.771461D-01 -0.213561D+02
+      3   0.248892D+01 -0.472473D+01 -0.684339D-01
+         5        -0.1013     -0.0192     -0.0156     -0.0454
+ Total R(velocity) tensor for State=          5
+                 1             2             3 
+      1  -0.101318D+00 -0.120480D+00  0.879004D+02
+      2  -0.140107D-01 -0.191504D-01  0.295438D+02
+      3   0.143068D+02  0.152353D+02 -0.156417D-01
+         6         0.0014     -0.0864     -0.0290     -0.0380
+ Total R(velocity) tensor for State=          6
+                 1             2             3 
+      1   0.143257D-02  0.858133D-01  0.324607D+03
+      2   0.120668D-01 -0.863543D-01 -0.294361D+02
+      3  -0.385845D+01  0.248566D+02 -0.289606D-01
+         7         0.0498      0.0690      0.0045      0.0411
+ Total R(velocity) tensor for State=          7
+                 1             2             3 
+      1   0.498382D-01  0.344818D-01  0.463335D-03
+      2  -0.231761D-01  0.690090D-01 -0.637901D-04
+      3   0.296409D+00  0.116393D+01  0.446574D-02
+         8        -0.0978     -0.0317      0.0022     -0.0424
+ Total R(velocity) tensor for State=          8
+                 1             2             3 
+      1  -0.977735D-01 -0.610225D-01  0.157118D-03
+      2   0.584749D-02 -0.317419D-01  0.118618D-05
+      3   0.389604D+01 -0.258810D+02  0.220533D-02
+         9         0.0129      0.0033      0.0000      0.0054
+ Total R(velocity) tensor for State=          9
+                 1             2             3 
+      1   0.129324D-01 -0.267399D-02  0.000000D+00
+      2  -0.109145D-02  0.333373D-02  0.178677D-05
+      3  -0.385564D+01  0.106971D+01  0.240423D-04
+        10        -0.0013      0.0066      0.0039      0.0031
+ Total R(velocity) tensor for State=         10
+                 1             2             3 
+      1  -0.129406D-02 -0.210450D-02 -0.777979D+01
+      2  -0.774638D-03  0.664772D-02 -0.152189D+01
+      3  -0.839510D-01  0.113645D+01  0.390382D-02
+        11        -0.0031     -0.0019      0.0005     -0.0015
+ Total R(velocity) tensor for State=         11
+                 1             2             3 
+      1  -0.305252D-02 -0.725167D-02 -0.117843D+02
+      2  -0.269668D-03 -0.189949D-02 -0.364598D+01
+      3   0.975219D+00  0.497363D+00  0.534510D-03
+        12         0.0228      0.0260     -0.0005      0.0161
+ Total R(velocity) tensor for State=         12
+                 1             2             3 
+      1   0.228303D-01  0.702429D-02  0.612568D+01
+      2  -0.118954D-01  0.259680D-01 -0.445378D+01
+      3   0.648127D+00  0.428181D+01 -0.464310D-03
+        13        -0.0189     -0.0512      0.0079     -0.0207
+ Total R(velocity) tensor for State=         13
+                 1             2             3 
+      1  -0.189068D-01 -0.996023D-01  0.114086D-03
+      2   0.206357D-01 -0.511924D-01 -0.356847D-04
+      3  -0.269596D+01  0.898033D+00  0.787868D-02
+        14         0.0308      0.0004      0.0195      0.0169
+ Total R(velocity) tensor for State=         14
+                 1             2             3 
+      1   0.308476D-01 -0.177007D-01  0.185386D-04
+      2   0.150015D-02  0.370709D-03  0.134948D-05
+      3   0.127978D+02  0.250282D+02  0.194656D-01
+        15        -0.0068      0.0203      0.0114      0.0083
+ Total R(velocity) tensor for State=         15
+                 1             2             3 
+      1  -0.681829D-02 -0.719242D-02 -0.261465D+02
+      2  -0.120495D-01  0.202715D-01 -0.566955D+01
+      3  -0.148269D+01  0.306202D+01  0.113776D-01
+        16         0.0104      0.3069      0.1709      0.1627
+ Total R(velocity) tensor for State=         16
+                 1             2             3 
+      1   0.104063D-01  0.295899D+00  0.862937D-04
+      2   0.107522D-01  0.306865D+00  0.515592D-05
+      3   0.772465D-01 -0.981439D-01  0.170944D+00
+        17        -0.4630     -0.0009     -0.1060     -0.1900
+ Total R(velocity) tensor for State=         17
+                 1             2             3 
+      1  -0.463035D+00 -0.403565D-01 -0.482739D-03
+      2   0.176811D+00 -0.911458D-03  0.484589D-03
+      3  -0.850781D+01  0.453946D+01 -0.106019D+00
+        18         0.2973      0.0382     -0.0240      0.1038
+ Total R(velocity) tensor for State=         18
+                 1             2             3 
+      1   0.297325D+00 -0.596771D-01 -0.267113D+02
+      2  -0.173035D+00  0.382004D-01  0.177940D+02
+      3   0.299054D+02 -0.185672D+01 -0.240129D-01
+        19         0.0390     -0.0167      0.0492      0.0238
+ Total R(velocity) tensor for State=         19
+                 1             2             3 
+      1   0.390038D-01  0.319074D-01 -0.135363D-03
+      2   0.644943D-01 -0.167050D-01  0.709779D-04
+      3   0.545100D+01 -0.115971D+02  0.492243D-01
+        20         0.0515     -0.0106      0.0686      0.0365
+ Total R(velocity) tensor for State=         20
+                 1             2             3 
+      1   0.514788D-01  0.275724D+00  0.468088D+02
+      2   0.945950D-02 -0.105958D-01 -0.398266D+02
+      3  -0.895679D+01 -0.376707D+02  0.685864D-01
+ 1/2[<0|r|b>*<b|rxdel|0> + (<0|rxdel|b>*<b|r|0>)*]
+ Rotatory Strengths (R) in cgs (10**-40 erg-esu-cm/Gauss)
+       state          XX          YY          ZZ     R(length)     R(au)
+         1        -0.0064      0.0506     -0.0142      0.0100      0.0000
+         2         0.0522     -0.0429      0.0068      0.0053      0.0000
+         3        -0.0067     -0.1614     -0.0205     -0.0629     -0.0001
+         4        -0.1581      0.2691      0.0355      0.0488      0.0001
+         5        -0.0413     -0.1078      0.0104     -0.0462     -0.0001
+         6        -0.1106     -0.0245      0.0258     -0.0365     -0.0001
+         7         0.0592     -0.0028      0.0678      0.0414      0.0001
+         8        -0.0086      0.0296     -0.1519     -0.0437     -0.0001
+         9        -0.0013      0.0106      0.0079      0.0058      0.0000
+        10         0.0135     -0.0007     -0.0014      0.0038      0.0000
+        11         0.0055     -0.0088     -0.0011     -0.0015      0.0000
+        12         0.0038      0.0005      0.0396      0.0147      0.0000
+        13        -0.0326      0.0198     -0.0504     -0.0211      0.0000
+        14         0.0105      0.0165      0.0210      0.0160      0.0000
+        15         0.0498     -0.0035     -0.0225      0.0080      0.0000
+        16         0.4610      0.0210     -0.0008      0.1604      0.0003
+        17        -0.0091     -0.5737      0.0223     -0.1868     -0.0004
+        18        -0.0045      0.3116     -0.0031      0.1014      0.0002
+        19         0.0000      0.0611      0.0101      0.0237      0.0001
+        20         0.0433      0.0904     -0.0264      0.0357      0.0001
+  1/2[<0|del|b>*<b|r|0> + (<0|r|b>*<b|del|0>)*] (Au)
+       state          X           Y           Z        Dip. S.   Osc.(frdel)
+         1         0.0000      0.0000     -0.0016      0.0016      0.0010
+         2        -0.0057     -0.0083      0.0000      0.0140      0.0093
+         3         0.0000      0.0000     -0.0053      0.0053      0.0036
+         4        -0.2243     -0.0623      0.0000      0.2867      0.1911
+         5        -0.1620     -0.1429      0.0000      0.3050      0.2033
+         6        -0.3180     -0.0078      0.0000      0.3258      0.2172
+         7         0.0000      0.0000     -0.0079      0.0079      0.0052
+         8         0.0000      0.0000     -0.0759      0.0759      0.0506
+         9         0.0000      0.0000     -0.0097      0.0097      0.0065
+        10        -0.0045      0.0000      0.0000      0.0045      0.0030
+        11        -0.0013     -0.0049      0.0000      0.0062      0.0041
+        12        -0.0008      0.0000      0.0000      0.0009      0.0006
+        13         0.0000      0.0000     -0.0096      0.0096      0.0064
+        14         0.0000      0.0000     -0.0088      0.0088      0.0059
+        15        -0.0124     -0.0032      0.0000      0.0156      0.0104
+        16         0.0000      0.0000      0.0000      0.0000      0.0000
+        17         0.0000      0.0000     -0.0030      0.0030      0.0020
+        18        -0.0003     -0.0566      0.0000      0.0569      0.0380
+        19         0.0000      0.0000     -0.0116      0.0116      0.0077
+        20        -0.1114     -0.0064      0.0000      0.1178      0.0785
+ Ground to excited state transition densities written to RWF  633
+
+ Excitation energies and oscillator strengths:
+ 
+ Excited state symmetry could not be determined.
+ Excited State   1:      Singlet-?Sym    5.6386 eV  219.89 nm  f=0.0008  <S**2>=0.000
+      12 -> 16         0.66804
+      12 -> 17        -0.21013
+ 
+ Excited state symmetry could not be determined.
+ Excited State   2:      Singlet-?Sym    6.7016 eV  185.01 nm  f=0.0091  <S**2>=0.000
+      11 -> 16        -0.11150
+      12 -> 13         0.59423
+      12 -> 14        -0.14683
+      12 -> 15         0.25893
+      12 -> 18         0.13530
+      12 -> 20        -0.12210
+ This state for optimization and/or second-order correction.
+ Copying the excited state density for this state as the 1-particle RhoCI density.
+ 
+ Excited state symmetry could not be determined.
+ Excited State   3:      Singlet-?Sym    7.0975 eV  174.69 nm  f=0.0037  <S**2>=0.000
+      11 -> 13        -0.66743
+      11 -> 19         0.13601
+      11 -> 20         0.13026
+ 
+ Excited state symmetry could not be determined.
+ Excited State   4:      Singlet-?Sym    7.2331 eV  171.41 nm  f=0.1952  <S**2>=0.000
+      11 -> 16        -0.38245
+      11 -> 17         0.17645
+      12 -> 14         0.51307
+      12 -> 19        -0.18420
+ 
+ Excited state symmetry could not be determined.
+ Excited State   5:      Singlet-?Sym    7.4961 eV  165.40 nm  f=0.2064  <S**2>=0.000
+      11 -> 16         0.37422
+      11 -> 17        -0.19805
+      12 -> 14         0.32745
+      12 -> 15         0.38766
+      12 -> 18         0.20525
+ 
+ Excited state symmetry could not be determined.
+ Excited State   6:      Singlet-?Sym    7.7574 eV  159.83 nm  f=0.2200  <S**2>=0.000
+      11 -> 16        -0.27168
+      11 -> 17         0.18003
+      12 -> 13        -0.33989
+      12 -> 14        -0.22653
+      12 -> 15         0.41519
+      12 -> 18         0.19284
+ 
+ Excited state symmetry could not be determined.
+ Excited State   7:      Singlet-?Sym    7.7903 eV  159.15 nm  f=0.0052  <S**2>=0.000
+      11 -> 14        -0.65830
+      11 -> 20        -0.10014
+      11 -> 21         0.15500
+ 
+ Excited state symmetry could not be determined.
+ Excited State   8:      Singlet-?Sym    8.0484 eV  154.05 nm  f=0.0520  <S**2>=0.000
+      11 -> 15        -0.64768
+      11 -> 18        -0.18589
+      11 -> 23         0.10811
+ 
+ Excited state symmetry could not be determined.
+ Excited State   9:      Singlet-?Sym    8.1124 eV  152.83 nm  f=0.0062  <S**2>=0.000
+      12 -> 16         0.20442
+      12 -> 17         0.66135
+ 
+ Excited state symmetry could not be determined.
+ Excited State  10:      Singlet-?Sym    8.6815 eV  142.81 nm  f=0.0038  <S**2>=0.000
+      11 -> 16        -0.30465
+      11 -> 17        -0.61889
+ 
+ Excited state symmetry could not be determined.
+ Excited State  11:      Singlet-?Sym    8.7608 eV  141.52 nm  f=0.0042  <S**2>=0.000
+      12 -> 15         0.30127
+      12 -> 18        -0.60908
+      12 -> 19         0.12203
+ 
+ Excited state symmetry could not be determined.
+ Excited State  12:      Singlet-?Sym    9.1071 eV  136.14 nm  f=0.0003  <S**2>=0.000
+      11 -> 16        -0.12680
+      12 -> 14         0.14478
+      12 -> 19         0.63556
+      12 -> 23         0.11495
+ 
+ Excited state symmetry could not be determined.
+ Excited State  13:      Singlet-?Sym    9.1591 eV  135.37 nm  f=0.0068  <S**2>=0.000
+      11 -> 15        -0.16494
+      11 -> 18         0.64580
+      11 -> 24        -0.11802
+ 
+ Excited state symmetry could not be determined.
+ Excited State  14:      Singlet-?Sym    9.4074 eV  131.79 nm  f=0.0059  <S**2>=0.000
+      11 -> 13        -0.11266
+      11 -> 19        -0.66248
+      11 -> 21         0.10060
+ 
+ Excited state symmetry could not be determined.
+ Excited State  15:      Singlet-?Sym    9.7210 eV  127.54 nm  f=0.0109  <S**2>=0.000
+      12 -> 13         0.11418
+      12 -> 14        -0.13320
+      12 -> 20         0.59841
+      12 -> 21        -0.11248
+      12 -> 23         0.26390
+ 
+ Excited state symmetry could not be determined.
+ Excited State  16:      Singlet-?Sym    9.8491 eV  125.88 nm  f=0.0000  <S**2>=0.000
+      10 -> 16         0.66116
+      10 -> 17        -0.20808
+ 
+ Excited state symmetry could not be determined.
+ Excited State  17:      Singlet-?Sym   10.2586 eV  120.86 nm  f=0.0018  <S**2>=0.000
+      11 -> 13        -0.15141
+      11 -> 20        -0.64817
+      11 -> 23        -0.12974
+ 
+ Excited state symmetry could not be determined.
+ Excited State  18:      Singlet-?Sym   10.2698 eV  120.73 nm  f=0.0372  <S**2>=0.000
+      11 -> 22         0.11374
+      12 -> 14         0.10070
+      12 -> 21         0.48169
+      12 -> 23         0.39813
+      12 -> 24         0.17875
+      12 -> 27        -0.14215
+ 
+ Excited state symmetry could not be determined.
+ Excited State  19:      Singlet-?Sym   10.2889 eV  120.50 nm  f=0.0080  <S**2>=0.000
+      12 -> 22         0.67665
+      12 -> 26        -0.16585
+ 
+ Excited state symmetry could not be determined.
+ Excited State  20:      Singlet-?Sym   10.4022 eV  119.19 nm  f=0.0792  <S**2>=0.000
+      12 -> 19        -0.12012
+      12 -> 20        -0.26317
+      12 -> 21        -0.43072
+      12 -> 23         0.31581
+      12 -> 24         0.31111
+ SavETr:  write IOETrn=   770 NScale= 10 NData=  16 NLR=1 LETran=     370.
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+          IDoAtm=111111
+ NEqPCM:  Using equilibrium solvation (IEInf=0, Eps=  78.3553, EpsInf=   1.7778)
+          Differentiating once with respect to electric field.
+                with respect to dipole field.
+          Differentiating once with respect to nuclear coordinates.
+          There are     1 degrees of freedom in the 1st order CPHF.  IDoFFX=0.
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ LinEq1:  Iter=  0 NonCon=     1 RMS=4.45D-02 Max=7.93D-01
+ AX will form     1 AO Fock derivatives at one time.
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ LinEq1:  Iter=  1 NonCon=     1 RMS=1.56D-02 Max=1.23D-01
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ LinEq1:  Iter=  2 NonCon=     1 RMS=8.25D-03 Max=1.37D-01
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ LinEq1:  Iter=  3 NonCon=     1 RMS=2.14D-03 Max=2.32D-02
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ LinEq1:  Iter=  4 NonCon=     1 RMS=1.30D-03 Max=1.52D-02
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ LinEq1:  Iter=  5 NonCon=     1 RMS=2.38D-04 Max=1.36D-03
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ LinEq1:  Iter=  6 NonCon=     1 RMS=4.94D-05 Max=3.32D-04
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ LinEq1:  Iter=  7 NonCon=     1 RMS=9.28D-06 Max=8.47D-05
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ LinEq1:  Iter=  8 NonCon=     1 RMS=1.35D-06 Max=1.16D-05
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ LinEq1:  Iter=  9 NonCon=     1 RMS=1.73D-07 Max=1.34D-06
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ LinEq1:  Iter= 10 NonCon=     1 RMS=2.78D-08 Max=1.51D-07
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ LinEq1:  Iter= 11 NonCon=     1 RMS=5.97D-09 Max=4.39D-08
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ LinEq1:  Iter= 12 NonCon=     1 RMS=1.07D-09 Max=9.38D-09
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ LinEq1:  Iter= 13 NonCon=     1 RMS=1.65D-10 Max=1.71D-09
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ LinEq1:  Iter= 14 NonCon=     0 RMS=3.42D-11 Max=5.37D-10
+ Linear equations converged to 1.000D-10 1.000D-09 after    14 iterations.
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ End of Minotr Frequency-dependent properties file   721 does not exist.
+ End of Minotr Frequency-dependent properties file   722 does not exist.
+ D1PCM: PCM CHGder 1st derivatives, ID1Alg=3 FixD1E=F DoIter=F DoCFld=F I1PDM=6.
+ Calling FoFJK, ICntrl=      5127 FMM=F ISym2X=0 I1Cent= 0 IOpClX= 0 NMat=1 NMatS=1 NMatT=0.
+ FoFJK:  IHMeth= 1 ICntrl=  5127 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ -------------------------------------------------------------------
+ Center     Atomic                   Forces (Hartrees/Bohr)
+ Number     Number              X              Y              Z
+ -------------------------------------------------------------------
+      1        6          -0.000990035   -0.002207944    0.000107907
+      2        7          -0.000432639    0.000484900   -0.000030227
+      3        8           0.001166131    0.001101579   -0.000040860
+      4        1           0.000112339    0.000177104    0.000002846
+      5        1           0.000012299   -0.000121104   -0.000008628
+      6        1           0.000131904    0.000565465   -0.000031039
+ -------------------------------------------------------------------
+ Cartesian Forces:  Max     0.002207944 RMS     0.000717327
+
+ GradGradGradGradGradGradGradGradGradGradGradGradGradGradGradGradGradGrad
+ Berny optimization.
+ Using GEDIIS/GDIIS optimizer.
+ Internal  Forces:  Max     0.001523026 RMS     0.000507751
+ Search for a local minimum.
+ Step number   4 out of a maximum of   25
+ All quantities printed in internal units (Hartrees-Bohrs-Radians)
+ Mixed Optimization -- En-DIIS/RFO-DIIS
+ Update second derivatives using D2CorX and points    1    2    3    4
+ DE= -6.08D-05 DEPred=-5.83D-05 R= 1.04D+00
+ SS=  1.41D+00  RLast= 2.27D-02 DXNew= 6.5384D-01 6.8170D-02
+ Trust test= 1.04D+00 RLast= 2.27D-02 DXMaxT set to 3.89D-01
+ The second derivative matrix:
+                          R1        R2        R3        R4        R5
+           R1           0.62980
+           R2           0.13410   0.91323
+           R3          -0.00422  -0.01077   0.32709
+           R4           0.00707   0.01495  -0.00192   0.46119
+           R5           0.01070   0.00884  -0.00690   0.00656   0.47036
+           A1           0.01231  -0.04488  -0.01236  -0.00150  -0.01533
+           A2           0.02916   0.00122  -0.00596   0.00451   0.00243
+           A3          -0.04498   0.01024   0.01275  -0.00409   0.00550
+           A4           0.00972  -0.00139  -0.00487   0.00138  -0.00154
+           A5           0.00620  -0.00147   0.00274  -0.00212  -0.00370
+           A6          -0.01592   0.00287   0.00213   0.00074   0.00524
+           D1           0.00200   0.00107   0.00009   0.00013   0.00015
+           D2           0.00224   0.00122   0.00010   0.00015   0.00018
+           D3          -0.00172  -0.00095  -0.00008  -0.00012  -0.00014
+           D4          -0.00149  -0.00080  -0.00006  -0.00010  -0.00011
+                          A1        A2        A3        A4        A5
+           A1           0.20591
+           A2          -0.01795   0.15996
+           A3           0.04017   0.00596   0.14036
+           A4          -0.01381  -0.00216   0.00811   0.15680
+           A5           0.00517  -0.00055  -0.00260   0.00090   0.16220
+           A6           0.00864   0.00271  -0.00551   0.00231  -0.00309
+           D1           0.00022   0.00035  -0.00070   0.00022   0.00005
+           D2           0.00026   0.00040  -0.00081   0.00025   0.00006
+           D3          -0.00020  -0.00031   0.00062  -0.00019  -0.00004
+           D4          -0.00015  -0.00026   0.00052  -0.00016  -0.00004
+                          A6        D1        D2        D3        D4
+           A6           0.16079
+           D1          -0.00027   0.02457
+           D2          -0.00031   0.00003   0.02458
+           D3           0.00024  -0.00002  -0.00002   0.02457
+           D4           0.00020  -0.00002  -0.00002   0.00002   0.02456
+ Use linear search instead of GDIIS.
+     Eigenvalues ---    0.02455   0.02455   0.02459   0.10062   0.15964
+     Eigenvalues ---    0.16447   0.20096   0.32836   0.45785   0.47388
+     Eigenvalues ---    0.58507   0.969341000.000001000.000001000.00000
+ RFO step:  Lambda=-8.97669251D-06 EMin= 2.45504310D-02
+ Quartic linear search produced a step of  0.04702.
+ Iteration  1 RMS(Cart)=  0.00234156 RMS(Int)=  0.00000593
+ Iteration  2 RMS(Cart)=  0.00000541 RMS(Int)=  0.00000041
+ Iteration  3 RMS(Cart)=  0.00000000 RMS(Int)=  0.00000041
+ Variable       Old X    -DE/DX   Delta X   Delta X   Delta X     New X
+                                 (Linear)    (Quad)   (Total)
+    R1        2.44729  -0.00051   0.00037  -0.00115  -0.00078   2.44651
+    R2        2.37512  -0.00152   0.00008  -0.00133  -0.00125   2.37386
+    R3        2.08336   0.00054   0.00015   0.00175   0.00190   2.08526
+    R4        1.91439  -0.00018   0.00001  -0.00034  -0.00032   1.91406
+    R5        1.93108  -0.00005   0.00005   0.00014   0.00019   1.93127
+    A1        2.24190   0.00076   0.00046   0.00417   0.00463   2.24653
+    A2        2.08110  -0.00052   0.00026  -0.00203  -0.00178   2.07933
+    A3        1.96018  -0.00024  -0.00072  -0.00214  -0.00285   1.95733
+    A4        2.12847   0.00017   0.00029   0.00148   0.00177   2.13024
+    A5        2.06998  -0.00002   0.00002  -0.00039  -0.00037   2.06961
+    A6        2.08473  -0.00015  -0.00031  -0.00109  -0.00140   2.08333
+    D1        0.00049  -0.00004   0.00004  -0.00148  -0.00145  -0.00096
+    D2       -3.14102  -0.00004   0.00004  -0.00169  -0.00165   3.14051
+    D3        3.14115   0.00003  -0.00003   0.00129   0.00126  -3.14077
+    D4       -0.00036   0.00003  -0.00003   0.00109   0.00106   0.00070
+         Item               Value     Threshold  Converged?
+ Maximum Force            0.001523     0.000450     NO 
+ RMS     Force            0.000508     0.000300     NO 
+ Maximum Displacement     0.004909     0.001800     NO 
+ RMS     Displacement     0.002341     0.001200     NO 
+ Predicted change in Energy=-4.599786D-06
+ GradGradGradGradGradGradGradGradGradGradGradGradGradGradGradGradGradGrad
+
+                          Input orientation:                          
+ ---------------------------------------------------------------------
+ Center     Atomic      Atomic             Coordinates (Angstroms)
+ Number     Number       Type             X           Y           Z
+ ---------------------------------------------------------------------
+      1          6           0       -0.097123    0.370169    0.000482
+      2          7           0        1.076820   -0.175673    0.000180
+      3          8           0       -1.222831   -0.187330   -0.000309
+      4          1           0        1.202316   -1.180746    0.000026
+      5          1           0        1.898527    0.431990   -0.000009
+      6          1           0       -0.177938    1.470675   -0.000153
+ ---------------------------------------------------------------------
+                    Distance matrix (angstroms):
+                    1          2          3          4          5
+     1  C    0.000000
+     2  N    1.294638   0.000000
+     3  O    1.256194   2.299681   0.000000
+     4  H    2.023334   1.012877   2.620728   0.000000
+     5  H    1.996608   1.021986   3.182206   1.756595   0.000000
+     6  H    1.103470   2.069996   1.959792   2.989170   2.321761
+                    6
+     6  H    0.000000
+ Symmetry turned off by external request.
+ Stoichiometry    CH3NO
+ Framework group  C1[X(CH3NO)]
+ Deg. of freedom    12
+ Full point group                 C1      NOp   1
+ Rotational constants (GHZ):     78.8847915     11.1736272      9.7873062
+ Standard basis: Aug-CC-pVDZ (5D, 7F)
+ Integral buffers will be    131072 words long.
+ Raffenetti 2 integral format.
+ Two-electron integral symmetry is turned off.
+    96 basis functions,   162 primitive gaussians,   102 cartesian basis functions
+    12 alpha electrons       12 beta electrons
+       nuclear repulsion energy        71.1936319039 Hartrees.
+ NAtoms=    6 NActive=    6 NUniq=    6 SFac= 7.50D-01 NAtFMM=   80 NAOKFM=F Big=F
+ Standard density basis: Auto (5D, 7F)
+   327 Density fitting functions
+ ------------------------------------------------------------------------------
+ Polarizable Continuum Model (PCM)
+ =================================
+ Model                : PCM.
+ Atomic radii         : UFF (Universal Force Field).
+ Polarization charges : Total charges.
+ Charge compensation  : None.
+ Solution method      : Matrix inversion.
+ Cavity type          : Scaled VdW (van der Waals Surface) (Alpha=1.100).
+ Cavity algorithm     : GePol (No added spheres)
+                        Default sphere list used, NSphG=    6.
+                        Lebedev-Laikov grids with approx.  5.0 points / Ang**2.
+                        Smoothing algorithm: Karplus/York (Gamma=1.0000).
+                        Polarization charges: spherical gaussians, with
+                                              point-specific exponents (IZeta= 3).
+                        Self-potential: point-specific (ISelfS= 7).
+                        Self-field    : sphere-specific E.n sum rule (ISelfD= 2).
+ 1st derivatives      : Analytical E(r).r(x)/FMM algorithm (CHGder, D1EAlg=3).
+                        Cavity 1st derivative terms included.
+ Solvent              : Water, Eps=  78.355300 Eps(inf)=   1.777849
+ ------------------------------------------------------------------------------
+ Spheres list:
+ ISph  on   Nord    Re0     Alpha      Xe            Ye            Ze
+    1   C      1    1.925   1.100     -0.097123      0.370169      0.000482
+    2   N      2    1.830   1.100      1.076820     -0.175673      0.000180
+    3   O      3    1.750   1.100     -1.222831     -0.187330     -0.000309
+    4   H      4    1.443   1.100      1.202316     -1.180746      0.000026
+    5   H      5    1.443   1.100      1.898527      0.431990     -0.000009
+    6   H      6    1.443   1.100     -0.177938      1.470675     -0.000153
+ ------------------------------------------------------------------------------
+ One-electron integrals computed using PRISM.
+ NBasis=    96 RedAO= T  NBF=    96
+ NBsUse=    96 1.00D-06 NBFU=    96
+ Initial guess read from the read-write file.
+ B after Tr=     0.000000    0.000000    0.000000
+         Rot=    1.000000    0.000000    0.000000    0.000000 Ang=   0.00 deg.
+ Requested convergence on RMS density matrix=1.00D-08 within 128 cycles.
+ Requested convergence on MAX density matrix=1.00D-06.
+ Requested convergence on             energy=1.00D-06.
+ No special actions if energy rises.
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ Error on total polarization charges =  0.01081
+ SCF Done:  E(RCAM-B3LYP) =  -169.858265397     A.U. after    9 cycles
+             Convg  =    0.6198D-08             -V/T =  2.0063
+ ExpMin= 2.97D-02 ExpMax= 1.17D+04 ExpMxC= 4.01D+02 IAcc=3 IRadAn=         5 AccDes= 0.00D+00
+ HarFok:  IExCor=  205 AccDes= 0.00D+00 IRadAn=         5 IDoV=-2
+ ScaDFX=  1.000000  1.000000  1.000000  1.000000
+ Range of M.O.s used for correlation:     4    96
+ NBasis=    96 NAE=    12 NBE=    12 NFC=     3 NFV=     0
+ NROrb=     93 NOA=     9 NOB=     9 NVA=    84 NVB=    84
+
+ **** Warning!!: The largest alpha MO coefficient is  0.18941146D+02
+
+ NEqPCM:  Using equilibrium solvation (IEInf=0, Eps=  78.3553, EpsInf=   1.7778)
+ Generating guess from densities on rwf.
+ Convergence on wavefunction:    0.000001000000000
+ Iteration     1 Dimension    40 NMult    40
+ CISAX will form    40 AO SS matrices at one time.
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ Iteration     2 Dimension    80 NMult    80
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ Iteration     3 Dimension   120 NMult   120
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ Iteration     4 Dimension   160 NMult   160
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ Iteration     5 Dimension   200 NMult   200
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ Iteration     6 Dimension   232 NMult   232
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ Iteration     7 Dimension   244 NMult   244
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ Iteration     8 Dimension   250 NMult   250
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ ***********************************************************************
+ Excited states from <AA,BB:AA,BB> singles matrix:
+ ***********************************************************************
+ 
+ Ground to excited state transition electric dipole moments (Au):
+       state          X           Y           Z        Dip. S.      Osc.
+         1         0.0000     -0.0005      0.0789      0.0062      0.0009
+         2        -0.1532      0.1768      0.0000      0.0547      0.0090
+         3        -0.0038     -0.0008      0.1466      0.0215      0.0037
+         4         0.8976      0.5111      0.0008      1.0669      0.1891
+         5        -0.7759      0.7189     -0.0003      1.1188      0.2055
+         6         1.0883      0.1556      0.0004      1.2085      0.2297
+         7         0.0025      0.0005      0.1657      0.0275      0.0052
+         8         0.0015      0.0003     -0.5174      0.2677      0.0528
+         9         0.0000      0.0002      0.1679      0.0282      0.0056
+        10        -0.1315     -0.0162     -0.0001      0.0175      0.0037
+        11         0.0615     -0.1261     -0.0001      0.0197      0.0042
+        12         0.0393     -0.0074      0.0004      0.0016      0.0004
+        13        -0.0010     -0.0002      0.1731      0.0300      0.0067
+        14        -0.0002     -0.0001     -0.1614      0.0260      0.0060
+        15         0.1906      0.1029      0.0002      0.0469      0.0112
+        16        -0.0014      0.0001      0.0063      0.0000      0.0000
+        17        -0.0002      0.0063     -0.0823      0.0068      0.0017
+        18        -0.0291     -0.3842     -0.0017      0.1485      0.0373
+        19         0.0000     -0.0016      0.1766      0.0312      0.0079
+        20        -0.5403      0.1304      0.0003      0.3089      0.0787
+ Ground to excited state transition velocity dipole moments (Au):
+       state          X           Y           Z        Dip. S.      Osc.
+         1         0.0000      0.0001     -0.0202      0.0004      0.0013
+         2         0.0383     -0.0450      0.0000      0.0035      0.0094
+         3         0.0010      0.0002     -0.0365      0.0013      0.0034
+         4        -0.2337     -0.1330     -0.0002      0.0723      0.1812
+         5         0.2106     -0.1952      0.0001      0.0825      0.1995
+         6        -0.3064     -0.0431     -0.0001      0.0957      0.2239
+         7        -0.0007     -0.0001     -0.0475      0.0023      0.0053
+         8        -0.0004     -0.0001      0.1491      0.0222      0.0501
+         9         0.0000     -0.0001     -0.0523      0.0027      0.0061
+        10         0.0336      0.0024      0.0000      0.0011      0.0024
+        11        -0.0192      0.0393      0.0000      0.0019      0.0040
+        12        -0.0252      0.0037     -0.0002      0.0006      0.0013
+        13         0.0003      0.0001     -0.0552      0.0030      0.0060
+        14         0.0001      0.0000      0.0559      0.0031      0.0060
+        15        -0.0662     -0.0327     -0.0001      0.0055      0.0102
+        16         0.0005      0.0000     -0.0003      0.0000      0.0000
+        17         0.0001     -0.0024      0.0354      0.0013      0.0022
+        18         0.0078      0.1481      0.0007      0.0220      0.0389
+        19         0.0000      0.0006     -0.0648      0.0042      0.0074
+        20         0.2050     -0.0487     -0.0001      0.0444      0.0774
+ Ground to excited state transition magnetic dipole moments (Au):
+       state          X           Y           Z
+         1        -0.9922     -0.2489     -0.0007
+         2        -0.0010     -0.0006      0.4894
+         3         0.0048      0.5834     -0.0004
+         4        -0.0005      0.0014      0.1479
+         5         0.0002     -0.0004     -0.1388
+         6        -0.0004     -0.0004      0.5775
+         7         0.0618     -0.0115      0.0011
+         8        -0.0153      0.2727      0.0008
+         9        -0.0521      0.1241      0.0001
+        10        -0.0003      0.0001      0.0836
+        11         0.0002      0.0002      0.0270
+        12         0.0002     -0.0002      0.2228
+        13         0.0914     -0.2951     -0.0007
+        14        -0.1091     -0.4751     -0.0004
+        15         0.0008     -0.0001     -0.4020
+        16        -0.9225      0.9888     -0.0006
+        17         0.0576     -0.4658     -0.0007
+        18         0.0008     -0.0057      0.0062
+        19        -0.0122     -0.1183      0.0002
+        20        -0.0001      0.0017     -0.1971
+ <0|del|b> * <b|rxdel|0> + <0|del|b> * <b|delr+rdel|0>
+ Rotatory Strengths (R) in cgs (10**-40 erg-esu-cm/Gauss)
+       state          XX          YY          ZZ    R(velocity)
+         1        -0.0210      0.0253     -0.0446     -0.0134
+ Total R(velocity) tensor for State=          1
+                 1             2             3 
+      1  -0.209677D-01  0.143855D-02  0.117677D-04
+      2   0.225842D+00  0.253380D-01  0.109917D-03
+      3  -0.290573D+02 -0.852173D+01 -0.446390D-01
+         2         0.0480     -0.0691     -0.0238     -0.0150
+ Total R(velocity) tensor for State=          2
+                 1             2             3 
+      1   0.479692D-01  0.450241D-01 -0.254291D+02
+      2  -0.828015D-01 -0.690727D-01 -0.840697D+01
+      3   0.658126D+01  0.560051D+01 -0.238171D-01
+         3         0.3046      0.0537      0.0027      0.1203
+ Total R(velocity) tensor for State=          3
+                 1             2             3 
+      1   0.304644D+00 -0.143025D+01  0.376789D-03
+      2  -0.388503D-01  0.537381D-01 -0.743442D-03
+      3  -0.108436D+01  0.583216D+01  0.266566D-02
+         4        -0.5609      0.1416      0.1300     -0.0964
+ Total R(velocity) tensor for State=          4
+                 1             2             3 
+      1  -0.560871D+00  0.950902D+00  0.230888D+02
+      2  -0.627162D-01  0.141567D+00 -0.211020D+02
+      3   0.304231D+01 -0.534446D+01  0.129967D+00
+         5         0.1744      0.0381      0.0506      0.0877
+ Total R(velocity) tensor for State=          5
+                 1             2             3 
+      1   0.174432D+00  0.231267D+00  0.867605D+02
+      2   0.209117D-01  0.381175D-01  0.313669D+02
+      3   0.138373D+02  0.149344D+02  0.505756D-01
+         6        -0.0769      0.1671      0.1246      0.0716
+ Total R(velocity) tensor for State=          6
+                 1             2             3 
+      1  -0.769044D-01 -0.168365D+00  0.334793D+03
+      2  -0.141607D-01  0.167144D+00 -0.311769D+02
+      3  -0.362504D+01  0.257506D+02  0.124635D+00
+         7        -0.0928     -0.1274     -0.0080     -0.0761
+ Total R(velocity) tensor for State=          7
+                 1             2             3 
+      1  -0.928277D-01 -0.600103D-01  0.155356D-02
+      2   0.406059D-01 -0.127446D+00 -0.213075D-03
+      3   0.304502D+00  0.116018D+01 -0.802003D-02
+         8         0.1892      0.0585     -0.0030      0.0816
+ Total R(velocity) tensor for State=          8
+                 1             2             3 
+      1   0.189181D+00  0.116558D+00  0.606851D-03
+      2  -0.982776D-02  0.585078D-01  0.211746D-05
+      3   0.364790D+01 -0.260271D+02 -0.303181D-02
+         9        -0.0256     -0.0060     -0.0009     -0.0108
+ Total R(velocity) tensor for State=          9
+                 1             2             3 
+      1  -0.255852D-01  0.650538D-02 -0.376260D-05
+      2   0.151306D-02 -0.598391D-02  0.693019D-05
+      3  -0.366642D+01  0.125975D+01 -0.931536D-03
+        10         0.0036     -0.0125     -0.0089     -0.0059
+ Total R(velocity) tensor for State=         10
+                 1             2             3 
+      1   0.362372D-02  0.370900D-02 -0.774124D+01
+      2   0.162355D-02 -0.125407D-01 -0.147576D+01
+      3  -0.814050D-01  0.115627D+01 -0.887086D-02
+        11         0.0078      0.0033     -0.0031      0.0027
+ Total R(velocity) tensor for State=         11
+                 1             2             3 
+      1   0.779374D-02  0.128958D-01 -0.117052D+02
+      2   0.346096D-03  0.332770D-02 -0.406429D+01
+      3   0.981131D+00  0.478080D+00 -0.305099D-02
+        12        -0.0416     -0.0469      0.0022     -0.0288
+ Total R(velocity) tensor for State=         12
+                 1             2             3 
+      1  -0.416008D-01 -0.129779D-01  0.647369D+01
+      2   0.219399D-01 -0.469117D-01 -0.471791D+01
+      3   0.675178D+00  0.454287D+01  0.222404D-02
+        13         0.0338      0.0965     -0.0164      0.0380
+ Total R(velocity) tensor for State=         13
+                 1             2             3 
+      1   0.337977D-01  0.191914D+00  0.413677D-03
+      2  -0.369301D-01  0.965049D-01 -0.126365D-03
+      3  -0.278666D+01  0.806807D+00 -0.164217D-01
+        14        -0.0616     -0.0013     -0.0343     -0.0324
+ Total R(velocity) tensor for State=         14
+                 1             2             3 
+      1  -0.615819D-01  0.293674D-01  0.655162D-04
+      2  -0.274614D-02 -0.129936D-02  0.463314D-05
+      3   0.128803D+02  0.253010D+02 -0.343312D-01
+        15         0.0171     -0.0359     -0.0270     -0.0153
+ Total R(velocity) tensor for State=         15
+                 1             2             3 
+      1   0.171116D-01  0.153387D-01 -0.265492D+02
+      2   0.236120D-01 -0.359072D-01 -0.630473D+01
+      3  -0.149497D+01  0.302462D+01 -0.270354D-01
+        16        -0.0229     -0.5929     -0.3319     -0.3159
+ Total R(velocity) tensor for State=         16
+                 1             2             3 
+      1  -0.229277D-01 -0.572245D+00  0.369666D-03
+      2  -0.239566D-01 -0.592891D+00  0.223410D-04
+      3  -0.176546D+00  0.224470D+00 -0.331926D+00
+        17         1.6933      0.0549      0.3286      0.6923
+ Total R(velocity) tensor for State=         17
+                 1             2             3 
+      1   0.169332D+01 -0.928731D-02 -0.647588D-02
+      2  -0.662098D+00  0.548750D-01  0.602781D-02
+      3  -0.829430D+01  0.439737D+01  0.328594D+00
+        18        -1.3750     -0.1310     -0.0698     -0.5253
+ Total R(velocity) tensor for State=         18
+                 1             2             3 
+      1  -0.137498D+01  0.203744D+00 -0.263647D+02
+      2   0.665348D+00 -0.131013D+00  0.192825D+02
+      3   0.297587D+02 -0.157388D+01 -0.698039D-01
+        19        -0.0817      0.0376     -0.1059     -0.0500
+ Total R(velocity) tensor for State=         19
+                 1             2             3 
+      1  -0.816699D-01 -0.614015D-01 -0.563687D-03
+      2  -0.131996D+00  0.376396D-01  0.341459D-03
+      3   0.541086D+01 -0.115872D+02 -0.105908D+00
+        20        -0.0974      0.0206     -0.1093     -0.0620
+ Total R(velocity) tensor for State=         20
+                 1             2             3 
+      1  -0.974371D-01 -0.482942D+00  0.479546D+02
+      2  -0.973712D-02  0.206483D-01 -0.408385D+02
+      3  -0.897546D+01 -0.378153D+02 -0.109322D+00
+ 1/2[<0|r|b>*<b|rxdel|0> + (<0|rxdel|b>*<b|r|0>)*]
+ Rotatory Strengths (R) in cgs (10**-40 erg-esu-cm/Gauss)
+       state          XX          YY          ZZ     R(length)     R(au)
+         1         0.0063     -0.0963      0.0389     -0.0171      0.0000
+         2        -0.1127      0.0773     -0.0042     -0.0132      0.0000
+         3         0.0128      0.3243      0.0384      0.1251      0.0003
+         4         0.3065     -0.5227     -0.0825     -0.0996     -0.0002
+         5         0.0987      0.2034     -0.0341      0.0893      0.0002
+         6         0.3084      0.0434     -0.1452      0.0689      0.0001
+         7        -0.1090      0.0043     -0.1252     -0.0766     -0.0002
+         8         0.0159     -0.0514      0.2871      0.0839      0.0002
+         9         0.0015     -0.0215     -0.0144     -0.0115      0.0000
+        10        -0.0269      0.0013      0.0039     -0.0072      0.0000
+        11        -0.0098      0.0163      0.0018      0.0028      0.0000
+        12        -0.0064     -0.0009     -0.0708     -0.0261     -0.0001
+        13         0.0646     -0.0377      0.0893      0.0387      0.0001
+        14        -0.0180     -0.0298     -0.0443     -0.0307     -0.0001
+        15        -0.1013      0.0042      0.0530     -0.0147      0.0000
+        16        -0.8915     -0.0451      0.0026     -0.3113     -0.0007
+        17         0.0082      2.0688     -0.0424      0.6782      0.0014
+        18         0.0166     -1.5622      0.0077     -0.5126     -0.0011
+        19        -0.0002     -0.1296     -0.0192     -0.0497     -0.0001
+        20        -0.0566     -0.1605      0.0350     -0.0607     -0.0001
+  1/2[<0|del|b>*<b|r|0> + (<0|r|b>*<b|del|0>)*] (Au)
+       state          X           Y           Z        Dip. S.   Osc.(frdel)
+         1         0.0000      0.0000     -0.0016      0.0016      0.0011
+         2        -0.0059     -0.0079      0.0000      0.0138      0.0092
+         3         0.0000      0.0000     -0.0053      0.0054      0.0036
+         4        -0.2097     -0.0680      0.0000      0.2777      0.1851
+         5        -0.1634     -0.1403      0.0000      0.3037      0.2025
+         6        -0.3334     -0.0067      0.0000      0.3401      0.2267
+         7         0.0000      0.0000     -0.0079      0.0079      0.0053
+         8         0.0000      0.0000     -0.0771      0.0771      0.0514
+         9         0.0000      0.0000     -0.0088      0.0088      0.0059
+        10        -0.0044      0.0000      0.0000      0.0045      0.0030
+        11        -0.0012     -0.0050      0.0000      0.0061      0.0041
+        12        -0.0010      0.0000      0.0000      0.0010      0.0007
+        13         0.0000      0.0000     -0.0096      0.0096      0.0064
+        14         0.0000      0.0000     -0.0090      0.0090      0.0060
+        15        -0.0126     -0.0034      0.0000      0.0160      0.0107
+        16         0.0000      0.0000      0.0000      0.0000      0.0000
+        17         0.0000      0.0000     -0.0029      0.0029      0.0020
+        18        -0.0002     -0.0569      0.0000      0.0571      0.0381
+        19         0.0000      0.0000     -0.0114      0.0114      0.0076
+        20        -0.1107     -0.0063      0.0000      0.1171      0.0781
+ Ground to excited state transition densities written to RWF  633
+
+ Excitation energies and oscillator strengths:
+ 
+ Excited state symmetry could not be determined.
+ Excited State   1:      Singlet-?Sym    5.6439 eV  219.68 nm  f=0.0009  <S**2>=0.000
+      12 -> 16         0.66715
+      12 -> 17        -0.21286
+ 
+ Excited state symmetry could not be determined.
+ Excited State   2:      Singlet-?Sym    6.6978 eV  185.11 nm  f=0.0090  <S**2>=0.000
+      11 -> 16        -0.10953
+      12 -> 13         0.59441
+      12 -> 14        -0.14924
+      12 -> 15         0.25805
+      12 -> 18         0.13500
+      12 -> 20        -0.12290
+ This state for optimization and/or second-order correction.
+ Copying the excited state density for this state as the 1-particle RhoCI density.
+ 
+ Excited state symmetry could not be determined.
+ Excited State   3:      Singlet-?Sym    7.1017 eV  174.58 nm  f=0.0037  <S**2>=0.000
+      11 -> 13        -0.66751
+      11 -> 19         0.13590
+      11 -> 20         0.13058
+ 
+ Excited state symmetry could not be determined.
+ Excited State   4:      Singlet-?Sym    7.2360 eV  171.34 nm  f=0.1891  <S**2>=0.000
+      11 -> 16        -0.36895
+      11 -> 17         0.17162
+      12 -> 14         0.52312
+      12 -> 19        -0.18577
+ 
+ Excited state symmetry could not be determined.
+ Excited State   5:      Singlet-?Sym    7.4988 eV  165.34 nm  f=0.2055  <S**2>=0.000
+      11 -> 16         0.37780
+      11 -> 17        -0.20118
+      12 -> 14         0.30802
+      12 -> 15         0.39588
+      12 -> 18         0.20976
+ 
+ Excited state symmetry could not be determined.
+ Excited State   6:      Singlet-?Sym    7.7567 eV  159.84 nm  f=0.2297  <S**2>=0.000
+      11 -> 16        -0.28173
+      11 -> 17         0.18681
+      12 -> 13        -0.33799
+      12 -> 14        -0.22918
+      12 -> 15         0.40761
+      12 -> 18         0.18839
+ 
+ Excited state symmetry could not be determined.
+ Excited State   7:      Singlet-?Sym    7.7941 eV  159.07 nm  f=0.0052  <S**2>=0.000
+      11 -> 14        -0.65836
+      11 -> 20        -0.10042
+      11 -> 21         0.15505
+ 
+ Excited state symmetry could not be determined.
+ Excited State   8:      Singlet-?Sym    8.0540 eV  153.94 nm  f=0.0528  <S**2>=0.000
+      11 -> 15        -0.64585
+      11 -> 18        -0.18544
+      11 -> 23         0.10792
+ 
+ Excited state symmetry could not be determined.
+ Excited State   9:      Singlet-?Sym    8.1080 eV  152.92 nm  f=0.0056  <S**2>=0.000
+      12 -> 16         0.20664
+      12 -> 17         0.65875
+ 
+ Excited state symmetry could not be determined.
+ Excited State  10:      Singlet-?Sym    8.6860 eV  142.74 nm  f=0.0037  <S**2>=0.000
+      11 -> 16        -0.30732
+      11 -> 17        -0.61714
+      12 -> 19        -0.10135
+ 
+ Excited state symmetry could not be determined.
+ Excited State  11:      Singlet-?Sym    8.7573 eV  141.58 nm  f=0.0042  <S**2>=0.000
+      12 -> 15         0.30133
+      12 -> 18        -0.60946
+      12 -> 19         0.12018
+ 
+ Excited state symmetry could not be determined.
+ Excited State  12:      Singlet-?Sym    9.1042 eV  136.18 nm  f=0.0004  <S**2>=0.000
+      11 -> 16        -0.12908
+      12 -> 14         0.14432
+      12 -> 19         0.63523
+      12 -> 23         0.11485
+ 
+ Excited state symmetry could not be determined.
+ Excited State  13:      Singlet-?Sym    9.1647 eV  135.28 nm  f=0.0067  <S**2>=0.000
+      11 -> 15        -0.16497
+      11 -> 18         0.64578
+      11 -> 24        -0.11735
+ 
+ Excited state symmetry could not be determined.
+ Excited State  14:      Singlet-?Sym    9.4126 eV  131.72 nm  f=0.0060  <S**2>=0.000
+      11 -> 13        -0.11261
+      11 -> 19        -0.66228
+      11 -> 21         0.10100
+ 
+ Excited state symmetry could not be determined.
+ Excited State  15:      Singlet-?Sym    9.7153 eV  127.62 nm  f=0.0112  <S**2>=0.000
+      12 -> 13         0.11468
+      12 -> 14        -0.13377
+      12 -> 20         0.59968
+      12 -> 21        -0.11338
+      12 -> 23         0.26060
+ 
+ Excited state symmetry could not be determined.
+ Excited State  16:      Singlet-?Sym    9.8588 eV  125.76 nm  f=0.0000  <S**2>=0.000
+      10 -> 16         0.66028
+      10 -> 17        -0.21078
+ 
+ Excited state symmetry could not be determined.
+ Excited State  17:      Singlet-?Sym   10.2618 eV  120.82 nm  f=0.0017  <S**2>=0.000
+      11 -> 13        -0.15190
+      11 -> 20        -0.64920
+      11 -> 23        -0.12527
+ 
+ Excited state symmetry could not be determined.
+ Excited State  18:      Singlet-?Sym   10.2674 eV  120.76 nm  f=0.0373  <S**2>=0.000
+      11 -> 22         0.11262
+      12 -> 14         0.10052
+      12 -> 21         0.48196
+      12 -> 23         0.39888
+      12 -> 24         0.17877
+      12 -> 27        -0.14177
+ 
+ Excited state symmetry could not be determined.
+ Excited State  19:      Singlet-?Sym   10.2849 eV  120.55 nm  f=0.0079  <S**2>=0.000
+      12 -> 22         0.67689
+      12 -> 26        -0.16533
+ 
+ Excited state symmetry could not be determined.
+ Excited State  20:      Singlet-?Sym   10.4008 eV  119.21 nm  f=0.0787  <S**2>=0.000
+      12 -> 19        -0.12078
+      12 -> 20        -0.26162
+      12 -> 21        -0.43052
+      12 -> 23         0.31802
+      12 -> 24         0.31044
+ SavETr:  write IOETrn=   770 NScale= 10 NData=  16 NLR=1 LETran=     370.
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+          IDoAtm=111111
+ NEqPCM:  Using equilibrium solvation (IEInf=0, Eps=  78.3553, EpsInf=   1.7778)
+          Differentiating once with respect to electric field.
+                with respect to dipole field.
+          Differentiating once with respect to nuclear coordinates.
+          There are     1 degrees of freedom in the 1st order CPHF.  IDoFFX=0.
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ LinEq1:  Iter=  0 NonCon=     1 RMS=4.45D-02 Max=7.91D-01
+ AX will form     1 AO Fock derivatives at one time.
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ LinEq1:  Iter=  1 NonCon=     1 RMS=1.56D-02 Max=1.23D-01
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ LinEq1:  Iter=  2 NonCon=     1 RMS=8.25D-03 Max=1.36D-01
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ LinEq1:  Iter=  3 NonCon=     1 RMS=2.14D-03 Max=2.31D-02
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ LinEq1:  Iter=  4 NonCon=     1 RMS=1.30D-03 Max=1.51D-02
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ LinEq1:  Iter=  5 NonCon=     1 RMS=2.38D-04 Max=1.37D-03
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ LinEq1:  Iter=  6 NonCon=     1 RMS=4.96D-05 Max=3.34D-04
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ LinEq1:  Iter=  7 NonCon=     1 RMS=9.37D-06 Max=8.49D-05
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ LinEq1:  Iter=  8 NonCon=     1 RMS=1.36D-06 Max=1.15D-05
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ LinEq1:  Iter=  9 NonCon=     1 RMS=1.76D-07 Max=1.34D-06
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ LinEq1:  Iter= 10 NonCon=     1 RMS=2.93D-08 Max=1.57D-07
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ LinEq1:  Iter= 11 NonCon=     1 RMS=6.33D-09 Max=4.75D-08
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ LinEq1:  Iter= 12 NonCon=     1 RMS=1.13D-09 Max=9.40D-09
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ LinEq1:  Iter= 13 NonCon=     1 RMS=1.90D-10 Max=2.96D-09
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ LinEq1:  Iter= 14 NonCon=     0 RMS=4.25D-11 Max=7.18D-10
+ Linear equations converged to 1.000D-10 1.000D-09 after    14 iterations.
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ End of Minotr Frequency-dependent properties file   721 does not exist.
+ End of Minotr Frequency-dependent properties file   722 does not exist.
+ D1PCM: PCM CHGder 1st derivatives, ID1Alg=3 FixD1E=F DoIter=F DoCFld=F I1PDM=6.
+ Calling FoFJK, ICntrl=      5127 FMM=F ISym2X=0 I1Cent= 0 IOpClX= 0 NMat=1 NMatS=1 NMatT=0.
+ FoFJK:  IHMeth= 1 ICntrl=  5127 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ -------------------------------------------------------------------
+ Center     Atomic                   Forces (Hartrees/Bohr)
+ Number     Number              X              Y              Z
+ -------------------------------------------------------------------
+      1        6          -0.001016775   -0.001157303   -0.000207325
+      2        7          -0.000073332    0.000255667    0.000058516
+      3        8           0.000956847    0.000720729    0.000078745
+      4        1          -0.000004016    0.000072349   -0.000005899
+      5        1          -0.000029785   -0.000086145    0.000016384
+      6        1           0.000167061    0.000194704    0.000059579
+ -------------------------------------------------------------------
+ Cartesian Forces:  Max     0.001157303 RMS     0.000472274
+
+ GradGradGradGradGradGradGradGradGradGradGradGradGradGradGradGradGradGrad
+ Berny optimization.
+ Using GEDIIS/GDIIS optimizer.
+ Internal  Forces:  Max     0.001164000 RMS     0.000337329
+ Search for a local minimum.
+ Step number   5 out of a maximum of   25
+ All quantities printed in internal units (Hartrees-Bohrs-Radians)
+ Mixed Optimization -- En-DIIS/RFO-DIIS
+ Swaping is turned off.
+ Update second derivatives using D2CorX and points    1    2    3    4    5
+ DE= -6.71D-06 DEPred=-4.60D-06 R= 1.46D+00
+ SS=  1.41D+00  RLast= 7.17D-03 DXNew= 6.5384D-01 2.1508D-02
+ Trust test= 1.46D+00 RLast= 7.17D-03 DXMaxT set to 3.89D-01
+ The second derivative matrix:
+                          R1        R2        R3        R4        R5
+           R1           0.62391
+           R2           0.09876   0.71515
+           R3           0.00617   0.05574   0.32323
+           R4           0.00348  -0.00563   0.00236   0.45939
+           R5           0.00969   0.00451  -0.00265   0.00569   0.47065
+           A1           0.03176   0.06902  -0.03350   0.00836  -0.00939
+           A2           0.01945  -0.04918   0.00636  -0.00030   0.00029
+           A3          -0.04984  -0.01109   0.00462  -0.00345   0.00467
+           A4           0.01364   0.02236  -0.00531   0.00271  -0.00007
+           A5           0.00590  -0.00388   0.00324  -0.00209  -0.00330
+           A6          -0.01954  -0.01848   0.00207  -0.00061   0.00337
+           D1           0.00276  -0.00002  -0.00561   0.00100  -0.00061
+           D2           0.00309  -0.00004  -0.00634   0.00113  -0.00069
+           D3          -0.00237   0.00003   0.00484  -0.00086   0.00053
+           D4          -0.00204   0.00001   0.00411  -0.00074   0.00045
+                          A1        A2        A3        A4        A5
+           A1           0.15607
+           A2           0.00732   0.14819
+           A3           0.03890   0.00479   0.14830
+           A4          -0.02040   0.00190   0.00505   0.15693
+           A5           0.00584  -0.00084  -0.00392   0.00128   0.16167
+           A6           0.01456  -0.00105  -0.00114   0.00179  -0.00295
+           D1          -0.00494   0.00167   0.00428  -0.00210   0.00006
+           D2          -0.00556   0.00189   0.00483  -0.00237   0.00007
+           D3           0.00424  -0.00144  -0.00369   0.00181  -0.00005
+           D4           0.00362  -0.00122  -0.00313   0.00154  -0.00005
+                          A6        D1        D2        D3        D4
+           A6           0.16117
+           D1           0.00204   0.02651
+           D2           0.00231   0.00222   0.02707
+           D3          -0.00176  -0.00170  -0.00192   0.02602
+           D4          -0.00149  -0.00144  -0.00163   0.00124   0.02560
+     Eigenvalues ---    0.02455   0.02455   0.02716   0.08971   0.13993
+     Eigenvalues ---    0.16348   0.16873   0.32430   0.45739   0.47257
+     Eigenvalues ---    0.57152   0.796551000.000001000.000001000.00000
+ En-DIIS/RFO-DIIS IScMMF=        0 using points:     5    4
+ RFO step:  Lambda=-3.13943419D-06.
+ DIIS coeffs:      1.82900     -0.82900
+ Iteration  1 RMS(Cart)=  0.00324939 RMS(Int)=  0.00001656
+ Iteration  2 RMS(Cart)=  0.00001470 RMS(Int)=  0.00000375
+ Iteration  3 RMS(Cart)=  0.00000000 RMS(Int)=  0.00000375
+ Variable       Old X    -DE/DX   Delta X   Delta X   Delta X     New X
+                                  (DIIS)     (GDIIS)  (Total)
+    R1        2.44651  -0.00020  -0.00065   0.00019  -0.00046   2.44605
+    R2        2.37386  -0.00116  -0.00104  -0.00163  -0.00267   2.37119
+    R3        2.08526   0.00017   0.00157   0.00045   0.00202   2.08727
+    R4        1.91406  -0.00009  -0.00027  -0.00014  -0.00041   1.91365
+    R5        1.93127  -0.00006   0.00016  -0.00006   0.00010   1.93138
+    A1        2.24653   0.00037   0.00384   0.00212   0.00594   2.25247
+    A2        2.07933  -0.00033  -0.00147  -0.00195  -0.00343   2.07589
+    A3        1.95733  -0.00004  -0.00237  -0.00015  -0.00252   1.95480
+    A4        2.13024   0.00005   0.00147   0.00046   0.00193   2.13217
+    A5        2.06961  -0.00001  -0.00031  -0.00020  -0.00051   2.06910
+    A6        2.08333  -0.00004  -0.00116  -0.00026  -0.00142   2.08191
+    D1       -0.00096   0.00007  -0.00120   0.00545   0.00425   0.00329
+    D2        3.14051   0.00008  -0.00137   0.00616   0.00479  -3.13788
+    D3       -3.14077  -0.00006   0.00105  -0.00470  -0.00365   3.13876
+    D4        0.00070  -0.00005   0.00088  -0.00399  -0.00311  -0.00241
+         Item               Value     Threshold  Converged?
+ Maximum Force            0.001164     0.000450     NO 
+ RMS     Force            0.000337     0.000300     NO 
+ Maximum Displacement     0.006149     0.001800     NO 
+ RMS     Displacement     0.003250     0.001200     NO 
+ Predicted change in Energy=-4.110182D-06
+ GradGradGradGradGradGradGradGradGradGradGradGradGradGradGradGradGradGrad
+
+                          Input orientation:                          
+ ---------------------------------------------------------------------
+ Center     Atomic      Atomic             Coordinates (Angstroms)
+ Number     Number       Type             X           Y           Z
+ ---------------------------------------------------------------------
+      1          6           0       -0.097923    0.367732   -0.001664
+      2          7           0        1.076589   -0.176303   -0.000265
+      3          8           0       -1.224855   -0.184076    0.000681
+      4          1           0        1.205452   -1.180729    0.000316
+      5          1           0        1.897145    0.433001    0.000649
+      6          1           0       -0.176637    1.469459    0.000499
+ ---------------------------------------------------------------------
+                    Distance matrix (angstroms):
+                    1          2          3          4          5
+     1  C    0.000000
+     2  N    1.294394   0.000000
+     3  O    1.254780   2.301457   0.000000
+     4  H    2.023987   1.012659   2.626730   0.000000
+     5  H    1.996137   1.022040   3.182400   1.755724   0.000000
+     6  H    1.104537   2.068601   1.957789   2.988924   2.318366
+                    6
+     6  H    0.000000
+ Symmetry turned off by external request.
+ Stoichiometry    CH3NO
+ Framework group  C1[X(CH3NO)]
+ Deg. of freedom    12
+ Full point group                 C1      NOp   1
+ Rotational constants (GHZ):     79.3992345     11.1558571      9.7815300
+ Standard basis: Aug-CC-pVDZ (5D, 7F)
+ Integral buffers will be    131072 words long.
+ Raffenetti 2 integral format.
+ Two-electron integral symmetry is turned off.
+    96 basis functions,   162 primitive gaussians,   102 cartesian basis functions
+    12 alpha electrons       12 beta electrons
+       nuclear repulsion energy        71.2075558603 Hartrees.
+ NAtoms=    6 NActive=    6 NUniq=    6 SFac= 7.50D-01 NAtFMM=   80 NAOKFM=F Big=F
+ Standard density basis: Auto (5D, 7F)
+   327 Density fitting functions
+ ------------------------------------------------------------------------------
+ Polarizable Continuum Model (PCM)
+ =================================
+ Model                : PCM.
+ Atomic radii         : UFF (Universal Force Field).
+ Polarization charges : Total charges.
+ Charge compensation  : None.
+ Solution method      : Matrix inversion.
+ Cavity type          : Scaled VdW (van der Waals Surface) (Alpha=1.100).
+ Cavity algorithm     : GePol (No added spheres)
+                        Default sphere list used, NSphG=    6.
+                        Lebedev-Laikov grids with approx.  5.0 points / Ang**2.
+                        Smoothing algorithm: Karplus/York (Gamma=1.0000).
+                        Polarization charges: spherical gaussians, with
+                                              point-specific exponents (IZeta= 3).
+                        Self-potential: point-specific (ISelfS= 7).
+                        Self-field    : sphere-specific E.n sum rule (ISelfD= 2).
+ 1st derivatives      : Analytical E(r).r(x)/FMM algorithm (CHGder, D1EAlg=3).
+                        Cavity 1st derivative terms included.
+ Solvent              : Water, Eps=  78.355300 Eps(inf)=   1.777849
+ ------------------------------------------------------------------------------
+ Spheres list:
+ ISph  on   Nord    Re0     Alpha      Xe            Ye            Ze
+    1   C      1    1.925   1.100     -0.097923      0.367732     -0.001664
+    2   N      2    1.830   1.100      1.076589     -0.176303     -0.000265
+    3   O      3    1.750   1.100     -1.224855     -0.184076      0.000681
+    4   H      4    1.443   1.100      1.205452     -1.180729      0.000316
+    5   H      5    1.443   1.100      1.897145      0.433001      0.000649
+    6   H      6    1.443   1.100     -0.176637      1.469459      0.000499
+ ------------------------------------------------------------------------------
+ One-electron integrals computed using PRISM.
+ NBasis=    96 RedAO= T  NBF=    96
+ NBsUse=    96 1.00D-06 NBFU=    96
+ Initial guess read from the read-write file.
+ B after Tr=     0.000000    0.000000    0.000000
+         Rot=    1.000000    0.000000    0.000000    0.000000 Ang=   0.00 deg.
+ Requested convergence on RMS density matrix=1.00D-08 within 128 cycles.
+ Requested convergence on MAX density matrix=1.00D-06.
+ Requested convergence on             energy=1.00D-06.
+ No special actions if energy rises.
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ Error on total polarization charges =  0.01081
+ SCF Done:  E(RCAM-B3LYP) =  -169.858164325     A.U. after    9 cycles
+             Convg  =    0.5840D-08             -V/T =  2.0063
+ ExpMin= 2.97D-02 ExpMax= 1.17D+04 ExpMxC= 4.01D+02 IAcc=3 IRadAn=         5 AccDes= 0.00D+00
+ HarFok:  IExCor=  205 AccDes= 0.00D+00 IRadAn=         5 IDoV=-2
+ ScaDFX=  1.000000  1.000000  1.000000  1.000000
+ Range of M.O.s used for correlation:     4    96
+ NBasis=    96 NAE=    12 NBE=    12 NFC=     3 NFV=     0
+ NROrb=     93 NOA=     9 NOB=     9 NVA=    84 NVB=    84
+
+ **** Warning!!: The largest alpha MO coefficient is  0.18757644D+02
+
+ NEqPCM:  Using equilibrium solvation (IEInf=0, Eps=  78.3553, EpsInf=   1.7778)
+ Generating guess from densities on rwf.
+ Convergence on wavefunction:    0.000001000000000
+ Iteration     1 Dimension    40 NMult    40
+ CISAX will form    40 AO SS matrices at one time.
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ Iteration     2 Dimension    80 NMult    80
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ Iteration     3 Dimension   120 NMult   120
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ Iteration     4 Dimension   160 NMult   160
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ Iteration     5 Dimension   200 NMult   200
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ Iteration     6 Dimension   236 NMult   236
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ Iteration     7 Dimension   248 NMult   248
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ Iteration     8 Dimension   254 NMult   254
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ ***********************************************************************
+ Excited states from <AA,BB:AA,BB> singles matrix:
+ ***********************************************************************
+ 
+ Ground to excited state transition electric dipole moments (Au):
+       state          X           Y           Z        Dip. S.      Osc.
+         1        -0.0001      0.0019      0.0803      0.0065      0.0009
+         2        -0.1562      0.1707     -0.0001      0.0535      0.0088
+         3         0.0124      0.0028      0.1484      0.0222      0.0039
+         4         0.8575      0.5383     -0.0024      1.0250      0.1819
+         5        -0.7755      0.7096      0.0010      1.1049      0.2031
+         6         1.1227      0.1388     -0.0009      1.2796      0.2432
+         7        -0.0089     -0.0016      0.1647      0.0272      0.0052
+         8        -0.0049     -0.0008     -0.5233      0.2739      0.0541
+         9        -0.0004     -0.0009      0.1503      0.0226      0.0045
+        10        -0.1297     -0.0157      0.0002      0.0171      0.0036
+        11         0.0580     -0.1274      0.0003      0.0196      0.0042
+        12         0.0438     -0.0078     -0.0014      0.0020      0.0004
+        13         0.0034      0.0006      0.1723      0.0297      0.0067
+        14         0.0008      0.0003     -0.1644      0.0270      0.0062
+        15         0.1927      0.1056     -0.0006      0.0483      0.0115
+        16         0.0047     -0.0003      0.0072      0.0001      0.0000
+        17        -0.0154     -0.2448     -0.0618      0.0640      0.0161
+        18        -0.0225     -0.2983      0.0530      0.0923      0.0232
+        19         0.0001      0.0063      0.1749      0.0306      0.0077
+        20        -0.5383      0.1316     -0.0010      0.3071      0.0783
+ Ground to excited state transition velocity dipole moments (Au):
+       state          X           Y           Z        Dip. S.      Osc.
+         1         0.0000     -0.0004     -0.0206      0.0004      0.0014
+         2         0.0390     -0.0435      0.0000      0.0034      0.0092
+         3        -0.0032     -0.0007     -0.0370      0.0014      0.0035
+         4        -0.2233     -0.1403      0.0006      0.0695      0.1742
+         5         0.2105     -0.1928     -0.0003      0.0815      0.1970
+         6        -0.3160     -0.0384      0.0002      0.1014      0.2370
+         7         0.0025      0.0005     -0.0473      0.0022      0.0052
+         8         0.0014      0.0002      0.1511      0.0228      0.0514
+         9         0.0001      0.0002     -0.0472      0.0022      0.0050
+        10         0.0331      0.0022      0.0000      0.0011      0.0023
+        11        -0.0182      0.0397     -0.0001      0.0019      0.0040
+        12        -0.0267      0.0040      0.0005      0.0007      0.0015
+        13        -0.0012     -0.0002     -0.0550      0.0030      0.0060
+        14        -0.0003     -0.0001      0.0570      0.0032      0.0062
+        15        -0.0669     -0.0338      0.0002      0.0056      0.0105
+        16        -0.0018      0.0001     -0.0006      0.0000      0.0000
+        17         0.0038      0.0944      0.0267      0.0096      0.0170
+        18         0.0060      0.1150     -0.0229      0.0138      0.0244
+        19         0.0000     -0.0024     -0.0641      0.0041      0.0073
+        20         0.2043     -0.0491      0.0003      0.0441      0.0770
+ Ground to excited state transition magnetic dipole moments (Au):
+       state          X           Y           Z
+         1        -0.9965     -0.2451      0.0021
+         2         0.0034      0.0021      0.4868
+         3         0.0049      0.5832      0.0012
+         4         0.0016     -0.0048      0.1374
+         5        -0.0006      0.0014     -0.1238
+         6         0.0012      0.0013      0.5853
+         7         0.0621     -0.0096     -0.0037
+         8        -0.0125      0.2688     -0.0027
+         9        -0.0529      0.1342     -0.0005
+        10         0.0010     -0.0004      0.0830
+        11        -0.0008     -0.0006      0.0261
+        12        -0.0008      0.0005      0.2232
+        13         0.0897     -0.2961      0.0024
+        14        -0.1084     -0.4736      0.0013
+        15        -0.0023      0.0000     -0.4017
+        16        -0.9195      0.9856      0.0016
+        17         0.0444     -0.3602      0.0034
+        18        -0.0358      0.2869      0.0008
+        19        -0.0112     -0.1192     -0.0005
+        20         0.0005     -0.0057     -0.2059
+ <0|del|b> * <b|rxdel|0> + <0|del|b> * <b|delr+rdel|0>
+ Rotatory Strengths (R) in cgs (10**-40 erg-esu-cm/Gauss)
+       state          XX          YY          ZZ    R(velocity)
+         1         0.0782     -0.0920      0.1398      0.0420
+ Total R(velocity) tensor for State=          1
+                 1             2             3 
+      1   0.781789D-01 -0.164537D-02  0.108287D-03
+      2  -0.785172D+00 -0.920273D-01  0.105783D-02
+      3  -0.295900D+02 -0.852710D+01  0.139848D+00
+         2        -0.1418      0.2443      0.0835      0.0620
+ Total R(velocity) tensor for State=          2
+                 1             2             3 
+      1  -0.141803D+00 -0.151859D+00 -0.266335D+02
+      2   0.282730D+00  0.244285D+00 -0.954629D+01
+      3   0.644841D+01  0.577494D+01  0.835095D-01
+         3        -1.0762     -0.1801     -0.0153     -0.4238
+ Total R(velocity) tensor for State=          3
+                 1             2             3 
+      1  -0.107616D+01  0.469987D+01  0.323602D-02
+      2   0.134153D+00 -0.180097D+00 -0.811275D-02
+      3  -0.112521D+01  0.589693D+01 -0.152888D-01
+         4         1.9241     -0.4653     -0.4184      0.3468
+ Total R(velocity) tensor for State=          4
+                 1             2             3 
+      1   0.192409D+01 -0.300943D+01  0.127232D+02
+      2   0.237359D+00 -0.465260D+00 -0.207935D+02
+      3   0.376794D+01 -0.599987D+01 -0.418396D+00
+         5        -0.6457     -0.1402     -0.1419     -0.3093
+ Total R(velocity) tensor for State=          5
+                 1             2             3 
+      1  -0.645681D+00 -0.823104D+00  0.839417D+02
+      2  -0.846670D-01 -0.140185D+00  0.339361D+02
+      3   0.132042D+02  0.144180D+02 -0.141908D+00
+         6         0.1784     -0.6037     -0.3324     -0.2526
+ Total R(velocity) tensor for State=          6
+                 1             2             3 
+      1   0.178441D+00  0.559076D+00  0.348595D+03
+      2   0.497364D-01 -0.603728D+00 -0.334951D+02
+      3  -0.329065D+01  0.270590D+02 -0.332395D+00
+         7         0.3262      0.4502      0.0255      0.2673
+ Total R(velocity) tensor for State=          7
+                 1             2             3 
+      1   0.326209D+00  0.192376D+00  0.190773D-01
+      2  -0.131522D+00  0.450197D+00 -0.264838D-02
+      3   0.276475D+00  0.113879D+01  0.254929D-01
+         8        -0.6639     -0.1917      0.0112     -0.2815
+ Total R(velocity) tensor for State=          8
+                 1             2             3 
+      1  -0.663947D+00 -0.371998D+00  0.689731D-02
+      2   0.301150D-01 -0.191719D+00  0.209241D-04
+      3   0.325843D+01 -0.263201D+02  0.111863D-01
+         9         0.1009      0.0178      0.0006      0.0398
+ Total R(velocity) tensor for State=          9
+                 1             2             3 
+      1   0.100867D+00 -0.398767D-01  0.113749D-04
+      2  -0.277774D-02  0.177593D-01  0.783583D-04
+      3  -0.330261D+01  0.151986D+01  0.639036D-03
+        10        -0.0106      0.0429      0.0275      0.0199
+ Total R(velocity) tensor for State=         10
+                 1             2             3 
+      1  -0.106391D-01 -0.142634D-01 -0.770467D+01
+      2  -0.497287D-02  0.428980D-01 -0.138106D+01
+      3  -0.831412D-01  0.123329D+01  0.274636D-01
+        11        -0.0225     -0.0118      0.0059     -0.0095
+ Total R(velocity) tensor for State=         11
+                 1             2             3 
+      1  -0.224567D-01 -0.419830D-01 -0.116060D+02
+      2   0.161256D-02 -0.117912D-01 -0.458751D+01
+      3   0.985618D+00  0.451376D+00  0.589527D-02
+        12         0.1301      0.1538     -0.0048      0.0930
+ Total R(velocity) tensor for State=         12
+                 1             2             3 
+      1   0.130098D+00  0.375546D-01  0.687138D+01
+      2  -0.688744D-01  0.153786D+00 -0.505876D+01
+      3   0.719193D+00  0.485051D+01 -0.481525D-02
+        13        -0.1074     -0.3227      0.0581     -0.1240
+ Total R(velocity) tensor for State=         13
+                 1             2             3 
+      1  -0.107415D+00 -0.657083D+00  0.461765D-02
+      2   0.118889D+00 -0.322676D+00 -0.133430D-02
+      3  -0.289287D+01  0.712609D+00  0.581453D-01
+        14         0.2068      0.0050      0.1188      0.1102
+ Total R(velocity) tensor for State=         14
+                 1             2             3 
+      1   0.206792D+00 -0.105281D+00  0.792408D-03
+      2   0.935831D-02  0.495867D-02  0.565195D-04
+      3   0.130220D+02  0.258105D+02  0.118827D+00
+        15        -0.0424      0.1113      0.0819      0.0503
+ Total R(velocity) tensor for State=         15
+                 1             2             3 
+      1  -0.423965D-01 -0.638876D-01 -0.270053D+02
+      2  -0.755531D-01  0.111327D+00 -0.699866D+01
+      3  -0.151534D+01  0.300186D+01  0.818735D-01
+        16         0.0909      2.0500      1.1526      1.0979
+ Total R(velocity) tensor for State=         16
+                 1             2             3 
+      1   0.909416D-01  0.197761D+01  0.383482D-02
+      2   0.955231D-01  0.205000D+01  0.492930D-03
+      3  -0.391370D+00  0.496778D+00  0.115264D+01
+        17       -51.5408     -3.2269     -8.4838    -21.0838
+ Total R(velocity) tensor for State=         17
+                 1             2             3 
+      1  -0.515408D+02  0.505508D+01 -0.105647D+02
+      2   0.204961D+02 -0.322691D+01  0.849595D+01
+      3   0.709214D+01  0.211966D+01 -0.848384D+01
+        18        50.4006      3.5196      7.5091     20.4764
+ Total R(velocity) tensor for State=         18
+                 1             2             3 
+      1   0.504006D+02 -0.575432D+01 -0.157678D+02
+      2  -0.205965D+02  0.351959D+01  0.123221D+02
+      3   0.145203D+02  0.736865D+00  0.750911D+01
+        19         0.3206     -0.1613      0.4411      0.2001
+ Total R(velocity) tensor for State=         19
+                 1             2             3 
+      1   0.320589D+00  0.238547D+00 -0.904302D-02
+      2   0.519236D+00 -0.161330D+00  0.614211D-02
+      3   0.541706D+01 -0.116157D+02  0.441086D+00
+        20         0.3064     -0.0650      0.3591      0.2002
+ Total R(velocity) tensor for State=         20
+                 1             2             3 
+      1   0.306415D+00  0.158204D+01  0.495912D+02
+      2   0.468184D-01 -0.650329D-01 -0.417642D+02
+      3  -0.910496D+01 -0.378459D+02  0.359122D+00
+ 1/2[<0|r|b>*<b|rxdel|0> + (<0|rxdel|b>*<b|r|0>)*]
+ Rotatory Strengths (R) in cgs (10**-40 erg-esu-cm/Gauss)
+       state          XX          YY          ZZ     R(length)     R(au)
+         1        -0.0471      0.3281     -0.1180      0.0543      0.0001
+         2         0.3808     -0.2479      0.0351      0.0560      0.0001
+         3        -0.0433     -1.1522     -0.1246     -0.4400     -0.0009
+         4        -0.9747      1.8168      0.2294      0.3572      0.0008
+         5        -0.3209     -0.7084      0.0846     -0.3149     -0.0007
+         6        -0.9686     -0.1294      0.3689     -0.2430     -0.0005
+         7         0.3893     -0.0111      0.4297      0.2693      0.0006
+         8        -0.0432      0.1566     -0.9816     -0.2894     -0.0006
+         9        -0.0134      0.0825      0.0569      0.0420      0.0001
+        10         0.0885     -0.0041     -0.0112      0.0244      0.0001
+        11         0.0322     -0.0552     -0.0062     -0.0097      0.0000
+        12         0.0256      0.0027      0.2231      0.0838      0.0002
+        13        -0.2145      0.1269     -0.2932     -0.1269     -0.0003
+        14         0.0645      0.0973      0.1513      0.1044      0.0002
+        15         0.3094     -0.0032     -0.1607      0.0485      0.0001
+        16         3.0790      0.1749     -0.0079      1.0820      0.0023
+        17         0.4824    -62.3570      0.1490    -20.5752     -0.0436
+        18        -0.5685     60.5185     -0.0286     19.9738      0.0424
+        19         0.0005      0.5352      0.0594      0.1984      0.0004
+        20         0.2019      0.5287     -0.1433      0.1958      0.0004
+  1/2[<0|del|b>*<b|r|0> + (<0|r|b>*<b|del|0>)*] (Au)
+       state          X           Y           Z        Dip. S.   Osc.(frdel)
+         1         0.0000      0.0000     -0.0017      0.0017      0.0011
+         2        -0.0061     -0.0074      0.0000      0.0135      0.0090
+         3         0.0000      0.0000     -0.0055      0.0055      0.0037
+         4        -0.1915     -0.0755      0.0000      0.2670      0.1780
+         5        -0.1633     -0.1368      0.0000      0.3001      0.2001
+         6        -0.3548     -0.0053      0.0000      0.3601      0.2401
+         7         0.0000      0.0000     -0.0078      0.0078      0.0052
+         8         0.0000      0.0000     -0.0791      0.0791      0.0527
+         9         0.0000      0.0000     -0.0071      0.0071      0.0047
+        10        -0.0043      0.0000      0.0000      0.0043      0.0029
+        11        -0.0011     -0.0051      0.0000      0.0061      0.0041
+        12        -0.0012      0.0000      0.0000      0.0012      0.0008
+        13         0.0000      0.0000     -0.0095      0.0095      0.0063
+        14         0.0000      0.0000     -0.0094      0.0094      0.0062
+        15        -0.0129     -0.0036      0.0000      0.0165      0.0110
+        16         0.0000      0.0000      0.0000      0.0000      0.0000
+        17        -0.0001     -0.0231     -0.0017      0.0248      0.0165
+        18        -0.0001     -0.0343     -0.0012      0.0357      0.0238
+        19         0.0000      0.0000     -0.0112      0.0112      0.0075
+        20        -0.1100     -0.0065      0.0000      0.1164      0.0776
+ Ground to excited state transition densities written to RWF  633
+
+ Excitation energies and oscillator strengths:
+ 
+ Excited state symmetry could not be determined.
+ Excited State   1:      Singlet-?Sym    5.6540 eV  219.29 nm  f=0.0009  <S**2>=0.000
+      12 -> 16         0.66570
+      12 -> 17        -0.21720
+ 
+ Excited state symmetry could not be determined.
+ Excited State   2:      Singlet-?Sym    6.6950 eV  185.19 nm  f=0.0088  <S**2>=0.000
+      11 -> 16        -0.10706
+      12 -> 13         0.59472
+      12 -> 14        -0.15214
+      12 -> 15         0.25675
+      12 -> 18         0.13443
+      12 -> 20        -0.12396
+ This state for optimization and/or second-order correction.
+ Copying the excited state density for this state as the 1-particle RhoCI density.
+ 
+ Excited state symmetry could not be determined.
+ Excited State   3:      Singlet-?Sym    7.1075 eV  174.44 nm  f=0.0039  <S**2>=0.000
+      11 -> 13        -0.66759
+      11 -> 19         0.13580
+      11 -> 20         0.13104
+ 
+ Excited state symmetry could not be determined.
+ Excited State   4:      Singlet-?Sym    7.2416 eV  171.21 nm  f=0.1819  <S**2>=0.000
+      11 -> 16        -0.35113
+      11 -> 17         0.16561
+      12 -> 14         0.53524
+      12 -> 19        -0.18734
+ 
+ Excited state symmetry could not be determined.
+ Excited State   5:      Singlet-?Sym    7.5043 eV  165.22 nm  f=0.2031  <S**2>=0.000
+      11 -> 16         0.38050
+      11 -> 17        -0.20489
+      12 -> 14         0.28236
+      12 -> 15         0.40667
+      12 -> 18         0.21540
+ 
+ Excited state symmetry could not be determined.
+ Excited State   6:      Singlet-?Sym    7.7583 eV  159.81 nm  f=0.2432  <S**2>=0.000
+      11 -> 16        -0.29512
+      11 -> 17         0.19650
+      12 -> 13        -0.33497
+      12 -> 14        -0.23227
+      12 -> 15         0.39710
+      12 -> 18         0.18209
+ 
+ Excited state symmetry could not be determined.
+ Excited State   7:      Singlet-?Sym    7.8002 eV  158.95 nm  f=0.0052  <S**2>=0.000
+      11 -> 14        -0.65831
+      11 -> 20        -0.10065
+      11 -> 21         0.15514
+ 
+ Excited state symmetry could not be determined.
+ Excited State   8:      Singlet-?Sym    8.0619 eV  153.79 nm  f=0.0541  <S**2>=0.000
+      11 -> 15        -0.64172
+      11 -> 18        -0.18416
+      11 -> 23         0.10746
+      12 -> 17        -0.11264
+ 
+ Excited state symmetry could not be determined.
+ Excited State   9:      Singlet-?Sym    8.1042 eV  152.99 nm  f=0.0045  <S**2>=0.000
+      11 -> 15        -0.11393
+      12 -> 16         0.20977
+      12 -> 17         0.65338
+ 
+ Excited state symmetry could not be determined.
+ Excited State  10:      Singlet-?Sym    8.6927 eV  142.63 nm  f=0.0036  <S**2>=0.000
+      11 -> 16        -0.31166
+      11 -> 17        -0.61443
+      12 -> 19        -0.10511
+ 
+ Excited state symmetry could not be determined.
+ Excited State  11:      Singlet-?Sym    8.7552 eV  141.61 nm  f=0.0042  <S**2>=0.000
+      12 -> 15         0.30129
+      12 -> 18        -0.61003
+      12 -> 19         0.11763
+ 
+ Excited state symmetry could not be determined.
+ Excited State  12:      Singlet-?Sym    9.1023 eV  136.21 nm  f=0.0004  <S**2>=0.000
+      11 -> 16        -0.13203
+      12 -> 14         0.14369
+      12 -> 19         0.63488
+      12 -> 21        -0.10062
+      12 -> 23         0.11450
+ 
+ Excited state symmetry could not be determined.
+ Excited State  13:      Singlet-?Sym    9.1732 eV  135.16 nm  f=0.0067  <S**2>=0.000
+      11 -> 15        -0.16466
+      11 -> 18         0.64590
+      11 -> 24        -0.11671
+ 
+ Excited state symmetry could not be determined.
+ Excited State  14:      Singlet-?Sym    9.4201 eV  131.62 nm  f=0.0062  <S**2>=0.000
+      11 -> 13        -0.11269
+      11 -> 19        -0.66212
+      11 -> 21         0.10142
+ 
+ Excited state symmetry could not be determined.
+ Excited State  15:      Singlet-?Sym    9.7097 eV  127.69 nm  f=0.0115  <S**2>=0.000
+      12 -> 13         0.11529
+      12 -> 14        -0.13433
+      12 -> 20         0.60128
+      12 -> 21        -0.11416
+      12 -> 23         0.25667
+ 
+ Excited state symmetry could not be determined.
+ Excited State  16:      Singlet-?Sym    9.8776 eV  125.52 nm  f=0.0000  <S**2>=0.000
+      10 -> 16         0.65884
+      10 -> 17        -0.21503
+ 
+ Excited state symmetry could not be determined.
+ Excited State  17:      Singlet-?Sym   10.2665 eV  120.77 nm  f=0.0161  <S**2>=0.000
+      11 -> 13        -0.11794
+      11 -> 20        -0.50372
+      12 -> 21         0.30471
+      12 -> 23         0.25300
+      12 -> 24         0.11353
+ 
+ Excited state symmetry could not be determined.
+ Excited State  18:      Singlet-?Sym   10.2671 eV  120.76 nm  f=0.0232  <S**2>=0.000
+      11 -> 20         0.41169
+      12 -> 21         0.37214
+      12 -> 23         0.31097
+      12 -> 24         0.13933
+      12 -> 27        -0.10892
+ 
+ Excited state symmetry could not be determined.
+ Excited State  19:      Singlet-?Sym   10.2816 eV  120.59 nm  f=0.0077  <S**2>=0.000
+      12 -> 22         0.67715
+      12 -> 26         0.16403
+ 
+ Excited state symmetry could not be determined.
+ Excited State  20:      Singlet-?Sym   10.4009 eV  119.21 nm  f=0.0783  <S**2>=0.000
+      12 -> 19        -0.12137
+      12 -> 20        -0.25921
+      12 -> 21        -0.43200
+      12 -> 23         0.31958
+      12 -> 24         0.30886
+ SavETr:  write IOETrn=   770 NScale= 10 NData=  16 NLR=1 LETran=     370.
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+          IDoAtm=111111
+ NEqPCM:  Using equilibrium solvation (IEInf=0, Eps=  78.3553, EpsInf=   1.7778)
+          Differentiating once with respect to electric field.
+                with respect to dipole field.
+          Differentiating once with respect to nuclear coordinates.
+          There are     1 degrees of freedom in the 1st order CPHF.  IDoFFX=0.
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ LinEq1:  Iter=  0 NonCon=     1 RMS=4.43D-02 Max=7.86D-01
+ AX will form     1 AO Fock derivatives at one time.
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ LinEq1:  Iter=  1 NonCon=     1 RMS=1.56D-02 Max=1.24D-01
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ LinEq1:  Iter=  2 NonCon=     1 RMS=8.25D-03 Max=1.34D-01
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ LinEq1:  Iter=  3 NonCon=     1 RMS=2.13D-03 Max=2.29D-02
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ LinEq1:  Iter=  4 NonCon=     1 RMS=1.29D-03 Max=1.50D-02
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ LinEq1:  Iter=  5 NonCon=     1 RMS=2.39D-04 Max=1.39D-03
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ LinEq1:  Iter=  6 NonCon=     1 RMS=4.98D-05 Max=3.37D-04
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ LinEq1:  Iter=  7 NonCon=     1 RMS=9.46D-06 Max=8.48D-05
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ LinEq1:  Iter=  8 NonCon=     1 RMS=1.38D-06 Max=1.13D-05
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ LinEq1:  Iter=  9 NonCon=     1 RMS=1.82D-07 Max=1.33D-06
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ LinEq1:  Iter= 10 NonCon=     1 RMS=3.21D-08 Max=1.92D-07
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ LinEq1:  Iter= 11 NonCon=     1 RMS=7.29D-09 Max=8.21D-08
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ LinEq1:  Iter= 12 NonCon=     1 RMS=1.48D-09 Max=2.48D-08
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ LinEq1:  Iter= 13 NonCon=     1 RMS=3.03D-10 Max=4.97D-09
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ LinEq1:  Iter= 14 NonCon=     0 RMS=5.59D-11 Max=4.83D-10
+ Linear equations converged to 1.000D-10 1.000D-09 after    14 iterations.
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ End of Minotr Frequency-dependent properties file   721 does not exist.
+ End of Minotr Frequency-dependent properties file   722 does not exist.
+ D1PCM: PCM CHGder 1st derivatives, ID1Alg=3 FixD1E=F DoIter=F DoCFld=F I1PDM=6.
+ Calling FoFJK, ICntrl=      5127 FMM=F ISym2X=0 I1Cent= 0 IOpClX= 0 NMat=1 NMatS=1 NMatT=0.
+ FoFJK:  IHMeth= 1 ICntrl=  5127 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ -------------------------------------------------------------------
+ Center     Atomic                   Forces (Hartrees/Bohr)
+ Number     Number              X              Y              Z
+ -------------------------------------------------------------------
+      1        6          -0.000234868    0.000199293    0.000713005
+      2        7           0.000131691   -0.000036184   -0.000200119
+      3        8           0.000177708    0.000042154   -0.000269966
+      4        1          -0.000121171   -0.000058897    0.000019691
+      5        1          -0.000044097   -0.000024089   -0.000057684
+      6        1           0.000090738   -0.000122277   -0.000204928
+ -------------------------------------------------------------------
+ Cartesian Forces:  Max     0.000713005 RMS     0.000218297
+
+ GradGradGradGradGradGradGradGradGradGradGradGradGradGradGradGradGradGrad
+ Berny optimization.
+ Using GEDIIS/GDIIS optimizer.
+ Internal  Forces:  Max     0.000265701 RMS     0.000137033
+ Search for a local minimum.
+ Step number   6 out of a maximum of   25
+ All quantities printed in internal units (Hartrees-Bohrs-Radians)
+ Mixed Optimization -- En-DIIS/RFO-DIIS
+ Swaping is turned off.
+ Update second derivatives using D2CorX and points    1    2    3    4    5
+                                                      6
+ DE= -1.79D-06 DEPred=-4.11D-06 R= 4.35D-01
+ Trust test= 4.35D-01 RLast= 1.16D-02 DXMaxT set to 3.89D-01
+ The second derivative matrix:
+                          R1        R2        R3        R4        R5
+           R1           0.61471
+           R2           0.09227   0.63898
+           R3           0.00565   0.04776   0.32661
+           R4           0.00352  -0.00585   0.00096   0.45982
+           R5           0.00980   0.00254  -0.00440   0.00613   0.47124
+           A1           0.02749   0.07999  -0.03595   0.00912  -0.00827
+           A2           0.01668  -0.05857   0.00089   0.00058   0.00050
+           A3          -0.04226   0.00343   0.01095  -0.00346   0.00627
+           A4           0.01198   0.01821  -0.00529   0.00240  -0.00040
+           A5           0.00549  -0.00719   0.00456  -0.00234  -0.00340
+           A6          -0.01747  -0.01102   0.00073  -0.00006   0.00379
+           D1           0.00288  -0.00462   0.00276  -0.00051   0.00128
+           D2           0.00323  -0.00531   0.00317  -0.00059   0.00146
+           D3          -0.00247   0.00402  -0.00240   0.00044  -0.00111
+           D4          -0.00212   0.00334  -0.00199   0.00036  -0.00094
+                          A1        A2        A3        A4        A5
+           A1           0.14854
+           A2           0.00858   0.14982
+           A3           0.04405   0.00699   0.13575
+           A4          -0.02115   0.00015   0.00833   0.15666
+           A5           0.00579  -0.00204  -0.00382   0.00151   0.16150
+           A6           0.01536   0.00190  -0.00452   0.00183  -0.00300
+           D1           0.00760  -0.00130  -0.00612   0.00269  -0.00044
+           D2           0.00868  -0.00149  -0.00697   0.00307  -0.00050
+           D3          -0.00660   0.00113   0.00531  -0.00234   0.00038
+           D4          -0.00552   0.00093   0.00446  -0.00196   0.00032
+                          A6        D1        D2        D3        D4
+           A6           0.16117
+           D1          -0.00225   0.03163
+           D2          -0.00257   0.00804   0.03367
+           D3           0.00195  -0.00613  -0.00695   0.02985
+           D4           0.00163  -0.00517  -0.00587   0.00447   0.02833
+     Eigenvalues ---    0.02455   0.02455   0.03686   0.08383   0.13362
+     Eigenvalues ---    0.16358   0.16666   0.32860   0.45751   0.47319
+     Eigenvalues ---    0.54937   0.736981000.000001000.000001000.00000
+ En-DIIS/RFO-DIIS IScMMF=        0 using points:     6    5    4
+ RFO step:  Lambda=-1.00910500D-06.
+ DIIS coeffs:      0.49230      0.95697     -0.44927
+ Iteration  1 RMS(Cart)=  0.00118754 RMS(Int)=  0.00000270
+ Iteration  2 RMS(Cart)=  0.00000254 RMS(Int)=  0.00000045
+ Iteration  3 RMS(Cart)=  0.00000000 RMS(Int)=  0.00000045
+ Variable       Old X    -DE/DX   Delta X   Delta X   Delta X     New X
+                                  (DIIS)     (GDIIS)  (Total)
+    R1        2.44605   0.00002  -0.00012   0.00036   0.00024   2.44629
+    R2        2.37119  -0.00016   0.00079  -0.00088  -0.00008   2.37111
+    R3        2.08727  -0.00015  -0.00017  -0.00040  -0.00058   2.08670
+    R4        1.91365   0.00002   0.00006   0.00002   0.00008   1.91373
+    R5        1.93138  -0.00003   0.00003  -0.00013  -0.00010   1.93128
+    A1        2.25247  -0.00011  -0.00094  -0.00023  -0.00117   2.25130
+    A2        2.07589   0.00002   0.00095  -0.00092   0.00003   2.07593
+    A3        1.95480   0.00010   0.00000   0.00115   0.00115   1.95596
+    A4        2.13217  -0.00008  -0.00018  -0.00044  -0.00062   2.13155
+    A5        2.06910  -0.00001   0.00009  -0.00005   0.00004   2.06914
+    A6        2.08191   0.00009   0.00009   0.00049   0.00059   2.08250
+    D1        0.00329  -0.00023  -0.00281  -0.00056  -0.00336  -0.00008
+    D2       -3.13788  -0.00027  -0.00317  -0.00065  -0.00382   3.14148
+    D3        3.13876   0.00020   0.00242   0.00049   0.00291  -3.14152
+    D4       -0.00241   0.00017   0.00206   0.00039   0.00245   0.00004
+         Item               Value     Threshold  Converged?
+ Maximum Force            0.000266     0.000450     YES
+ RMS     Force            0.000137     0.000300     YES
+ Maximum Displacement     0.003221     0.001800     NO 
+ RMS     Displacement     0.001188     0.001200     YES
+ Predicted change in Energy=-1.837467D-06
+ GradGradGradGradGradGradGradGradGradGradGradGradGradGradGradGradGradGrad
+
+                          Input orientation:                          
+ ---------------------------------------------------------------------
+ Center     Atomic      Atomic             Coordinates (Angstroms)
+ Number     Number       Type             X           Y           Z
+ ---------------------------------------------------------------------
+      1          6           0       -0.097951    0.368142    0.000041
+      2          7           0        1.076595   -0.176128    0.000095
+      3          8           0       -1.224283   -0.184796   -0.000109
+      4          1           0        1.204683   -1.180697    0.000083
+      5          1           0        1.897229    0.432988    0.000123
+      6          1           0       -0.176503    1.469577   -0.000016
+ ---------------------------------------------------------------------
+                    Distance matrix (angstroms):
+                    1          2          3          4          5
+     1  C    0.000000
+     2  N    1.294522   0.000000
+     3  O    1.254737   2.300894   0.000000
+     4  H    2.023798   1.012702   2.625203   0.000000
+     5  H    1.996233   1.021989   3.182058   1.756018   0.000000
+     6  H    1.104232   2.068477   1.958262   2.988582   2.318379
+                    6
+     6  H    0.000000
+ Symmetry turned off by external request.
+ Stoichiometry    CH3NO
+ Framework group  C1[X(CH3NO)]
+ Deg. of freedom    12
+ Full point group                 C1      NOp   1
+ Rotational constants (GHZ):     79.3062144     11.1615354      9.7844715
+ Standard basis: Aug-CC-pVDZ (5D, 7F)
+ Integral buffers will be    131072 words long.
+ Raffenetti 2 integral format.
+ Two-electron integral symmetry is turned off.
+    96 basis functions,   162 primitive gaussians,   102 cartesian basis functions
+    12 alpha electrons       12 beta electrons
+       nuclear repulsion energy        71.2112117612 Hartrees.
+ NAtoms=    6 NActive=    6 NUniq=    6 SFac= 7.50D-01 NAtFMM=   80 NAOKFM=F Big=F
+ Standard density basis: Auto (5D, 7F)
+   327 Density fitting functions
+ ------------------------------------------------------------------------------
+ Polarizable Continuum Model (PCM)
+ =================================
+ Model                : PCM.
+ Atomic radii         : UFF (Universal Force Field).
+ Polarization charges : Total charges.
+ Charge compensation  : None.
+ Solution method      : Matrix inversion.
+ Cavity type          : Scaled VdW (van der Waals Surface) (Alpha=1.100).
+ Cavity algorithm     : GePol (No added spheres)
+                        Default sphere list used, NSphG=    6.
+                        Lebedev-Laikov grids with approx.  5.0 points / Ang**2.
+                        Smoothing algorithm: Karplus/York (Gamma=1.0000).
+                        Polarization charges: spherical gaussians, with
+                                              point-specific exponents (IZeta= 3).
+                        Self-potential: point-specific (ISelfS= 7).
+                        Self-field    : sphere-specific E.n sum rule (ISelfD= 2).
+ 1st derivatives      : Analytical E(r).r(x)/FMM algorithm (CHGder, D1EAlg=3).
+                        Cavity 1st derivative terms included.
+ Solvent              : Water, Eps=  78.355300 Eps(inf)=   1.777849
+ ------------------------------------------------------------------------------
+ Spheres list:
+ ISph  on   Nord    Re0     Alpha      Xe            Ye            Ze
+    1   C      1    1.925   1.100     -0.097951      0.368142      0.000041
+    2   N      2    1.830   1.100      1.076595     -0.176128      0.000095
+    3   O      3    1.750   1.100     -1.224283     -0.184796     -0.000109
+    4   H      4    1.443   1.100      1.204683     -1.180697      0.000083
+    5   H      5    1.443   1.100      1.897229      0.432988      0.000123
+    6   H      6    1.443   1.100     -0.176503      1.469577     -0.000016
+ ------------------------------------------------------------------------------
+ One-electron integrals computed using PRISM.
+ NBasis=    96 RedAO= T  NBF=    96
+ NBsUse=    96 1.00D-06 NBFU=    96
+ Initial guess read from the read-write file.
+ B after Tr=     0.000000    0.000000    0.000000
+         Rot=    1.000000    0.000000    0.000000    0.000000 Ang=   0.00 deg.
+ Requested convergence on RMS density matrix=1.00D-08 within 128 cycles.
+ Requested convergence on MAX density matrix=1.00D-06.
+ Requested convergence on             energy=1.00D-06.
+ No special actions if energy rises.
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ Error on total polarization charges =  0.01081
+ SCF Done:  E(RCAM-B3LYP) =  -169.858230585     A.U. after    9 cycles
+             Convg  =    0.2772D-08             -V/T =  2.0063
+ ExpMin= 2.97D-02 ExpMax= 1.17D+04 ExpMxC= 4.01D+02 IAcc=3 IRadAn=         5 AccDes= 0.00D+00
+ HarFok:  IExCor=  205 AccDes= 0.00D+00 IRadAn=         5 IDoV=-2
+ ScaDFX=  1.000000  1.000000  1.000000  1.000000
+ Range of M.O.s used for correlation:     4    96
+ NBasis=    96 NAE=    12 NBE=    12 NFC=     3 NFV=     0
+ NROrb=     93 NOA=     9 NOB=     9 NVA=    84 NVB=    84
+
+ **** Warning!!: The largest alpha MO coefficient is  0.18790510D+02
+
+ NEqPCM:  Using equilibrium solvation (IEInf=0, Eps=  78.3553, EpsInf=   1.7778)
+ Generating guess from densities on rwf.
+ Convergence on wavefunction:    0.000001000000000
+ Iteration     1 Dimension    40 NMult    40
+ CISAX will form    40 AO SS matrices at one time.
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ Iteration     2 Dimension    80 NMult    80
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ Iteration     3 Dimension   120 NMult   120
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ Iteration     4 Dimension   160 NMult   160
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ Iteration     5 Dimension   200 NMult   200
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ Iteration     6 Dimension   222 NMult   222
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ Iteration     7 Dimension   232 NMult   232
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ Iteration     8 Dimension   236 NMult   236
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ ***********************************************************************
+ Excited states from <AA,BB:AA,BB> singles matrix:
+ ***********************************************************************
+ 
+ Ground to excited state transition electric dipole moments (Au):
+       state          X           Y           Z        Dip. S.      Osc.
+         1         0.0000      0.0000      0.0801      0.0064      0.0009
+         2        -0.1560      0.1715      0.0000      0.0537      0.0088
+         3        -0.0003     -0.0001      0.1488      0.0222      0.0039
+         4         0.8641      0.5338      0.0001      1.0316      0.1830
+         5        -0.7760      0.7113     -0.0001      1.1081      0.2037
+         6         1.1168      0.1415      0.0001      1.2672      0.2409
+         7         0.0002      0.0000      0.1643      0.0270      0.0052
+         8         0.0002      0.0000     -0.5215      0.2720      0.0537
+         9         0.0000      0.0000      0.1555      0.0242      0.0048
+        10        -0.1298     -0.0161      0.0000      0.0171      0.0036
+        11         0.0587     -0.1272      0.0000      0.0196      0.0042
+        12         0.0428     -0.0078      0.0000      0.0019      0.0004
+        13        -0.0001      0.0000      0.1724      0.0297      0.0067
+        14         0.0000      0.0000     -0.1641      0.0269      0.0062
+        15         0.1924      0.1049      0.0000      0.0480      0.0114
+        16        -0.0001      0.0000      0.0067      0.0000      0.0000
+        17         0.0001      0.0015     -0.0819      0.0067      0.0017
+        18        -0.0292     -0.3859     -0.0004      0.1497      0.0377
+        19         0.0000     -0.0002      0.1753      0.0307      0.0077
+        20        -0.5387      0.1326      0.0000      0.3078      0.0784
+ Ground to excited state transition velocity dipole moments (Au):
+       state          X           Y           Z        Dip. S.      Osc.
+         1         0.0000      0.0000     -0.0205      0.0004      0.0013
+         2         0.0389     -0.0437      0.0000      0.0034      0.0093
+         3         0.0001      0.0000     -0.0371      0.0014      0.0035
+         4        -0.2251     -0.1391      0.0000      0.0700      0.1753
+         5         0.2107     -0.1933      0.0000      0.0818      0.1976
+         6        -0.3144     -0.0392      0.0000      0.1004      0.2347
+         7        -0.0001      0.0000     -0.0471      0.0022      0.0052
+         8         0.0000      0.0000      0.1505      0.0227      0.0510
+         9         0.0000      0.0000     -0.0487      0.0024      0.0053
+        10         0.0331      0.0023      0.0000      0.0011      0.0023
+        11        -0.0184      0.0397      0.0000      0.0019      0.0040
+        12        -0.0264      0.0039      0.0000      0.0007      0.0014
+        13         0.0000      0.0000     -0.0550      0.0030      0.0060
+        14         0.0000      0.0000      0.0569      0.0032      0.0062
+        15        -0.0668     -0.0335      0.0000      0.0056      0.0104
+        16         0.0000      0.0000     -0.0005      0.0000      0.0000
+        17         0.0000     -0.0006      0.0354      0.0013      0.0022
+        18         0.0078      0.1488      0.0002      0.0222      0.0392
+        19         0.0000      0.0001     -0.0643      0.0041      0.0073
+        20         0.2045     -0.0495      0.0000      0.0443      0.0772
+ Ground to excited state transition magnetic dipole moments (Au):
+       state          X           Y           Z
+         1        -0.9958     -0.2463     -0.0001
+         2        -0.0001     -0.0001      0.4871
+         3         0.0049      0.5832      0.0000
+         4        -0.0001      0.0001      0.1392
+         5         0.0000      0.0000     -0.1265
+         6        -0.0001      0.0000      0.5841
+         7         0.0620     -0.0099      0.0001
+         8        -0.0133      0.2702      0.0001
+         9        -0.0527      0.1315      0.0000
+        10         0.0000      0.0000      0.0833
+        11         0.0000      0.0000      0.0261
+        12         0.0000      0.0000      0.2231
+        13         0.0899     -0.2957     -0.0001
+        14        -0.1081     -0.4744      0.0000
+        15         0.0001      0.0000     -0.4015
+        16        -0.9203      0.9854     -0.0001
+        17         0.0574     -0.4621     -0.0001
+        18         0.0002     -0.0016      0.0024
+        19        -0.0112     -0.1194      0.0000
+        20         0.0000      0.0002     -0.2041
+ <0|del|b> * <b|rxdel|0> + <0|del|b> * <b|delr+rdel|0>
+ Rotatory Strengths (R) in cgs (10**-40 erg-esu-cm/Gauss)
+       state          XX          YY          ZZ    R(velocity)
+         1         0.0004      0.0018     -0.0063     -0.0013
+ Total R(velocity) tensor for State=          1
+                 1             2             3 
+      1   0.447556D-03  0.867788D-03  0.000000D+00
+      2   0.200282D-01  0.184219D-02  0.229334D-05
+      3  -0.295068D+02 -0.854475D+01 -0.632521D-02
+         2         0.0055     -0.0065     -0.0037     -0.0016
+ Total R(velocity) tensor for State=          2
+                 1             2             3 
+      1   0.548641D-02  0.385518D-02 -0.265097D+02
+      2  -0.689850D-02 -0.650808D-02 -0.941704D+01
+      3   0.646434D+01  0.575569D+01 -0.372950D-02
+         3         0.0275      0.0047      0.0003      0.0108
+ Total R(velocity) tensor for State=          3
+                 1             2             3 
+      1   0.275002D-01 -0.124071D+00  0.366798D-05
+      2  -0.369444D-02  0.466817D-02 -0.632794D-05
+      3  -0.112222D+01  0.591656D+01  0.265350D-03
+         4        -0.0534      0.0132      0.0127     -0.0092
+ Total R(velocity) tensor for State=          4
+                 1             2             3 
+      1  -0.534420D-01  0.829446D-01  0.144465D+02
+      2  -0.499654D-02  0.131749D-01 -0.208361D+02
+      3   0.362920D+01 -0.587236D+01  0.126648D-01
+         5         0.0111      0.0048      0.0128      0.0096
+ Total R(velocity) tensor for State=          5
+                 1             2             3 
+      1   0.111401D-01  0.223767D-01  0.846038D+02
+      2   0.665994D-03  0.478896D-02  0.335948D+02
+      3   0.133273D+02  0.145292D+02  0.128254D-01
+         6        -0.0328      0.0143      0.0356      0.0057
+ Total R(velocity) tensor for State=          6
+                 1             2             3 
+      1  -0.327632D-01 -0.189364D-01  0.346251D+03
+      2   0.157833D-02  0.142664D-01 -0.330924D+02
+      3  -0.335087D+01  0.268776D+02  0.356239D-01
+         7        -0.0069     -0.0097     -0.0006     -0.0057
+ Total R(velocity) tensor for State=          7
+                 1             2             3 
+      1  -0.686704D-02 -0.435160D-02  0.868663D-05
+      2   0.354264D-02 -0.966912D-02 -0.113208D-05
+      3   0.263530D+00  0.113702D+01 -0.606049D-03
+         8         0.0169      0.0053     -0.0002      0.0073
+ Total R(velocity) tensor for State=          8
+                 1             2             3 
+      1   0.168510D-01  0.118338D-01  0.614422D-05
+      2  -0.821399D-03  0.531016D-02  0.000000D+00
+      3   0.338842D+01 -0.263068D+02 -0.236870D-03
+         9        -0.0030     -0.0005     -0.0002     -0.0012
+ Total R(velocity) tensor for State=          9
+                 1             2             3 
+      1  -0.300505D-02  0.136281D-02  0.000000D+00
+      2   0.301281D-03 -0.475290D-03  0.000000D+00
+      3  -0.340358D+01  0.146898D+01 -0.161810D-03
+        10         0.0013     -0.0013     -0.0014     -0.0005
+ Total R(velocity) tensor for State=         10
+                 1             2             3 
+      1   0.129161D-02  0.289401D-03 -0.770266D+01
+      2   0.330890D-03 -0.132723D-02 -0.139366D+01
+      3  -0.873810D-01  0.124027D+01 -0.139247D-02
+        11         0.0015      0.0004     -0.0009      0.0003
+ Total R(velocity) tensor for State=         11
+                 1             2             3 
+      1   0.147666D-02  0.119476D-02 -0.116360D+02
+      2   0.354144D-03  0.360367D-03 -0.447482D+01
+      3   0.985802D+00  0.457068D+00 -0.947545D-03
+        12        -0.0040     -0.0038      0.0007     -0.0023
+ Total R(velocity) tensor for State=         12
+                 1             2             3 
+      1  -0.395702D-02 -0.103282D-02  0.677532D+01
+      2   0.223089D-02 -0.381993D-02 -0.499256D+01
+      3   0.714479D+00  0.477854D+01  0.734903D-03
+        13         0.0032      0.0084     -0.0017      0.0033
+ Total R(velocity) tensor for State=         13
+                 1             2             3 
+      1   0.317091D-02  0.170279D-01  0.363847D-05
+      2  -0.337195D-02  0.835061D-02 -0.130305D-05
+      3  -0.287043D+01  0.743342D+00 -0.172659D-02
+        14        -0.0065      0.0000     -0.0020     -0.0028
+ Total R(velocity) tensor for State=         14
+                 1             2             3 
+      1  -0.649485D-02 -0.108570D-03  0.000000D+00
+      2  -0.324244D-03  0.350943D-04  0.000000D+00
+      3   0.130072D+02  0.257866D+02 -0.195573D-02
+        15         0.0034     -0.0034     -0.0044     -0.0014
+ Total R(velocity) tensor for State=         15
+                 1             2             3 
+      1   0.344454D-02  0.127257D-02 -0.268808D+02
+      2   0.275168D-02 -0.342708D-02 -0.679509D+01
+      3  -0.151528D+01  0.301999D+01 -0.436694D-02
+        16        -0.0007     -0.0555     -0.0300     -0.0287
+ Total R(velocity) tensor for State=         16
+                 1             2             3 
+      1  -0.678694D-03 -0.535003D-01  0.513634D-05
+      2  -0.753418D-03 -0.554858D-01  0.000000D+00
+      3  -0.288283D+00  0.366918D+00 -0.299793D-01
+        17         0.4001      0.0215      0.0678      0.1631
+ Total R(velocity) tensor for State=         17
+                 1             2             3 
+      1   0.400092D+00 -0.278052D-01 -0.358299D-03
+      2  -0.158785D+00  0.214945D-01  0.311089D-03
+      3  -0.822636D+01  0.431533D+01  0.678160D-01
+        18        -0.3674     -0.0293     -0.0420     -0.1462
+ Total R(velocity) tensor for State=         18
+                 1             2             3 
+      1  -0.367432D+00  0.467762D-01 -0.266030D+02
+      2   0.159880D+00 -0.293290D-01  0.202648D+02
+      3   0.298844D+02 -0.156943D+01 -0.419558D-01
+        19        -0.0084      0.0038     -0.0103     -0.0050
+ Total R(velocity) tensor for State=         19
+                 1             2             3 
+      1  -0.844332D-02 -0.561773D-02 -0.645106D-05
+      2  -0.140126D-01  0.376704D-02  0.166733D-05
+      3   0.541533D+01 -0.116327D+02 -0.102641D-01
+        20        -0.0125      0.0010     -0.0089     -0.0068
+ Total R(velocity) tensor for State=         20
+                 1             2             3 
+      1  -0.125098D-01 -0.432375D-01  0.493943D+02
+      2   0.194767D-02  0.996014D-03 -0.413397D+02
+      3  -0.914232D+01 -0.377514D+02 -0.887493D-02
+ 1/2[<0|r|b>*<b|rxdel|0> + (<0|rxdel|b>*<b|r|0>)*]
+ Rotatory Strengths (R) in cgs (10**-40 erg-esu-cm/Gauss)
+       state          XX          YY          ZZ     R(length)     R(au)
+         1        -0.0044     -0.0084      0.0076     -0.0017      0.0000
+         2        -0.0142      0.0071      0.0029     -0.0014      0.0000
+         3         0.0012      0.0297      0.0029      0.0112      0.0000
+         4         0.0331     -0.0485     -0.0131     -0.0095      0.0000
+         5         0.0169      0.0200     -0.0076      0.0098      0.0000
+         6         0.0603      0.0039     -0.0479      0.0054      0.0000
+         7        -0.0080      0.0003     -0.0096     -0.0058      0.0000
+         8         0.0016     -0.0051      0.0260      0.0075      0.0000
+         9         0.0001     -0.0024     -0.0016     -0.0013      0.0000
+        10        -0.0032      0.0001      0.0012     -0.0006      0.0000
+        11        -0.0008      0.0016      0.0001      0.0003      0.0000
+        12         0.0000      0.0000     -0.0064     -0.0021      0.0000
+        13         0.0065     -0.0035      0.0070      0.0033      0.0000
+        14        -0.0003     -0.0030     -0.0046     -0.0026      0.0000
+        15        -0.0131      0.0003      0.0086     -0.0014      0.0000
+        16        -0.0836     -0.0016      0.0005     -0.0282     -0.0001
+        17        -0.0021      0.4843     -0.0038      0.1594      0.0003
+        18         0.0041     -0.4328      0.0006     -0.1427     -0.0003
+        19        -0.0002     -0.0134     -0.0012     -0.0049      0.0000
+        20        -0.0016     -0.0160     -0.0025     -0.0067      0.0000
+  1/2[<0|del|b>*<b|r|0> + (<0|r|b>*<b|del|0>)*] (Au)
+       state          X           Y           Z        Dip. S.   Osc.(frdel)
+         1         0.0000      0.0000     -0.0016      0.0016      0.0011
+         2        -0.0061     -0.0075      0.0000      0.0136      0.0090
+         3         0.0000      0.0000     -0.0055      0.0055      0.0037
+         4        -0.1945     -0.0742      0.0000      0.2687      0.1791
+         5        -0.1635     -0.1375      0.0000      0.3010      0.2007
+         6        -0.3511     -0.0055      0.0000      0.3567      0.2378
+         7         0.0000      0.0000     -0.0077      0.0077      0.0052
+         8         0.0000      0.0000     -0.0785      0.0785      0.0523
+         9         0.0000      0.0000     -0.0076      0.0076      0.0050
+        10        -0.0043      0.0000      0.0000      0.0043      0.0029
+        11        -0.0011     -0.0050      0.0000      0.0061      0.0041
+        12        -0.0011      0.0000      0.0000      0.0012      0.0008
+        13         0.0000      0.0000     -0.0095      0.0095      0.0063
+        14         0.0000      0.0000     -0.0093      0.0093      0.0062
+        15        -0.0128     -0.0035      0.0000      0.0164      0.0109
+        16         0.0000      0.0000      0.0000      0.0000      0.0000
+        17         0.0000      0.0000     -0.0029      0.0029      0.0019
+        18        -0.0002     -0.0574      0.0000      0.0577      0.0384
+        19         0.0000      0.0000     -0.0113      0.0113      0.0075
+        20        -0.1102     -0.0066      0.0000      0.1167      0.0778
+ Ground to excited state transition densities written to RWF  633
+
+ Excitation energies and oscillator strengths:
+ 
+ Excited state symmetry could not be determined.
+ Excited State   1:      Singlet-?Sym    5.6543 eV  219.27 nm  f=0.0009  <S**2>=0.000
+      12 -> 16         0.66580
+      12 -> 17        -0.21694
+ 
+ Excited state symmetry could not be determined.
+ Excited State   2:      Singlet-?Sym    6.6967 eV  185.14 nm  f=0.0088  <S**2>=0.000
+      11 -> 16        -0.10742
+      12 -> 13         0.59474
+      12 -> 14        -0.15147
+      12 -> 15         0.25697
+      12 -> 18         0.13447
+      12 -> 20        -0.12378
+ This state for optimization and/or second-order correction.
+ Copying the excited state density for this state as the 1-particle RhoCI density.
+ 
+ Excited state symmetry could not be determined.
+ Excited State   3:      Singlet-?Sym    7.1067 eV  174.46 nm  f=0.0039  <S**2>=0.000
+      11 -> 13        -0.66761
+      11 -> 19         0.13587
+      11 -> 20         0.13098
+ 
+ Excited state symmetry could not be determined.
+ Excited State   4:      Singlet-?Sym    7.2420 eV  171.20 nm  f=0.1830  <S**2>=0.000
+      11 -> 16        -0.35396
+      11 -> 17         0.16691
+      12 -> 14         0.53338
+      12 -> 19        -0.18708
+ 
+ Excited state symmetry could not be determined.
+ Excited State   5:      Singlet-?Sym    7.5043 eV  165.22 nm  f=0.2037  <S**2>=0.000
+      11 -> 16         0.38010
+      11 -> 17        -0.20466
+      12 -> 14         0.28675
+      12 -> 15         0.40477
+      12 -> 18         0.21441
+ 
+ Excited state symmetry could not be determined.
+ Excited State   6:      Singlet-?Sym    7.7592 eV  159.79 nm  f=0.2409  <S**2>=0.000
+      11 -> 16        -0.29269
+      11 -> 17         0.19508
+      12 -> 13        -0.33541
+      12 -> 14        -0.23170
+      12 -> 15         0.39909
+      12 -> 18         0.18316
+ 
+ Excited state symmetry could not be determined.
+ Excited State   7:      Singlet-?Sym    7.7996 eV  158.96 nm  f=0.0052  <S**2>=0.000
+      11 -> 14        -0.65826
+      11 -> 20        -0.10058
+      11 -> 21         0.15512
+ 
+ Excited state symmetry could not be determined.
+ Excited State   8:      Singlet-?Sym    8.0609 eV  153.81 nm  f=0.0537  <S**2>=0.000
+      11 -> 15        -0.64296
+      11 -> 18        -0.18442
+      11 -> 23         0.10765
+      12 -> 17        -0.10531
+ 
+ Excited state symmetry could not be determined.
+ Excited State   9:      Singlet-?Sym    8.1059 eV  152.96 nm  f=0.0048  <S**2>=0.000
+      11 -> 15        -0.10670
+      12 -> 16         0.20988
+      12 -> 17         0.65470
+ 
+ Excited state symmetry could not be determined.
+ Excited State  10:      Singlet-?Sym    8.6919 eV  142.64 nm  f=0.0036  <S**2>=0.000
+      11 -> 16        -0.31148
+      11 -> 17        -0.61469
+      12 -> 19        -0.10416
+ 
+ Excited state symmetry could not be determined.
+ Excited State  11:      Singlet-?Sym    8.7569 eV  141.58 nm  f=0.0042  <S**2>=0.000
+      12 -> 15         0.30121
+      12 -> 18        -0.60997
+      12 -> 19         0.11823
+ 
+ Excited state symmetry could not be determined.
+ Excited State  12:      Singlet-?Sym    9.1036 eV  136.19 nm  f=0.0004  <S**2>=0.000
+      11 -> 16        -0.13143
+      12 -> 14         0.14380
+      12 -> 19         0.63500
+      12 -> 21        -0.10047
+      12 -> 23         0.11450
+ 
+ Excited state symmetry could not be determined.
+ Excited State  13:      Singlet-?Sym    9.1722 eV  135.17 nm  f=0.0067  <S**2>=0.000
+      11 -> 15        -0.16458
+      11 -> 18         0.64597
+      11 -> 24        -0.11697
+ 
+ Excited state symmetry could not be determined.
+ Excited State  14:      Singlet-?Sym    9.4191 eV  131.63 nm  f=0.0062  <S**2>=0.000
+      11 -> 13        -0.11275
+      11 -> 19        -0.66220
+      11 -> 21         0.10128
+ 
+ Excited state symmetry could not be determined.
+ Excited State  15:      Singlet-?Sym    9.7118 eV  127.66 nm  f=0.0114  <S**2>=0.000
+      12 -> 13         0.11516
+      12 -> 14        -0.13413
+      12 -> 20         0.60099
+      12 -> 21        -0.11375
+      12 -> 23         0.25761
+ 
+ Excited state symmetry could not be determined.
+ Excited State  16:      Singlet-?Sym    9.8778 eV  125.52 nm  f=0.0000  <S**2>=0.000
+      10 -> 16         0.65895
+      10 -> 17        -0.21477
+ 
+ Excited state symmetry could not be determined.
+ Excited State  17:      Singlet-?Sym   10.2662 eV  120.77 nm  f=0.0017  <S**2>=0.000
+      11 -> 13        -0.15238
+      11 -> 20        -0.65028
+      11 -> 23        -0.12103
+ 
+ Excited state symmetry could not be determined.
+ Excited State  18:      Singlet-?Sym   10.2682 eV  120.75 nm  f=0.0377  <S**2>=0.000
+      11 -> 22         0.11187
+      12 -> 14         0.10033
+      12 -> 21         0.48026
+      12 -> 23         0.40129
+      12 -> 24         0.18012
+      12 -> 27        -0.14088
+ 
+ Excited state symmetry could not be determined.
+ Excited State  19:      Singlet-?Sym   10.2832 eV  120.57 nm  f=0.0077  <S**2>=0.000
+      12 -> 22         0.67719
+      12 -> 26        -0.16455
+ 
+ Excited state symmetry could not be determined.
+ Excited State  20:      Singlet-?Sym   10.4018 eV  119.19 nm  f=0.0784  <S**2>=0.000
+      12 -> 19        -0.12112
+      12 -> 20        -0.25938
+      12 -> 21        -0.43291
+      12 -> 23         0.31845
+      12 -> 24         0.30872
+ SavETr:  write IOETrn=   770 NScale= 10 NData=  16 NLR=1 LETran=     370.
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+          IDoAtm=111111
+ NEqPCM:  Using equilibrium solvation (IEInf=0, Eps=  78.3553, EpsInf=   1.7778)
+          Differentiating once with respect to electric field.
+                with respect to dipole field.
+          Differentiating once with respect to nuclear coordinates.
+          There are     1 degrees of freedom in the 1st order CPHF.  IDoFFX=0.
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ LinEq1:  Iter=  0 NonCon=     1 RMS=4.43D-02 Max=7.86D-01
+ AX will form     1 AO Fock derivatives at one time.
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ LinEq1:  Iter=  1 NonCon=     1 RMS=1.56D-02 Max=1.24D-01
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ LinEq1:  Iter=  2 NonCon=     1 RMS=8.25D-03 Max=1.34D-01
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ LinEq1:  Iter=  3 NonCon=     1 RMS=2.13D-03 Max=2.30D-02
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ LinEq1:  Iter=  4 NonCon=     1 RMS=1.29D-03 Max=1.50D-02
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ LinEq1:  Iter=  5 NonCon=     1 RMS=2.39D-04 Max=1.38D-03
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ LinEq1:  Iter=  6 NonCon=     1 RMS=4.97D-05 Max=3.36D-04
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ LinEq1:  Iter=  7 NonCon=     1 RMS=9.43D-06 Max=8.48D-05
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ LinEq1:  Iter=  8 NonCon=     1 RMS=1.38D-06 Max=1.14D-05
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ LinEq1:  Iter=  9 NonCon=     1 RMS=1.80D-07 Max=1.34D-06
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ LinEq1:  Iter= 10 NonCon=     1 RMS=3.11D-08 Max=1.69D-07
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ LinEq1:  Iter= 11 NonCon=     1 RMS=6.63D-09 Max=5.21D-08
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ LinEq1:  Iter= 12 NonCon=     1 RMS=1.11D-09 Max=1.01D-08
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ LinEq1:  Iter= 13 NonCon=     1 RMS=1.58D-10 Max=1.35D-09
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ LinEq1:  Iter= 14 NonCon=     0 RMS=2.86D-11 Max=2.52D-10
+ Linear equations converged to 1.000D-10 1.000D-09 after    14 iterations.
+ FoFJK:  IHMeth= 1 ICntrl=     0 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ End of Minotr Frequency-dependent properties file   721 does not exist.
+ End of Minotr Frequency-dependent properties file   722 does not exist.
+ D1PCM: PCM CHGder 1st derivatives, ID1Alg=3 FixD1E=F DoIter=F DoCFld=F I1PDM=6.
+ Calling FoFJK, ICntrl=      5127 FMM=F ISym2X=0 I1Cent= 0 IOpClX= 0 NMat=1 NMatS=1 NMatT=0.
+ FoFJK:  IHMeth= 1 ICntrl=  5127 DoSepK=T KAlg= 1 I1Cent= 0 FoldK=F
+ -------------------------------------------------------------------
+ Center     Atomic                   Forces (Hartrees/Bohr)
+ Number     Number              X              Y              Z
+ -------------------------------------------------------------------
+      1        6          -0.000005518    0.000002252   -0.000018015
+      2        7           0.000013523   -0.000009374    0.000004600
+      3        8           0.000040120    0.000069259    0.000007070
+      4        1          -0.000068344   -0.000027494   -0.000000541
+      5        1          -0.000014728   -0.000037837    0.000001808
+      6        1           0.000034947    0.000003194    0.000005079
+ -------------------------------------------------------------------
+ Cartesian Forces:  Max     0.000069259 RMS     0.000029292
+
+ GradGradGradGradGradGradGradGradGradGradGradGradGradGradGradGradGradGrad
+ Berny optimization.
+ Using GEDIIS/GDIIS optimizer.
+ Internal  Forces:  Max     0.000052595 RMS     0.000020653
+ Search for a local minimum.
+ Step number   7 out of a maximum of   25
+ All quantities printed in internal units (Hartrees-Bohrs-Radians)
+ Mixed Optimization -- En-DIIS/RFO-DIIS
+ Swaping is turned off.
+ Update second derivatives using D2CorX and points    1    2    3    4    5
+                                                      6    7
+ DE= -1.62D-06 DEPred=-1.84D-06 R= 8.81D-01
+ SS=  1.41D+00  RLast= 6.65D-03 DXNew= 6.5384D-01 1.9956D-02
+ Trust test= 8.81D-01 RLast= 6.65D-03 DXMaxT set to 3.89D-01
+ The second derivative matrix:
+                          R1        R2        R3        R4        R5
+           R1           0.61000
+           R2           0.07490   0.61039
+           R3           0.00248   0.04191   0.32600
+           R4           0.00403  -0.00569   0.00135   0.45966
+           R5           0.01124  -0.00039  -0.00345   0.00584   0.47081
+           A1           0.03433   0.07575  -0.03397   0.00947  -0.00620
+           A2           0.01628  -0.05916   0.00091   0.00016  -0.00075
+           A3          -0.04243   0.01345   0.00961  -0.00292   0.00628
+           A4           0.01185   0.01156  -0.00544   0.00238  -0.00034
+           A5           0.00353  -0.00963   0.00336  -0.00194  -0.00288
+           A6          -0.01538  -0.00193   0.00208  -0.00043   0.00322
+           D1          -0.00130  -0.00228  -0.00043  -0.00021  -0.00070
+           D2          -0.00154  -0.00259  -0.00045  -0.00025  -0.00080
+           D3           0.00115   0.00199   0.00036   0.00019   0.00061
+           D4           0.00091   0.00168   0.00034   0.00015   0.00051
+                          A1        A2        A3        A4        A5
+           A1           0.15749
+           A2           0.00913   0.15058
+           A3           0.03552   0.00726   0.14125
+           A4          -0.01840  -0.00056   0.00726   0.15668
+           A5           0.00482  -0.00168  -0.00312   0.00108   0.16072
+           A6           0.01358   0.00223  -0.00414   0.00224  -0.00181
+           D1           0.00015   0.00065  -0.00024  -0.00077  -0.00023
+           D2           0.00020   0.00073  -0.00028  -0.00087  -0.00026
+           D3          -0.00015  -0.00055   0.00022   0.00066   0.00020
+           D4          -0.00010  -0.00048   0.00017   0.00057   0.00017
+                          A6        D1        D2        D3        D4
+           A6           0.15957
+           D1           0.00100   0.03770
+           D2           0.00113   0.01496   0.04157
+           D3          -0.00086  -0.01138  -0.01294   0.03439
+           D4          -0.00073  -0.00957  -0.01088   0.00828   0.03151
+     Eigenvalues ---    0.02455   0.02455   0.07139   0.08862   0.13224
+     Eigenvalues ---    0.16197   0.16526   0.32803   0.45751   0.47209
+     Eigenvalues ---    0.55248   0.700681000.000001000.000001000.00000
+ En-DIIS/RFO-DIIS IScMMF=        0 using points:     7    6    5    4
+ RFO step:  Lambda=-1.03820542D-08.
+ DIIS coeffs:      1.04667     -0.01187     -0.08999      0.05519
+ Iteration  1 RMS(Cart)=  0.00011475 RMS(Int)=  0.00000004
+ Iteration  2 RMS(Cart)=  0.00000001 RMS(Int)=  0.00000004
+ Variable       Old X    -DE/DX   Delta X   Delta X   Delta X     New X
+                                  (DIIS)     (GDIIS)  (Total)
+    R1        2.44629  -0.00003   0.00004  -0.00007  -0.00003   2.44626
+    R2        2.37111  -0.00005  -0.00003  -0.00003  -0.00006   2.37105
+    R3        2.08670  -0.00002  -0.00006   0.00001  -0.00006   2.08664
+    R4        1.91373   0.00000   0.00001   0.00000   0.00001   1.91374
+    R5        1.93128  -0.00002  -0.00001  -0.00003  -0.00004   1.93124
+    A1        2.25130  -0.00001  -0.00010   0.00000  -0.00011   2.25120
+    A2        2.07593   0.00001  -0.00002   0.00010   0.00008   2.07600
+    A3        1.95596   0.00000   0.00012  -0.00009   0.00003   1.95598
+    A4        2.13155  -0.00003  -0.00006  -0.00012  -0.00018   2.13137
+    A5        2.06914  -0.00001   0.00000  -0.00004  -0.00003   2.06911
+    A6        2.08250   0.00003   0.00006   0.00016   0.00021   2.08271
+    D1       -0.00008   0.00001   0.00007   0.00000   0.00008   0.00000
+    D2        3.14148   0.00001   0.00008   0.00002   0.00010   3.14158
+    D3       -3.14152  -0.00001  -0.00006   0.00000  -0.00007  -3.14158
+    D4        0.00004   0.00000  -0.00005   0.00001  -0.00004   0.00000
+         Item               Value     Threshold  Converged?
+ Maximum Force            0.000053     0.000450     YES
+ RMS     Force            0.000021     0.000300     YES
+ Maximum Displacement     0.000313     0.001800     YES
+ RMS     Displacement     0.000115     0.001200     YES
+ Predicted change in Energy=-9.953649D-09
+ Optimization completed.
+    -- Stationary point found.
+                           ----------------------------
+                           !   Optimized Parameters   !
+                           ! (Angstroms and Degrees)  !
+ --------------------------                            --------------------------
+ ! Name  Definition              Value          Derivative Info.                !
+ --------------------------------------------------------------------------------
+ ! R1    R(1,2)                  1.2945         -DE/DX =    0.0                 !
+ ! R2    R(1,3)                  1.2547         -DE/DX =   -0.0001              !
+ ! R3    R(1,6)                  1.1042         -DE/DX =    0.0                 !
+ ! R4    R(2,4)                  1.0127         -DE/DX =    0.0                 !
+ ! R5    R(2,5)                  1.022          -DE/DX =    0.0                 !
+ ! A1    A(2,1,3)              128.9903         -DE/DX =    0.0                 !
+ ! A2    A(2,1,6)              118.9418         -DE/DX =    0.0                 !
+ ! A3    A(3,1,6)              112.068          -DE/DX =    0.0                 !
+ ! A4    A(1,2,4)              122.1287         -DE/DX =    0.0                 !
+ ! A5    A(1,2,5)              118.5529         -DE/DX =    0.0                 !
+ ! A6    A(4,2,5)              119.3184         -DE/DX =    0.0                 !
+ ! D1    D(3,1,2,4)             -0.0045         -DE/DX =    0.0                 !
+ ! D2    D(3,1,2,5)            179.9936         -DE/DX =    0.0                 !
+ ! D3    D(6,1,2,4)           -179.9956         -DE/DX =    0.0                 !
+ ! D4    D(6,1,2,5)              0.0025         -DE/DX =    0.0                 !
+ --------------------------------------------------------------------------------
+ GradGradGradGradGradGradGradGradGradGradGradGradGradGradGradGradGradGrad
+
+                          Input orientation:                          
+ ---------------------------------------------------------------------
+ Center     Atomic      Atomic             Coordinates (Angstroms)
+ Number     Number       Type             X           Y           Z
+ ---------------------------------------------------------------------
+      1          6           0       -0.097951    0.368142    0.000041
+      2          7           0        1.076595   -0.176128    0.000095
+      3          8           0       -1.224283   -0.184796   -0.000109
+      4          1           0        1.204683   -1.180697    0.000083
+      5          1           0        1.897229    0.432988    0.000123
+      6          1           0       -0.176503    1.469577   -0.000016
+ ---------------------------------------------------------------------
+                    Distance matrix (angstroms):
+                    1          2          3          4          5
+     1  C    0.000000
+     2  N    1.294522   0.000000
+     3  O    1.254737   2.300894   0.000000
+     4  H    2.023798   1.012702   2.625203   0.000000
+     5  H    1.996233   1.021989   3.182058   1.756018   0.000000
+     6  H    1.104232   2.068477   1.958262   2.988582   2.318379
+                    6
+     6  H    0.000000
+ Symmetry turned off by external request.
+ Stoichiometry    CH3NO
+ Framework group  C1[X(CH3NO)]
+ Deg. of freedom    12
+ Full point group                 C1      NOp   1
+ Rotational constants (GHZ):     79.3062144     11.1615354      9.7844715
+
+ **********************************************************************
+
+            Population analysis using the SCF density.
+
+ **********************************************************************
+
+ Alpha  occ. eigenvalues --  -19.19795 -14.44946 -10.37275  -1.11873  -1.01630
+ Alpha  occ. eigenvalues --   -0.71325  -0.64107  -0.56983  -0.49146  -0.48542
+ Alpha  occ. eigenvalues --   -0.35256  -0.33338
+ Alpha virt. eigenvalues --    0.01587   0.03276   0.04394   0.05355   0.07712
+ Alpha virt. eigenvalues --    0.08234   0.09519   0.12584   0.14128   0.14990
+ Alpha virt. eigenvalues --    0.15974   0.18042   0.20724   0.21210   0.21324
+ Alpha virt. eigenvalues --    0.25350   0.27133   0.28333   0.28742   0.35690
+ Alpha virt. eigenvalues --    0.37007   0.37227   0.39299   0.44548   0.45696
+ Alpha virt. eigenvalues --    0.47493   0.50396   0.51288   0.52394   0.54443
+ Alpha virt. eigenvalues --    0.56442   0.57175   0.58015   0.62889   0.66547
+ Alpha virt. eigenvalues --    0.69617   0.71920   0.75318   0.80093   0.83071
+ Alpha virt. eigenvalues --    0.85326   0.87435   0.92445   1.05204   1.07499
+ Alpha virt. eigenvalues --    1.09743   1.13934   1.18718   1.23905   1.29217
+ Alpha virt. eigenvalues --    1.29364   1.35386   1.41675   1.48084   1.48351
+ Alpha virt. eigenvalues --    1.66783   1.72345   1.74901   1.76264   1.80053
+ Alpha virt. eigenvalues --    1.82781   1.90292   1.98044   2.03025   2.04413
+ Alpha virt. eigenvalues --    2.08823   2.14478   2.18950   2.21673   2.28750
+ Alpha virt. eigenvalues --    2.50585   2.50687   2.56742   2.64342   2.70381
+ Alpha virt. eigenvalues --    2.87467   3.07788   3.19238   3.35410   3.40996
+ Alpha virt. eigenvalues --    3.46482   3.48700   3.66116   3.77468
+          Condensed to atoms (all electrons):
+              1          2          3          4          5          6
+     1  C    4.843004   0.380028   0.299428  -0.229530  -0.149583   0.053286
+     2  N    0.380028   5.742322  -0.053236   0.398692   0.349661  -0.022831
+     3  O    0.299428  -0.053236   8.473102  -0.000222  -0.000685  -0.110821
+     4  H   -0.229530   0.398692  -0.000222   1.064353  -0.200914   0.059908
+     5  H   -0.149583   0.349661  -0.000685  -0.200914   1.009011  -0.017579
+     6  H    0.053286  -0.022831  -0.110821   0.059908  -0.017579   1.357005
+ Mulliken atomic charges:
+              1
+     1  C    0.803368
+     2  N    0.205364
+     3  O   -0.607567
+     4  H   -0.092286
+     5  H    0.010089
+     6  H   -0.318968
+ Sum of Mulliken atomic charges =   0.00000
+ Mulliken charges with hydrogens summed into heavy atoms:
+              1
+     1  C    0.484400
+     2  N    0.123167
+     3  O   -0.607567
+ Sum of Mulliken charges with hydrogens summed into heavy atoms =   0.00000
+ Electronic spatial extent (au):  <R**2>=            147.5934
+ Charge=              0.0000 electrons
+ Dipole moment (field-independent basis, Debye):
+    X=              5.7888    Y=              1.0186    Z=              0.0004  Tot=              5.8777
+ Quadrupole moment (field-independent basis, Debye-Ang):
+   XX=            -18.5844   YY=            -15.2601   ZZ=            -19.1919
+   XY=             -1.5754   XZ=             -0.0002   YZ=             -0.0001
+ Traceless Quadrupole moment (field-independent basis, Debye-Ang):
+   XX=             -0.9056   YY=              2.4187   ZZ=             -1.5131
+   XY=             -1.5754   XZ=             -0.0002   YZ=             -0.0001
+ Octapole moment (field-independent basis, Debye-Ang**2):
+  XXX=             19.3943  YYY=             -1.5126  ZZZ=             -0.0007  XYY=              4.3035
+  XXY=              0.9741  XXZ=              0.0009  XZZ=             -0.2349  YZZ=             -0.1412
+  YYZ=              0.0000  XYZ=              0.0001
+ Hexadecapole moment (field-independent basis, Debye-Ang**3):
+ XXXX=           -116.9780 YYYY=            -33.0035 ZZZZ=            -19.5093 XXXY=              3.2397
+ XXXZ=             -0.0039 YYYX=             -4.2673 YYYZ=             -0.0008 ZZZX=             -0.0052
+ ZZZY=             -0.0002 XXYY=            -23.9723 XXZZ=            -26.6745 YYZZ=            -10.0881
+ XXYZ=              0.0001 YYXZ=             -0.0013 ZZXY=              0.3354
+ N-N= 7.121121176118D+01 E-N=-5.405325891786D+02  KE= 1.687951917125D+02
+ 1\1\GINC-CLODOMIRA\FOpt\RTD-CAM-B3LYP-FC\Aug-CC-pVDZ\C1H3N1O1\DIEGOA\2
+ 8-Oct-2019\0\\# cam-b3lyp/aug-cc-pvdz opt nosymm td(root=2,nstates=20)
+  SCRF=PCM int(grid=ultrafine)\\Title\\0,1\C,-0.0979506154,0.3681421391
+ ,0.0000406992\N,1.0765952187,-0.1761278253,0.0000954072\O,-1.224282709
+ 7,-0.1847963126,-0.0001087438\H,1.2046827861,-1.180696977,0.0000832945
+ \H,1.8972285906,0.43298836,0.0001225984\H,-0.1765032703,1.4695766158,-
+ 0.0000162555\\Version=EM64L-G09RevA.01\HF=-169.8582306\RMSD=2.772e-09\
+ RMSF=2.929e-05\Dipole=2.708005,-0.2338246,0.0003308\PG=C01 [X(C1H3N1O1
+ )]\\@
+
+
+ MAN IS THE MEASURE OF ALL THINGS.
+  -- PROTAGORAS (5TH CENTURY B.C.)
+ Job cpu time:  0 days  1 hours 26 minutes  0.8 seconds.
+ File lengths (MBytes):  RWF=     52 Int=      0 D2E=      0 Chk=      8 Scr=      1
+ Normal termination of Gaussian 09 at Mon Oct 28 09:56:13 2019.
