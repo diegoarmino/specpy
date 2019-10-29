@@ -58,7 +58,7 @@ end program read_gaus
       character (len=18)            :: keygrad
       character (len=6)             :: keyfreq
       integer                       :: estat,ios,exitstat
-      integer                       :: i,j,k,r,s,m,nm,at,nat,count,xi
+      integer                       :: i,j,k,r,s,m,nm,at,nat,count,xi,iat
       integer                       :: ndf, nvdf
 
 
@@ -289,12 +289,59 @@ end program read_gaus
          write(77,*) excoords
          rewind 236
 
+         write(77,*)          '%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%'
+         write(77,*)          '   WRITING INPUT GROUND STATE COORDINATES'
+         write(77,*)          '%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%'
+         write(77,*)
+         write(77,'(A)')      '-------------------------------------------'
+         write(77,'(A)')      ' AT       X            Y            Z      '
+         write(77,'(A)')      '-------------------------------------------'
+         do iat=1,nqmatoms
+            write(77,'(i3,3F13.8)')  iat, qmcoords(:,iat)
+         end do
+         write(77,*)
+         write(77,*)          '%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%'
+         write(77,*)          '  WRITING INPUT EXCITED STATE COORDINATES  '
+         write(77,*)          '%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%'
+         write(77,*)
+         write(77,'(A)')      '-------------------------------------------'
+         write(77,'(A)')      ' AT       X            Y            Z      '
+         write(77,'(A)')      '-------------------------------------------'
+         do iat=1,nqmatoms
+            write(77,'(i3,3F13.8)')  iat, excoords(:,iat)
+         end do
+         write(77,*)
+
 
    !     TRANSLATE TO CENTER OF MASS AND ROTATE TO PRINCIPAL AXES OF INERTIA.
    !     --------------------------------------------------------------------------
+         write(77,*) '   STARTING REORIENTATION FOR GROUND STATE '
          call orient(qmcoords,at_numbers,atmass,ndf,nqmatoms)
+         write(77,*) '   STARTING REORIENTATION FOR EXCITED STATE '
          call orient(excoords,at_numbers,atmass,ndf,nqmatoms)
 
+         write(77,*)          '%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%'
+         write(77,*)          '   WRITING ORIENTED GROUND STATE COORDINATES   '
+         write(77,*)          '%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%'
+         write(77,*)
+         write(77,'(A)')      '-------------------------------------------'
+         write(77,'(A)')      ' AT       X            Y            Z      '
+         write(77,'(A)')      '-------------------------------------------'
+         do iat=1,nqmatoms
+            write(77,'(i3,3F13.8)')  iat, qmcoords(:,iat)
+         end do
+         write(77,*)
+         write(77,*)          '%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%'
+         write(77,*)          '   WRITING ORIENTED EXCITED STATE COORDINATES  '
+         write(77,*)          '%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%'
+         write(77,*)
+         write(77,'(A)')      '-------------------------------------------'
+         write(77,'(A)')      ' AT       X            Y            Z      '
+         write(77,'(A)')      '-------------------------------------------'
+         do iat=1,nqmatoms
+            write(77,'(i3,3F13.8)')  iat, excoords(:,iat)
+         end do
+         write(77,*)
 
    !     TAKING DIFFERENCE BETWEEN EXCITED AND GROUND STATE GEOMETRIES IN CARTESIAN
    !     --------------------------------------------------------------------------
