@@ -515,7 +515,7 @@ end program read_gaus
 
 
   !     DIAGONALIZATION OF THE MOMENT OF INERTIA
-        allocate ( work(100), IWORK(100) )
+        allocate ( work(1000), IWORK(1000) )
         LWORK=-1
         call dsyevd('V','U',3,Itsr,3,Ieigval,WORK,LWORK,IWORK,LWORK,INFO)
         LWORK=WORK(1)
