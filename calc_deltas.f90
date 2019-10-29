@@ -270,8 +270,6 @@ end program read_gaus
          end do
          write(77,*) 'Number of lines skipped in fchk file is = ', count
          read(235,*) ( ( qmcoords(i,j),i=1,3 ), j=1,nqmatoms )
-         qmcoords=qmcoords/a0  !DANGER a0 should not be there
-         write(77,*) qmcoords
          rewind 235
 
 
@@ -285,8 +283,6 @@ end program read_gaus
          end do
          write(77,*) 'Number of lines skipped in fchk file is = ', count
          read(236,*) ( ( excoords(i,j),i=1,3 ), j=1,nqmatoms )
-         excoords=excoords/a0  !DANGER a0 should not be there
-         write(77,*) excoords
          rewind 236
 
          write(77,*)          '%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%'
@@ -297,7 +293,7 @@ end program read_gaus
          write(77,'(A)')      ' AT       X            Y            Z      '
          write(77,'(A)')      '-------------------------------------------'
          do iat=1,nqmatoms
-            write(77,'(i3,3F13.8)')  iat, qmcoords(:,iat)
+            write(77,'(i3,3D16.8)')  iat, qmcoords(:,iat)
          end do
          write(77,*)
          write(77,*)          '%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%'
@@ -308,7 +304,7 @@ end program read_gaus
          write(77,'(A)')      ' AT       X            Y            Z      '
          write(77,'(A)')      '-------------------------------------------'
          do iat=1,nqmatoms
-            write(77,'(i3,3F13.8)')  iat, excoords(:,iat)
+            write(77,'(i3,3D16.8)')  iat, excoords(:,iat)
          end do
          write(77,*)
 
@@ -317,8 +313,10 @@ end program read_gaus
    !     --------------------------------------------------------------------------
          write(77,*) '   STARTING REORIENTATION FOR GROUND STATE '
          call orient(qmcoords,at_numbers,atmass,ndf,nqmatoms)
+
          write(77,*) '   STARTING REORIENTATION FOR EXCITED STATE '
          call orient(excoords,at_numbers,atmass,ndf,nqmatoms)
+
 
          write(77,*)          '%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%'
          write(77,*)          '   WRITING ORIENTED GROUND STATE COORDINATES   '
@@ -353,6 +351,13 @@ end program read_gaus
    !      end do
 
    !     NONDIMENSIONALIZATION OF GEOMETRIES AND DISPLACEMENTS
+   !     --------------------------------------------------------------------------
+
+   !     --------------------------------------------------------------------------
+   !     --------------------------------------------------------------------------
+         qmcoords=qmcoords/a0 ! DANGER this unit conversion should be wrong
+         excoords=-excoords/a0 ! DANGER this unit conversion should be wrong
+   !     --------------------------------------------------------------------------
    !     --------------------------------------------------------------------------
 
    !     MASS WEIGHT
@@ -434,6 +439,7 @@ end program read_gaus
         integer             :: ipiv(3)
         real*8              :: Mass(ndf)
         real*8              :: X0(3,nqmatoms)
+        real*8              :: IX0(3,nqmatoms)
         real*8              :: Xrot(3,nqmatoms)
         real*8              :: Itsr(3,3)
         real*8              :: innp(3,3)
@@ -447,6 +453,7 @@ end program read_gaus
         real*8              :: com(3)
         real*8              :: Ieigval(3)
 
+        double precision, parameter :: A0        =  0.52917710d00         ! Angstrms/bohr
         real*8,external  :: ddot
 
         real*8,  dimension(:,:), allocatable :: VT,U
@@ -456,12 +463,9 @@ end program read_gaus
 !        include "qvmbia_param.f"
    !    ------------------------------------------------------------------
 
-        !unitv=reshape((/ 1d0, 0d0, 0d0, &
-        !             &   0d0, 1d0, 0d0, &
-        !             &   0d0, 0d0, 1d0 /),(/3,3/))
 
    !    Converting initial coordinates to AU
-        X0=qmcoords!/a0
+        X0=qmcoords
    !     write(77,'(A)') 'CONVERSION FACTOR a0 -> Angs'
    !     write(77,'(D12.3)') a0
 
@@ -475,19 +479,28 @@ end program read_gaus
         end do
         com = com/totM
 
+        write(77,'(3D11.2)') com*a0
    !    Translating to center of mass
         do i=1,nqmatoms
            do j=1,3
-              X0(j,i)=(X0(j,i)-com(j))*sqrt(atmass(i))
+              X0(j,i)=(X0(j,i)-com(j))
+              IX0(j,i)=(X0(j,i)-com(j))*sqrt(atmass(i))
            end do
         end do
+
+        write(77,*)
+        write(77,'(A)') 'CENTERED COORDINATES'
+        do i=1,nqmatoms
+           write(77,'(3F14.8)') X0(:,i)*a0
+        end do
+        write(77,*)
 
 
    !    Moment of inertia tensor.
    !    Itsr = Sum_i [ai**T.ai - ai.ai**T]
         Itsr=0.0d0
         do i=1,nqmatoms
-           ai=X0(:,i)
+           ai=IX0(:,i)
            innp=0.0d0
            outp=0.0d0
            innp(1,1) = ddot(3,ai,1,ai,1)
@@ -515,19 +528,27 @@ end program read_gaus
 
 
   !     DIAGONALIZATION OF THE MOMENT OF INERTIA
-        allocate ( work(1000), IWORK(1000) )
+        allocate ( work(100) )
         LWORK=-1
-        call dsyevd('V','U',3,Itsr,3,Ieigval,WORK,LWORK,IWORK,LWORK,INFO)
+        call dsyev('V','U',3,Itsr,3,Ieigval,WORK,LWORK,INFO)
         LWORK=WORK(1)
-        LIWORK=IWORK(1)
-        if(allocated(WORK2)) deallocate (WORK2,IWORK2)
-        allocate (WORK2(LWORK),IWORK2(LIWORK))
-        call dsyevd('V','U',3,Itsr,3,Ieigval,WORK2,LWORK,IWORK2,LIWORK,INFO)
-        deallocate( WORK, IWORK, WORK2, IWORK2 )
+        if(allocated(WORK)) deallocate (WORK)
+        allocate ( WORK(LWORK) )
+        call dsyev('V','U',3,Itsr,3,Ieigval,WORK,LWORK,INFO)
+        deallocate( WORK )
 
-
+        write(77,*)
+        write(77,'(A)') 'INERTIA TENSOR EIGENVECTORS'
+        do i=1,3
+           write(77,'(3D11.2)') Itsr(i,:)
+        end do
   !     Descaling eigenvalues.
         Ieigval=Ieigval/1000d0
+        write(77,*)
+        write(77,'(A)') 'INERTIA TENSOR EIGENVALUES'
+        write(77,'(3D11.2)') Ieigval
+        write(77,*)
+
 
   !     ROTATE TO PRINCIPAL AXES
         Xrot=0d0
@@ -539,6 +560,6 @@ end program read_gaus
           end do
         end do
 
-        X0 = Xrot
+        qmcoords = Xrot
 
   end subroutine
