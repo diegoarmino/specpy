@@ -27,7 +27,7 @@ end program read_gaus
       implicit none
 
       integer,          intent(in)  :: nqmatoms, nclatoms
-      integer,          intent(in)  :: at_numbers(nqmatoms) ! Atomic numbers of QM atoms.
+      integer,          intent(out) :: at_numbers(nqmatoms) ! Atomic numbers of QM atoms.
       double precision, intent(out) :: qmcoords(3,nqmatoms) ! QM atom coordinates
       double precision, intent(out) :: atmass(nqmatoms)
       double precision, intent(out) :: nmodes(3*nqmatoms,3*nqmatoms-6)
@@ -53,6 +53,7 @@ end program read_gaus
       double precision              :: tmp
       character (len=4)             :: cfx,cfy,cfz
       character (len=17)            :: keycoords
+      character (len=17)            :: keyatnum
       character (len=19)            :: keymass
       character (len=9)             :: keynmodes
       character (len=18)            :: keygrad
@@ -112,6 +113,21 @@ end program read_gaus
          open(unit=236, file="td-opt.fchk", iostat=ios, action="read")
          if ( ios /= 0 ) stop "Error opening fchk file to read."
       endif
+
+
+!@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+!     ATOMIC NUMBERS
+!@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+      read(234,'(A14)') keyatnum
+      count=1
+      do while (trim(keyatnum) /= 'Atomic numbers')
+         read(234,'(A14)') keyatnum
+         count=count+1
+      end do
+      write(77,*) 'Number of lines skipped in fchk file is = ', count
+      read(234,*) ( at_numbers(i),i=1,nqmatoms )
+      rewind 234
+
 
 !@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 !     MASSES
@@ -293,7 +309,7 @@ end program read_gaus
          write(77,'(A)')      ' AT       X            Y            Z      '
          write(77,'(A)')      '-------------------------------------------'
          do iat=1,nqmatoms
-            write(77,'(i3,3D16.8)')  iat, qmcoords(:,iat)
+            write(77,'(i3,3F16.8)')  at_numbers(i), qmcoords(:,iat)*a0
          end do
          write(77,*)
          write(77,*)          '%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%'
@@ -304,7 +320,7 @@ end program read_gaus
          write(77,'(A)')      ' AT       X            Y            Z      '
          write(77,'(A)')      '-------------------------------------------'
          do iat=1,nqmatoms
-            write(77,'(i3,3D16.8)')  iat, excoords(:,iat)
+            write(77,'(i3,3F16.8)')  at_numbers(i), excoords(:,iat)*a0
          end do
          write(77,*)
 
@@ -326,7 +342,7 @@ end program read_gaus
          write(77,'(A)')      ' AT       X            Y            Z      '
          write(77,'(A)')      '-------------------------------------------'
          do iat=1,nqmatoms
-            write(77,'(i3,3F13.8)')  iat, qmcoords(:,iat)
+            write(77,'(i3,3F13.8)')  at_numbers(i), qmcoords(:,iat)*a0
          end do
          write(77,*)
          write(77,*)          '%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%'
@@ -337,7 +353,7 @@ end program read_gaus
          write(77,'(A)')      ' AT       X            Y            Z      '
          write(77,'(A)')      '-------------------------------------------'
          do iat=1,nqmatoms
-            write(77,'(i3,3F13.8)')  iat, excoords(:,iat)
+            write(77,'(i3,3F13.8)')  at_numbers(i), excoords(:,iat)*a0
          end do
          write(77,*)
 
@@ -442,6 +458,7 @@ end program read_gaus
         real*8              :: IX0(3,nqmatoms)
         real*8              :: Xrot(3,nqmatoms)
         real*8              :: Itsr(3,3)
+        real*8              :: Ievprod(3,3)
         real*8              :: innp(3,3)
         real*8              :: outp(3,3)
         real*8              :: ai(3)
@@ -479,7 +496,9 @@ end program read_gaus
         end do
         com = com/totM
 
-        write(77,'(3D11.2)') com*a0
+        write(77,'(A)') 'CENTER OF MASS COORDINATES in A'
+        write(77,'(3F11.2)') com*a0
+
    !    Translating to center of mass
         do i=1,nqmatoms
            do j=1,3
@@ -489,18 +508,98 @@ end program read_gaus
         end do
 
         write(77,*)
-        write(77,'(A)') 'CENTERED COORDINATES'
+        write(77,'(A)') 'CENTERED COORDINATES in A'
         do i=1,nqmatoms
-           write(77,'(3F14.8)') X0(:,i)*a0
+           write(77,'(I3,3F14.8)') at_numbers(i), X0(:,i)*a0
         end do
         write(77,*)
 
+   !    Computing total mass and center of mass.
+        totM=0.0d0
+        do i=1,nqmatoms
+            do j=1,3
+                com(j)=com(j)+atmass(i)*X0(j,i)
+            end do
+            totM=totM+atmass(i)
+        end do
+        com = com/totM
+
+        write(77,'(A)') 'CENTER OF MASS centered COORDINATES in A'
+        write(77,'(3F11.2)') com*a0
 
    !    Moment of inertia tensor.
    !    Itsr = Sum_i [ai**T.ai - ai.ai**T]
         Itsr=0.0d0
         do i=1,nqmatoms
            ai=IX0(:,i)
+           innp=0.0d0
+           outp=0.0d0
+           innp(1,1) = ddot(3,ai,1,ai,1)
+           innp(2,2) = innp(1,1)
+           innp(3,3) = innp(1,1)
+           call dger(3,3,1d0,ai,1,ai,1,outp,3)
+           Itsr=Itsr+innp-outp
+        end do
+
+   !    Symmetrizing inertia tensor.
+!        do i=1,2
+!           do j=i+1,3
+!             Itsr(j,i)=Itsr(i,j)
+!           end do
+!        end do
+
+        write(77,'(A)') 'INERTIA TENSOR'
+        do i=1,3
+           write(77,'(3F11.2)') Itsr(i,:)
+        end do
+
+  !     DIAGONALIZATION OF THE MOMENT OF INERTIA
+        allocate ( work(100) )
+        LWORK=-1
+        call dsyev('V','U',3,Itsr,3,Ieigval,WORK,LWORK,INFO)
+        LWORK=WORK(1)
+        if(allocated(WORK)) deallocate (WORK)
+        allocate ( WORK(LWORK) )
+        call dsyev('V','U',3,Itsr,3,Ieigval,WORK,LWORK,INFO)
+        deallocate( WORK )
+
+        write(77,*)
+        write(77,'(A)') 'INERTIA TENSOR EIGENVECTORS'
+        do i=1,3
+           write(77,'(3F11.2)') Itsr(i,:)
+        end do
+        write(77,*)
+        write(77,'(A)') 'INERTIA TENSOR EIGENVALUES'
+        write(77,'(3F11.2)') Ieigval
+        write(77,*)
+
+        call dgemm('T','N',3,3,3,1d0,Itsr,3,Itsr,3,0d0,IevProd,3)
+        write(77,*)
+        write(77,'(A)') 'PRODUCT OF I EIGENVECTORS, SHOULD BE IDENTITY'
+        do i=1,3
+           write(77,'(3F11.2)') IevProd(i,:)
+        end do
+        
+
+
+  !     ROTATE TO PRINCIPAL AXES
+        Xrot=0d0
+        do iat = 1,nqmatoms
+          do i = 1,3
+            do j = 1,3
+              Xrot(i,iat) = Xrot(i,iat) + Itsr(j,i) * X0(j,iat)
+            end do
+          end do
+        end do
+
+        qmcoords = Xrot
+
+   !    Calculating moment of inertia of new orientation. 
+   !    Should be in the x, y and z directions.
+   !    Itsr = Sum_i [ai**T.ai - ai.ai**T]
+        Itsr=0.0d0
+        do i=1,nqmatoms
+           ai=Xrot(:,i)
            innp=0.0d0
            outp=0.0d0
            innp(1,1) = ddot(3,ai,1,ai,1)
@@ -518,14 +617,10 @@ end program read_gaus
            end do
         end do
 
-        write(77,'(A)') 'INERTIA TENSOR'
+        write(77,'(A)') 'NEW INERTIA TENSOR'
         do i=1,3
-           write(77,'(3D11.2)') Itsr(i,:)
+           write(77,'(3F11.2)') Itsr(i,:)
         end do
-
-  !     Scaling tensor of inertia to avoid numerical problems.
-        Itsr=Itsr*1000d0
-
 
   !     DIAGONALIZATION OF THE MOMENT OF INERTIA
         allocate ( work(100) )
@@ -538,28 +633,16 @@ end program read_gaus
         deallocate( WORK )
 
         write(77,*)
-        write(77,'(A)') 'INERTIA TENSOR EIGENVECTORS'
+        write(77,'(A)') 'NEW INERTIA TENSOR EIGENVECTORS'
         do i=1,3
-           write(77,'(3D11.2)') Itsr(i,:)
+           write(77,'(3F11.2)') Itsr(i,:)
         end do
-  !     Descaling eigenvalues.
-        Ieigval=Ieigval/1000d0
         write(77,*)
-        write(77,'(A)') 'INERTIA TENSOR EIGENVALUES'
-        write(77,'(3D11.2)') Ieigval
+        write(77,'(A)') 'NEW INERTIA TENSOR EIGENVALUES'
+        write(77,'(3F11.2)') Ieigval
         write(77,*)
 
 
-  !     ROTATE TO PRINCIPAL AXES
-        Xrot=0d0
-        do iat = 1,nqmatoms
-          do i = 1,3
-            do j = 1,3
-              Xrot(i,iat) = Xrot(i,iat) + Itsr(j,i) * X0(j,iat)
-            end do
-          end do
-        end do
 
-        qmcoords = Xrot
 
   end subroutine
