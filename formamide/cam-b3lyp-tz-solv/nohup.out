@@ -1,3 +1,44 @@
 Terminated
 Segmentation fault (core dumped)
 Segmentation fault (core dumped)
+ Read checkpoint file td1.chk
+ Write formatted file td1.fchk
+cp: cannot stat 'td1-opt.fchk': No such file or directory
+STOP Error opening fchk file to read.
+ Read checkpoint file td2.chk
+ Write formatted file td2.fchk
+cp: cannot stat 'td2-opt.fchk': No such file or directory
+STOP Error opening fchk file to read.
+ Read checkpoint file td3.chk
+ Write formatted file td3.fchk
+cp: cannot stat 'td3-opt.fchk': No such file or directory
+STOP Error opening fchk file to read.
+ Read checkpoint file td4.chk
+ Write formatted file td4.fchk
+cp: cannot stat 'td4-opt.fchk': No such file or directory
+STOP Error opening fchk file to read.
+ Read checkpoint file td5.chk
+ Write formatted file td5.fchk
+cp: cannot stat 'td5-opt.fchk': No such file or directory
+STOP Error opening fchk file to read.
+ Read checkpoint file td6.chk
+ Write formatted file td6.fchk
+cp: cannot stat 'td6-opt.fchk': No such file or directory
+STOP Error opening fchk file to read.
+ Read checkpoint file td7.chk
+ Write formatted file td7.fchk
+cp: cannot stat 'td7-opt.fchk': No such file or directory
+STOP Error opening fchk file to read.
+ Read checkpoint file td8.chk
+ Write formatted file td8.fchk
+cp: cannot stat 'td8-opt.fchk': No such file or directory
+STOP Error opening fchk file to read.
+grep: dist1.dat: No such file or directory
+grep: dist2.dat: No such file or directory
+grep: dist3.dat: No such file or directory
+grep: dist4.dat: No such file or directory
+grep: dist5.dat: No such file or directory
+grep: dist6.dat: No such file or directory
+grep: dist7.dat: No such file or directory
+grep: dist8.dat: No such file or directory
+Terminated
