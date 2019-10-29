@@ -289,6 +289,13 @@ end program read_gaus
          write(77,*) excoords
          rewind 236
 
+
+   !     TRANSLATE TO CENTER OF MASS AND ROTATE TO PRINCIPAL AXES OF INERTIA.
+   !     --------------------------------------------------------------------------
+         call orient(qmcoords,at_numbers,atmass,ndf,nqmatoms)
+         call orient(excoords,at_numbers,atmass,ndf,nqmatoms)
+
+
    !     TAKING DIFFERENCE BETWEEN EXCITED AND GROUND STATE GEOMETRIES IN CARTESIAN
    !     --------------------------------------------------------------------------
    !      del0 = excoords-qmcoords
@@ -364,3 +371,127 @@ end program read_gaus
       end if
 
    end subroutine
+
+
+  subroutine orient(qmcoords,at_numbers,atmass,ndf,nqmatoms)
+        implicit none
+   !    ------------------------------------------------------------------
+        integer,intent(in)                :: ndf
+        integer,intent(in)                :: nqmatoms
+        integer,intent(in)                :: at_numbers(nqmatoms) ! Atomic numbers of QM atoms.
+        double precision,intent(in)       :: atmass(nqmatoms)
+        double precision,intent(inout)    :: qmcoords(3,nqmatoms)
+   !    Internal variables
+        integer             :: i,j,k,iat
+        integer             :: zeros(2),nonz(2)
+        integer             :: ipiv(3)
+        real*8              :: Mass(ndf)
+        real*8              :: X0(3,nqmatoms)
+        real*8              :: Xrot(3,nqmatoms)
+        real*8              :: Itsr(3,3)
+        real*8              :: innp(3,3)
+        real*8              :: outp(3,3)
+        real*8              :: ai(3)
+        real*8              :: atmp
+        real*8              :: cutoff
+        real*8              :: det
+        real*8              :: trp
+        real*8              :: totM
+        real*8              :: com(3)
+        real*8              :: Ieigval(3)
+
+        real*8,external  :: ddot
+
+        real*8,  dimension(:,:), allocatable :: VT,U
+
+        real*8,  dimension(:), allocatable :: WORK,WORK2,IWORK,IWORK2
+        integer                            :: LWORK,LIWORK,INFO
+!        include "qvmbia_param.f"
+   !    ------------------------------------------------------------------
+
+        !unitv=reshape((/ 1d0, 0d0, 0d0, &
+        !             &   0d0, 1d0, 0d0, &
+        !             &   0d0, 0d0, 1d0 /),(/3,3/))
+
+   !    Converting initial coordinates to AU
+        X0=qmcoords!/a0
+   !     write(77,'(A)') 'CONVERSION FACTOR a0 -> Angs'
+   !     write(77,'(D12.3)') a0
+
+   !    Computing total mass and atomic mass array and center of mass.
+        totM=0.0d0
+        do i=1,nqmatoms
+            do j=1,3
+                com(j)=com(j)+atmass(i)*X0(j,i)
+            end do
+            totM=totM+atmass(i)
+        end do
+        com = com/totM
+
+   !    Translating to center of mass
+        do i=1,nqmatoms
+           do j=1,3
+              X0(j,i)=(X0(j,i)-com(j))*sqrt(atmass(i))
+           end do
+        end do
+
+
+   !    Moment of inertia tensor.
+   !    Itsr = Sum_i [ai**T.ai - ai.ai**T]
+        Itsr=0.0d0
+        do i=1,nqmatoms
+           ai=X0(:,i)
+           innp=0.0d0
+           outp=0.0d0
+           innp(1,1) = ddot(3,ai,1,ai,1)
+           innp(2,2) = innp(1,1)
+           innp(3,3) = innp(1,1)
+           call dger(3,3,1d0,ai,1,ai,1,outp,3)
+   !        call dsyr('U',3,1d0,ai,1,outp,3)
+           Itsr=Itsr+innp-outp
+        end do
+
+   !    Symmetrizing inertia tensor.
+        do i=1,2
+           do j=i+1,3
+             Itsr(j,i)=Itsr(i,j)
+           end do
+        end do
+
+        write(77,'(A)') 'INERTIA TENSOR'
+        do i=1,3
+           write(77,'(3D11.2)') Itsr(i,:)
+        end do
+
+  !     Scaling tensor of inertia to avoid numerical problems.
+        Itsr=Itsr*1000d0
+
+
+  !     DIAGONALIZATION OF THE MOMENT OF INERTIA
+        allocate ( work(100), IWORK(100) )
+        LWORK=-1
+        call dsyevd('V','U',3,Itsr,3,Ieigval,WORK,LWORK,IWORK,LWORK,INFO)
+        LWORK=WORK(1)
+        LIWORK=IWORK(1)
+        if(allocated(WORK2)) deallocate (WORK2,IWORK2)
+        allocate (WORK2(LWORK),IWORK2(LIWORK))
+        call dsyevd('V','U',3,Itsr,3,Ieigval,WORK2,LWORK,IWORK2,LIWORK,INFO)
+        deallocate( WORK, IWORK, WORK2, IWORK2 )
+
+
+  !     Descaling eigenvalues.
+        Ieigval=Ieigval/1000d0
+
+  !     ROTATE TO PRINCIPAL AXES
+        Xrot=0d0
+        do iat = 1,nqmatoms
+          do i = 1,3
+            do j = 1,3
+              Xrot(i,iat) = Xrot(i,iat) + Itsr(j,i) * X0(j,iat)
+            end do
+          end do
+        end do
+
+        X0 = Xrot
+
+  end subroutine
