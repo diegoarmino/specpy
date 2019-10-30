@@ -461,7 +461,8 @@ end program read_gaus
         real*8              :: Ievprod(3,3)
         real*8              :: innp(3,3)
         real*8              :: outp(3,3)
-        real*8              :: ai(3)
+        real*8              :: ai(3,1)
+        !real*8              :: ai(3,1)
         real*8              :: atmp
         real*8              :: cutoff
         real*8              :: det
@@ -469,6 +470,7 @@ end program read_gaus
         real*8              :: totM
         real*8              :: com(3)
         real*8              :: Ieigval(3)
+        double precision    :: Ixx,Iyy,Izz,Ixy,Ixz,Iyz
 
         double precision, parameter :: A0        =  0.52917710d00         ! Angstrms/bohr
         real*8,external  :: ddot
@@ -527,19 +529,50 @@ end program read_gaus
         write(77,'(A)') 'CENTER OF MASS centered COORDINATES in A'
         write(77,'(3F11.2)') com*a0
 
-   !    Moment of inertia tensor.
+   !    Calculating moment of inertia of new orientation. 
+   !    Should be in the x, y and z directions.
    !    Itsr = Sum_i [ai**T.ai - ai.ai**T]
         Itsr=0.0d0
         do i=1,nqmatoms
-           ai=IX0(:,i)
+           ai(:,1)=IX0(:,i)
+           !ai=IX0(:,i)
            innp=0.0d0
            outp=0.0d0
-           innp(1,1) = ddot(3,ai,1,ai,1)
+           innp(1,1) = ddot(3,ai(:,1),1,ai(:,1),1)
+           !innp(1,1) = ddot(3,ai,1,ai,1)
            innp(2,2) = innp(1,1)
            innp(3,3) = innp(1,1)
-           call dger(3,3,1d0,ai,1,ai,1,outp,3)
+!           call dger(3,3,1d0,ai,1,ai,1,outp,3)
+           outp = matmul(ai,transpose(ai))
            Itsr=Itsr+innp-outp
         end do
+        
+
+        
+         Ixx = 0d0
+         Ixy = 0d0
+         Ixz = 0d0
+         Iyy = 0d0
+         Iyz = 0d0
+         Izz = 0d0
+         do i=1,nqmatoms
+            Ixx = Ixx + atmass(i) * (X0(2,i)**2 + X0(3,i)**2)
+            Ixy = Ixy - atmass(i) * (X0(1,i)* X0(2,i))
+            Ixz = Ixz - atmass(i) * (X0(1,i)* X0(3,i))
+            Iyy = Iyy + atmass(i) * (X0(1,i)**2 + X0(3,i)**2)
+            Iyz = Iyz - atmass(i) * (X0(2,i)* X0(3,i))
+            Izz = Izz + atmass(i) * (X0(1,i)**2 + X0(2,i)**2)
+         end do
+         Itsr(1,1) = Ixx
+        Itsr(1,2) = Ixy
+        Itsr(1,3) = Ixz
+        Itsr(2,1) = Ixy
+        Itsr(2,2) = Iyy
+        Itsr(2,3) = Iyz
+        Itsr(3,1) = Ixz
+        Itsr(3,2) = Iyz
+        Itsr(3,3) = Izz
+      
 
    !    Symmetrizing inertia tensor.
 !        do i=1,2
@@ -599,23 +632,43 @@ end program read_gaus
    !    Itsr = Sum_i [ai**T.ai - ai.ai**T]
         Itsr=0.0d0
         do i=1,nqmatoms
-           ai=Xrot(:,i)
+           ai(:,1)=Xrot(:,i)
+           !ai=Xrot(:,i)
            innp=0.0d0
            outp=0.0d0
-           innp(1,1) = ddot(3,ai,1,ai,1)
+           innp(1,1) = ddot(3,ai(:,1),1,ai(:,1),1)
+           !innp(1,1) = ddot(3,ai,1,ai,1)
            innp(2,2) = innp(1,1)
            innp(3,3) = innp(1,1)
-           call dger(3,3,1d0,ai,1,ai,1,outp,3)
-   !        call dsyr('U',3,1d0,ai,1,outp,3)
+!           call dger(3,3,1d0,ai,1,ai,1,outp,3)
+           outp = matmul(ai,transpose(ai))
            Itsr=Itsr+innp-outp
         end do
-
-   !    Symmetrizing inertia tensor.
-        do i=1,2
-           do j=i+1,3
-             Itsr(j,i)=Itsr(i,j)
-           end do
+        
+        Ixx = 0d0
+        Ixy = 0d0
+        Ixz = 0d0
+        Iyy = 0d0
+        Iyz = 0d0
+        Izz = 0d0
+        do i=1,nqmatoms
+           Ixx = Ixx + atmass(i) * (Xrot(2,i)**2 + Xrot(3,i)**2)
+           Ixy = Ixy - atmass(i) * (Xrot(1,i)* Xrot(2,i))
+           Ixz = Ixz - atmass(i) * (Xrot(1,i)* Xrot(3,i))
+           Iyy = Iyy + atmass(i) * (Xrot(1,i)**2 + Xrot(3,i)**2)
+           Iyz = Iyz - atmass(i) * (Xrot(2,i)* Xrot(3,i))
+           Izz = Izz + atmass(i) * (Xrot(1,i)**2 + Xrot(2,i)**2)
         end do
+        Itsr(1,1) = Ixx
+        Itsr(1,2) = Ixy
+        Itsr(1,3) = Ixz
+        Itsr(2,1) = Ixy
+        Itsr(2,2) = Iyy
+        Itsr(2,3) = Iyz
+        Itsr(3,1) = Ixz
+        Itsr(3,2) = Iyz
+        Itsr(3,3) = Izz
+
 
         write(77,'(A)') 'NEW INERTIA TENSOR'
         do i=1,3
