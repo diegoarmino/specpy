@@ -22,6 +22,19 @@ def read_table(path):
     return ( displacements, frequencies )
 
 
+def read_table2(path):
+    with open(path,mode='r') as f0:
+        sn1_file = f0.read()
+    f0.closed
+    lsn1 = sn1_file.split('\n')
+    sn1=[]
+    for i in range(len(lsn1)-1):
+        sn1.append(lsn1[i].split())
+    tsn1=np.transpose(np.array(sn1))
+    colums=tsn1.astype(float)
+    return  colums 
+
+
 
 def raman_full(tmax,omega_nm,omega_gm,delta_nm):
     c = cnst.c

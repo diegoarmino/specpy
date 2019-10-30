@@ -11,60 +11,12 @@ import os.path
 sys.path.append(os.path.abspath('.'))
 sys.path.insert(0, "/home/diegoa/dev/specpy")
 
-from ramanlib import raman_ex_disp,read_table
+from ramanlib import raman_ex_disp,read_table,read_table2
 
 
 ##############################################################################
 #     RAMAN SHIFT SPECTRA
 ##############################################################################
-##############################################################################
-#     ALL ELECTRONIC STATES
-##############################################################################
-# delta_nm, omega_nm = read_table('/home/diegoa/dev/specpy/formamide/cam-b3lyp-tz/displacements.dat')
-#
-# ex_lambdas = np.array([192.,200.,209.,218.,229.,252.,325.,407.])
-# ex_lambdas = 10**7/ex_lambdas
-# #ex_lambdas = np.flip(ex_lambdas,axis=None)
-# print(ex_lambdas)
-# # [52083 50000. 47846. 45871. 43668. 39682. 30769. 24570.]
-# #gamma      = [800.,600.,160.] # 6-31G*
-# #gamma      = [500.]*9
-# gamma      = [800.]*9
-#
-# #omega0     = [5.76,8.0,8.4] # in of eV 6-31G*
-# omega0     = [5.6578,6.7266,6.7506,7.2737,7.4984,7.6410,7.8286,8.0887,8.0980]
-# omega0     = np.multiply(omega0,8065.540107) # convert to cm-1
-# states_list = np.identity(len(omega_nm))
-# states_list.tolist()
-#
-# exmax=90000.
-# exmin=20000.
-# ex_range = [exmin,exmax]
-# sc_range = [0.,4000.]
-# gamma_scat = 10.
-#
-# #states_list = [[1,1,9,1],[4,2],[4,1,9,1],[9,2],[9,2,1,1]]
-#
-# #omega0     = [5.76,8.0,8.4] # in of eV 6-31G*
-# omega0     = [5.6578,6.7266,6.7506,7.2737,7.4984,7.6410,7.8286,8.0887,8.0980]
-# omega0     = np.multiply(omega0,8065.540107) # convert to cm-1
-# states_list = np.identity(len(omega_nm))
-# states_list.tolist()
-# print(omega0)
-# exmax=90000.
-# exmin=20000.
-# ex_range = [exmin,exmax]
-# sc_range = [0.,4000.]
-# gamma_scat = 10.
-#
-# #states_list = [[1,1,9,1],[4,2],[4,1,9,1],[9,2],[9,2,1,1]]
-# states_list = []
-# #trans_dip=[0.0076,0.4453/5.,0.0139] # cam-b3lyp/6-31G*
-# trans_dip=[0.0013,0.0258,0.0080,0.0995,0.0007,0.1071,0.3443,0.0192,0.0002]
-#
-# re,im,ex_spec_list,freq,spec_array = raman_ex_disp(delta_nm,omega_nm,omega0,gamma,states_list,gamma_scat,sc_range,ex_range,ex_lambdas,trans_dip)
-#
-
 
 
 
@@ -72,16 +24,27 @@ from ramanlib import raman_ex_disp,read_table
 ##############################################################################
 #    ALL STATES SOLVENT
 ##############################################################################
-delta_nm, omega_nm = read_table('/home/diegoa/dev/specpy/formamide/cam-b3lyp-tz-solv/dispopt.dat')
-
-ex_lambdas = np.array([192.,200.,209.,218.,10**7/45685,229.,252.,325.,407.])
-
-gamma      = [800.]*8
-
-omega0     = [ 5.7717 , 7.0116 , 7.0883 , 7.4425 , 7.7327 , 7.7938 , 8.0559 , 8.0613 ]
+system = 'formamide/'
+method = 'cam-b3lyp-tz-solv/'
+method = 'cam-b3lyp-631/'
+delta_nm, omega_nm = read_table('/home/diegoa/dev/specpy/'+system+method+'dispgrad.dat')
+omega0 = read_table2('/home/diegoa/dev/specpy/'+system+method+'elec-trans-ev.dat')
 omega0     = np.multiply(omega0,8065.540107) # convert to cm-1
+trans_dip = read_table2('/home/diegoa/dev/specpy/'+system+method+'trans-dip.dat')
+ex_lambdas = np.array([192.,200.,209.,218.,229.,252.,325.,407.])
+trans_dip = trans_dip[0]
+omega0 = omega0[0]
+gamma      = [500.]*8
 
-trans_dip  = [0.0050 , 0.0151 , 0.0669 , 1.1231 , 0.7241 , 0.0029 , 0.6840 , 0.1480 ]
+#omega0     = [ 5.7717 ,  7.0116 , 7.0883 , 7.4425 , 7.7327 , 7.7938 , 8.0559 , 8.0613 ]
+#trans_dip  = [0.0050 , 0.0151 , 0.0669 , 1.1231 , 0.7241 , 0.0029 , 0.6840 , 0.1480 ]
+
+# for i in [1,2,4]:
+#     delta_nm = np.delete(      delta_nm   , i  ,  0)
+#     omega0 = np.delete(        omega0     , i  ,  0)
+#     trans_dip = np.delete(     trans_dip  , i  ,  0)
+#     gamma = np.delete(         gamma      , i  ,  0)
+
 
 exmax=90000.
 exmin=20000.

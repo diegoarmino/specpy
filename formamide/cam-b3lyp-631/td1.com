@@ -1,6 +1,6 @@
 %chk=td1.chk
 %NProcShared=4
-# cam-b3lyp/6-31+G**  force nosymm td(root=1,nstates=10)
+# cam-b3lyp/6-31G**  force nosymm td(root=1,nstates=10)
 
  Title
 
