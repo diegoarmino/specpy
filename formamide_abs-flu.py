@@ -9,24 +9,30 @@ import sys
 import os.path
 sys.path.append(os.path.abspath('.'))
 sys.path.insert(0, "/home/diegoa/dev/specpy")
-from ramanlib import fluorescence,uvvis,read_table,uvvis_multi_electronic_state
+from ramanlib import fluorescence,uvvis,read_table,uvvis_multi_electronic_state,read_table2
 
 ##############################################################################
 #  CAM-B3LYP/6-31G*
 ##############################################################################
-delta_nm, omega_nm = read_table('/home/diegoa/dev/specpy/formamide/cam-b3lyp-631/displacements.dat')
-gamma    = [800.,300.,120.]
-#omega0     = [5.76,7.52,7.99] # in units of eV
-omega0     = [5.76,7.13,8.0] ##,6.17,6.45] # in units of eV
-omega0     = np.asarray(omega0)
-omega0     = omega0*8065.540107 # convert to cm-1
+system = 'formamide/'
+method = 'cam-b3lyp-tz-solv/'
+method = 'cam-b3lyp-631/'
+method = 'pbe-631/'
+delta_nm, omega_nm = read_table('/home/diegoa/dev/specpy/'+system+method+'dispgrad.dat')
 
-trans_dip=np.asarray([0.0076,0.4453/5.,0.0139])
+ex_lambdas = np.array([192.,200.,209.,218.,229.,252.,325.,407.])
 
+trans_dip  = read_table2('/home/diegoa/dev/specpy/'+system+method+'trans-dip.dat')
+
+omega0  = read_table2('/home/diegoa/dev/specpy/'+system+method+'elec-trans-ev.dat')
+omega0  = np.multiply(omega0,8065.540107) # convert to cm-1
+omega0  = omega0.tolist()
+
+gamma    = [800.,800.]
 
 #omega0=10**7/218.74
 states_list = np.identity(len(omega_nm))
-states_list.tolist()
+states_list = states_list.tolist()
 #ffreq,fluo = fluorescence(delta_nm,omega_nm,omega0,gamma)
 ufreq,uuvvis =  uvvis_multi_electronic_state(delta_nm,omega_nm,omega0,gamma,trans_dip)
 

@@ -27,6 +27,7 @@ from ramanlib import raman_ex_disp,read_table,read_table2
 system = 'formamide/'
 method = 'cam-b3lyp-tz-solv/'
 method = 'cam-b3lyp-631/'
+method = 'pbe-631/'
 delta_nm, omega_nm = read_table('/home/diegoa/dev/specpy/'+system+method+'dispgrad.dat')
 omega0 = read_table2('/home/diegoa/dev/specpy/'+system+method+'elec-trans-ev.dat')
 omega0     = np.multiply(omega0,8065.540107) # convert to cm-1
@@ -34,7 +35,7 @@ trans_dip = read_table2('/home/diegoa/dev/specpy/'+system+method+'trans-dip.dat'
 ex_lambdas = np.array([192.,200.,209.,218.,229.,252.,325.,407.])
 trans_dip = trans_dip[0]
 omega0 = omega0[0]
-gamma      = [500.]*8
+gamma      = [500.]*2
 
 #omega0     = [ 5.7717 ,  7.0116 , 7.0883 , 7.4425 , 7.7327 , 7.7938 , 8.0559 , 8.0613 ]
 #trans_dip  = [0.0050 , 0.0151 , 0.0669 , 1.1231 , 0.7241 , 0.0029 , 0.6840 , 0.1480 ]
