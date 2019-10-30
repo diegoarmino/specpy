@@ -728,6 +728,10 @@ end program read_gaus
 
 
   end subroutine
+
+
+
+
   subroutine orient_nmodes(at_numbers,atmass,ndf,nqmatoms,Iev,nmodes)
         implicit none
    !    ------------------------------------------------------------------
