@@ -15,7 +15,7 @@ program read_gaus
    read(numchar,*) nqmatoms
 
    allocate( at_numbers(nqmatoms), qmcoords(3,nqmatoms) , atmass(nqmatoms),  &
-             nmodes(3*nqmatoms-6,3*nqmatoms), dxyzqm(3,nqmatoms),            &
+             nmodes(3*nqmatoms,3*nqmatoms-6), dxyzqm(3,nqmatoms),            &
              freq(3*nqmatoms-6) )
 
    call read_gaus_chekpoint(nqmatoms,nclatoms,at_numbers,qmcoords,atmass,nmodes,dxyzqm,freq)
@@ -50,6 +50,8 @@ end program read_gaus
       double precision              :: delta(3*nqmatoms-6)
       double precision              :: nmt(3*nqmatoms)
       double precision              :: gtmp(3*nqmatoms)
+      double precision              :: Ievgr(3,3)
+      double precision              :: Ievex(3,3)
       double precision              :: tmp
       character (len=4)             :: cfx,cfy,cfz
       character (len=17)            :: keycoords
@@ -309,7 +311,7 @@ end program read_gaus
          write(77,'(A)')      ' AT       X            Y            Z      '
          write(77,'(A)')      '-------------------------------------------'
          do iat=1,nqmatoms
-            write(77,'(i3,3F16.8)')  at_numbers(i), qmcoords(:,iat)*a0
+            write(77,'(i3,3F16.8)')  at_numbers(iat), qmcoords(:,iat)*a0
          end do
          write(77,*)
          write(77,*)          '%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%'
@@ -320,7 +322,7 @@ end program read_gaus
          write(77,'(A)')      ' AT       X            Y            Z      '
          write(77,'(A)')      '-------------------------------------------'
          do iat=1,nqmatoms
-            write(77,'(i3,3F16.8)')  at_numbers(i), excoords(:,iat)*a0
+            write(77,'(i3,3F16.8)')  at_numbers(iat), excoords(:,iat)*a0
          end do
          write(77,*)
 
@@ -328,10 +330,10 @@ end program read_gaus
    !     TRANSLATE TO CENTER OF MASS AND ROTATE TO PRINCIPAL AXES OF INERTIA.
    !     --------------------------------------------------------------------------
          write(77,*) '   STARTING REORIENTATION FOR GROUND STATE '
-         call orient(qmcoords,at_numbers,atmass,ndf,nqmatoms)
+         call orient(qmcoords,at_numbers,atmass,ndf,nqmatoms,Ievgr)
 
          write(77,*) '   STARTING REORIENTATION FOR EXCITED STATE '
-         call orient(excoords,at_numbers,atmass,ndf,nqmatoms)
+         call orient(excoords,at_numbers,atmass,ndf,nqmatoms,Ievex)
 
 
          write(77,*)          '%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%'
@@ -342,7 +344,7 @@ end program read_gaus
          write(77,'(A)')      ' AT       X            Y            Z      '
          write(77,'(A)')      '-------------------------------------------'
          do iat=1,nqmatoms
-            write(77,'(i3,3F13.8)')  at_numbers(i), qmcoords(:,iat)*a0
+            write(77,'(i3,3F13.8)')  at_numbers(iat), qmcoords(:,iat)*a0
          end do
          write(77,*)
          write(77,*)          '%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%'
@@ -353,7 +355,7 @@ end program read_gaus
          write(77,'(A)')      ' AT       X            Y            Z      '
          write(77,'(A)')      '-------------------------------------------'
          do iat=1,nqmatoms
-            write(77,'(i3,3F13.8)')  at_numbers(i), excoords(:,iat)*a0
+            write(77,'(i3,3F13.8)')  at_numbers(iat), excoords(:,iat)*a0
          end do
          write(77,*)
 
@@ -371,20 +373,24 @@ end program read_gaus
 
    !     --------------------------------------------------------------------------
    !     --------------------------------------------------------------------------
-         qmcoords=qmcoords/a0 ! DANGER this unit conversion should be wrong
-         excoords=-excoords/a0 ! DANGER this unit conversion should be wrong
+         !qmcoords=qmcoords/a0 ! DANGER this unit conversion should be wrong
+         !excoords=excoords/a0 ! DANGER this unit conversion should be wrong
    !     --------------------------------------------------------------------------
    !     --------------------------------------------------------------------------
+
 
    !     MASS WEIGHT
          do i=1,nqmatoms
              do j=1,3
                  gnd_coords_v(3*(i-1)+j) = qmcoords(j,i) * sqrt(atmass(i))
                  exc_coords_v(3*(i-1)+j) = excoords(j,i) * sqrt(atmass(i))
-                 !delv(3*(i-1)+j)         = del0(j,i)     * sqrt(atmass(i))
                  delv(3*(i-1)+j)         = (qmcoords(j,i) - excoords(j,i)) * sqrt(atmass(i))
              end do
          end do
+
+   !     ROTATING NORMAL MODES WITH INERTIA TENSOR EIGENVECTORS
+         write(77,*) '   ROTATING NORMAL MODES                  '
+         call orient_nmodes(at_numbers,atmass,ndf,nqmatoms,Ievgr,nmodes)
 
    !     CONVERT TO MASS-WEIGHTED NORMAL COORDINATES
          gnd_nc=0d0
@@ -419,9 +425,8 @@ end program read_gaus
          write(77,*) 'Displacements in adimensional normal cartesian coordinates'
          write(77,*) '    LMXg-LMXex     frequency (cm-1)'
          do i=1,nvdf
-           !write(77,'(4f14.6)') 2d0*del_nc(i), 2d0*del(i), 2d0*delta(i),freq(i)
-           !write(77,'(4f14.6)') del_nc(i), del(i), delta(i)/a0,freq(i) ! DANGER, A0 MAYBE SHOULD NOT BE HERE
-           write(77,'(4f14.6)') del_nc(i), freq(i) ! DANGER, A0 MAYBE SHOULD NOT BE HERE
+           !write(77,'(4f14.6)') del_nc(i)/a0, freq(i) ! DANGER, A0 MAYBE SHOULD NOT BE HERE
+           write(77,'(4f14.6)') (exc_nc(i)-gnd_nc(i)), freq(i) ! DANGER, A0 MAYBE SHOULD NOT BE HERE
          end do
       end if
 
@@ -441,7 +446,7 @@ end program read_gaus
    end subroutine
 
 
-  subroutine orient(qmcoords,at_numbers,atmass,ndf,nqmatoms)
+  subroutine orient(qmcoords,at_numbers,atmass,ndf,nqmatoms,Ievout)
         implicit none
    !    ------------------------------------------------------------------
         integer,intent(in)                :: ndf
@@ -449,6 +454,7 @@ end program read_gaus
         integer,intent(in)                :: at_numbers(nqmatoms) ! Atomic numbers of QM atoms.
         double precision,intent(in)       :: atmass(nqmatoms)
         double precision,intent(inout)    :: qmcoords(3,nqmatoms)
+        double precision,intent(out)      :: Ievout(3,3)
    !    Internal variables
         integer             :: i,j,k,iat
         integer             :: zeros(2),nonz(2)
@@ -471,6 +477,7 @@ end program read_gaus
         real*8              :: com(3)
         real*8              :: Ieigval(3)
         double precision    :: Ixx,Iyy,Izz,Ixy,Ixz,Iyz
+        double precision    :: signx, signy, signz
 
         double precision, parameter :: A0        =  0.52917710d00         ! Angstrms/bohr
         real*8,external  :: ddot
@@ -549,21 +556,21 @@ end program read_gaus
         
 
         
-         Ixx = 0d0
-         Ixy = 0d0
-         Ixz = 0d0
-         Iyy = 0d0
-         Iyz = 0d0
-         Izz = 0d0
-         do i=1,nqmatoms
-            Ixx = Ixx + atmass(i) * (X0(2,i)**2 + X0(3,i)**2)
-            Ixy = Ixy - atmass(i) * (X0(1,i)* X0(2,i))
-            Ixz = Ixz - atmass(i) * (X0(1,i)* X0(3,i))
-            Iyy = Iyy + atmass(i) * (X0(1,i)**2 + X0(3,i)**2)
-            Iyz = Iyz - atmass(i) * (X0(2,i)* X0(3,i))
-            Izz = Izz + atmass(i) * (X0(1,i)**2 + X0(2,i)**2)
-         end do
-         Itsr(1,1) = Ixx
+        Ixx = 0d0
+        Ixy = 0d0
+        Ixz = 0d0
+        Iyy = 0d0
+        Iyz = 0d0
+        Izz = 0d0
+        do i=1,nqmatoms
+           Ixx = Ixx + atmass(i) * (X0(2,i)**2 + X0(3,i)**2)
+           Ixy = Ixy - atmass(i) * (X0(1,i)* X0(2,i))
+           Ixz = Ixz - atmass(i) * (X0(1,i)* X0(3,i))
+           Iyy = Iyy + atmass(i) * (X0(1,i)**2 + X0(3,i)**2)
+           Iyz = Iyz - atmass(i) * (X0(2,i)* X0(3,i))
+           Izz = Izz + atmass(i) * (X0(1,i)**2 + X0(2,i)**2)
+        end do
+        Itsr(1,1) = Ixx
         Itsr(1,2) = Ixy
         Itsr(1,3) = Ixz
         Itsr(2,1) = Ixy
@@ -596,6 +603,9 @@ end program read_gaus
         call dsyev('V','U',3,Itsr,3,Ieigval,WORK,LWORK,INFO)
         deallocate( WORK )
 
+!       Inertia tensor eigenvectors output
+        Ievout = Itsr
+
         write(77,*)
         write(77,'(A)') 'INERTIA TENSOR EIGENVECTORS'
         do i=1,3
@@ -625,7 +635,6 @@ end program read_gaus
           end do
         end do
 
-        qmcoords = Xrot
 
    !    Calculating moment of inertia of new orientation. 
    !    Should be in the x, y and z directions.
@@ -690,12 +699,62 @@ end program read_gaus
         do i=1,3
            write(77,'(3F11.2)') Itsr(i,:)
         end do
+
+        signx = sign(1d0,Ievout(1,1))
+        signy = sign(1d0,Ievout(2,2))
+        signz = sign(1d0,Ievout(3,3))
+        Ievout(:,1) = signx * Ievout(:,1)
+        Ievout(:,2) = signx * Ievout(:,2)
+        Ievout(:,3) = signx * Ievout(:,3)
+
+  !     ROTATE TO PRINCIPAL AXES
+        Xrot=0d0
+        do iat = 1,nqmatoms
+          do i = 1,3
+            do j = 1,3
+              Xrot(i,iat) = Xrot(i,iat) + Ievout(j,i) * X0(j,iat)
+            end do
+          end do
+        end do
+        qmcoords = Xrot
+
+
         write(77,*)
         write(77,'(A)') 'NEW INERTIA TENSOR EIGENVALUES'
         write(77,'(3F11.2)') Ieigval
         write(77,*)
 
 
+
+
+  end subroutine
+  subroutine orient_nmodes(at_numbers,atmass,ndf,nqmatoms,Iev,nmodes)
+        implicit none
+   !    ------------------------------------------------------------------
+        integer,intent(in)                :: ndf
+        integer,intent(in)                :: nqmatoms
+        integer,intent(in)                :: at_numbers(nqmatoms) ! Atomic numbers of QM atoms.
+        double precision,intent(in)       :: atmass(nqmatoms)
+        double precision,intent(in)       :: Iev(3,3)
+        double precision,intent(inout)    :: nmodes(ndf,ndf-6)
+   !    Internal variables
+        double precision                  :: nmvec(ndf)
+        double precision                  :: outvec(ndf)
+        integer             :: i,j,iat,nm
+
+  !     ROTATE TO PRINCIPAL AXES
+        do nm = 1,ndf-6
+          nmvec=nmodes(:,nm)
+          outvec=0d0
+          do iat = 1,nqmatoms
+            do i = 1,3
+              do j = 1,3
+                outvec(3*(iat-1)+i) = outvec(3*(iat-1)+i) + Iev(j,i) * nmvec(3*(iat-1)+j)
+              end do
+            end do
+          end do
+          nmodes(:,nm)=outvec
+        end do 
 
 
   end subroutine
