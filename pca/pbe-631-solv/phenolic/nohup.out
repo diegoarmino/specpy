@@ -1,0 +1,94 @@
+ Read checkpoint file freq.chk
+ Write formatted file freq.fchk
+ Read checkpoint file td1.chk
+ Write formatted file td1.fchk
+ Missing data for FChkPn.
+ Error termination via Lnk1e at Fri Nov  1 10:30:01 2019.
+run.bash: line 4:  5107 Segmentation fault      (core dumped) formchk td${i}.chk
+run.bash: line 8: ./calc_deltas.bin: No such file or directory
+cp: cannot stat 'fort.77': No such file or directory
+grep: disp1.dat: No such file or directory
+ Read checkpoint file td2.chk
+ Write formatted file td2.fchk
+ Missing data for FChkPn.
+ Error termination via Lnk1e at Fri Nov  1 10:30:04 2019.
+run.bash: line 4:  5137 Segmentation fault      (core dumped) formchk td${i}.chk
+run.bash: line 8: ./calc_deltas.bin: No such file or directory
+cp: cannot stat 'fort.77': No such file or directory
+grep: disp2.dat: No such file or directory
+ Read checkpoint file td3.chk
+ Write formatted file td3.fchk
+ Missing data for FChkPn.
+ Error termination via Lnk1e at Fri Nov  1 10:30:05 2019.
+run.bash: line 4:  5164 Segmentation fault      (core dumped) formchk td${i}.chk
+run.bash: line 8: ./calc_deltas.bin: No such file or directory
+cp: cannot stat 'fort.77': No such file or directory
+grep: disp3.dat: No such file or directory
+ Read checkpoint file td4.chk
+ Write formatted file td4.fchk
+ Missing data for FChkPn.
+ Error termination via Lnk1e at Fri Nov  1 10:30:05 2019.
+run.bash: line 4:  5176 Segmentation fault      (core dumped) formchk td${i}.chk
+run.bash: line 8: ./calc_deltas.bin: No such file or directory
+cp: cannot stat 'fort.77': No such file or directory
+grep: disp4.dat: No such file or directory
+ Read checkpoint file td5.chk
+ Write formatted file td5.fchk
+ Missing data for FChkPn.
+ Error termination via Lnk1e at Fri Nov  1 10:30:05 2019.
+run.bash: line 4:  5188 Segmentation fault      (core dumped) formchk td${i}.chk
+run.bash: line 8: ./calc_deltas.bin: No such file or directory
+cp: cannot stat 'fort.77': No such file or directory
+grep: disp5.dat: No such file or directory
+ Read checkpoint file td6.chk
+ Write formatted file td6.fchk
+ Missing data for FChkPn.
+ Error termination via Lnk1e at Fri Nov  1 10:30:05 2019.
+run.bash: line 4:  5200 Segmentation fault      (core dumped) formchk td${i}.chk
+run.bash: line 8: ./calc_deltas.bin: No such file or directory
+cp: cannot stat 'fort.77': No such file or directory
+grep: disp6.dat: No such file or directory
+ Read checkpoint file td7.chk
+ Write formatted file td7.fchk
+ Missing data for FChkPn.
+ Error termination via Lnk1e at Fri Nov  1 10:30:05 2019.
+run.bash: line 4:  5212 Segmentation fault      (core dumped) formchk td${i}.chk
+run.bash: line 8: ./calc_deltas.bin: No such file or directory
+cp: cannot stat 'fort.77': No such file or directory
+grep: disp7.dat: No such file or directory
+ Read checkpoint file td8.chk
+ Write formatted file td8.fchk
+ Missing data for FChkPn.
+ Error termination via Lnk1e at Fri Nov  1 10:30:05 2019.
+run.bash: line 4:  5224 Segmentation fault      (core dumped) formchk td${i}.chk
+run.bash: line 8: ./calc_deltas.bin: No such file or directory
+cp: cannot stat 'fort.77': No such file or directory
+grep: disp8.dat: No such file or directory
+ Read checkpoint file freq.chk
+ Write formatted file freq.fchk
+ Read checkpoint file td1.chk
+ Write formatted file td1.fchk
+run.bash: line 8: ./calc_deltas.bin: No such file or directory
+cp: cannot stat 'fort.77': No such file or directory
+grep: disp1.dat: No such file or directory
+ Read checkpoint file td2.chk
+ Write formatted file td2.fchk
+run.bash: line 8: ./calc_deltas.bin: No such file or directory
+cp: cannot stat 'fort.77': No such file or directory
+grep: disp2.dat: No such file or directory
+ Read checkpoint file td3.chk
+ Write formatted file td3.fchk
+run.bash: line 8: ./calc_deltas.bin: No such file or directory
+cp: cannot stat 'fort.77': No such file or directory
+grep: disp3.dat: No such file or directory
+ Read checkpoint file td4.chk
+ Write formatted file td4.fchk
+run.bash: line 8: ./calc_deltas.bin: No such file or directory
+cp: cannot stat 'fort.77': No such file or directory
+grep: disp4.dat: No such file or directory
+ Read checkpoint file td5.chk
+ Write formatted file td5.fchk
+run.bash: line 8: ./calc_deltas.bin: No such file or directory
+cp: cannot stat 'fort.77': No such file or directory
+grep: disp5.dat: No such file or directory
+Terminated

@@ -18,17 +18,19 @@ system = 'formamide/'
 method = 'cam-b3lyp-tz-solv/'
 method = 'cam-b3lyp-631/'
 method = 'pbe-631/'
+method = 'pbe-631-solv/'
+method = 'pbe-dzvp/'
 delta_nm, omega_nm = read_table('/home/diegoa/dev/specpy/'+system+method+'dispgrad.dat')
 
 ex_lambdas = np.array([192.,200.,209.,218.,229.,252.,325.,407.])
 
 trans_dip  = read_table2('/home/diegoa/dev/specpy/'+system+method+'trans-dip.dat')
 
-omega0  = read_table2('/home/diegoa/dev/specpy/'+system+method+'elec-trans-ev.dat')
+omega0  = read_table2('/home/diegoa/dev/specpy/'+system+method+'omega0.dat')
 omega0  = np.multiply(omega0,8065.540107) # convert to cm-1
 omega0  = omega0.tolist()
 
-gamma    = [800.,800.]
+gamma    = [400.,400.,400.,400.,400.,100.]
 
 #omega0=10**7/218.74
 states_list = np.identity(len(omega_nm))

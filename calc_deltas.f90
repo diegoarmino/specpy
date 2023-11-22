@@ -209,6 +209,30 @@ end program read_gaus
           write(77,'(99F8.3)') orth(i,:)
        end do
 
+!     READING GROUND STATE EQUILIBRIUM GEOMETRY
+!     --------------------------------------------------------------------------
+      rewind 235
+      read(235,'(A17)') keycoords
+      count=1
+      do while (trim(keycoords) /= 'Current cartesian')
+         read(235,'(A17)') keycoords
+         count=count+1
+      end do
+      write(77,*) 'Number of lines skipped in fchk file is = ', count
+      read(235,*) ( ( qmcoords(i,j),i=1,3 ), j=1,nqmatoms )
+      rewind 235
+
+      write(77,*)          '%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%'
+      write(77,*)          '   WRITING INPUT GROUND STATE COORDINATES'
+      write(77,*)          '%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%'
+      write(77,*)
+      write(77,'(A)')      '-------------------------------------------'
+      write(77,'(A)')      ' AT       X            Y            Z      '
+      write(77,'(A)')      '-------------------------------------------'
+      do iat=1,nqmatoms
+         write(77,'(i3,3F16.8)')  at_numbers(iat), qmcoords(:,iat)*a0
+      end do
+
       write(77,*) 'Frequencies= ', freq
       write(77,*)
       write(77,*)             '%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%'
@@ -536,7 +560,7 @@ end program read_gaus
         write(77,'(A)') 'CENTER OF MASS centered COORDINATES in A'
         write(77,'(3F11.2)') com*a0
 
-   !    Calculating moment of inertia of new orientation. 
+   !    Calculating moment of inertia of new orientation.
    !    Should be in the x, y and z directions.
    !    Itsr = Sum_i [ai**T.ai - ai.ai**T]
         Itsr=0.0d0
@@ -553,9 +577,9 @@ end program read_gaus
            outp = matmul(ai,transpose(ai))
            Itsr=Itsr+innp-outp
         end do
-        
 
-        
+
+
         Ixx = 0d0
         Ixy = 0d0
         Ixz = 0d0
@@ -579,7 +603,7 @@ end program read_gaus
         Itsr(3,1) = Ixz
         Itsr(3,2) = Iyz
         Itsr(3,3) = Izz
-      
+
 
    !    Symmetrizing inertia tensor.
 !        do i=1,2
@@ -622,7 +646,7 @@ end program read_gaus
         do i=1,3
            write(77,'(3F11.2)') IevProd(i,:)
         end do
-        
+
 
 
   !     ROTATE TO PRINCIPAL AXES
@@ -636,7 +660,7 @@ end program read_gaus
         end do
 
 
-   !    Calculating moment of inertia of new orientation. 
+   !    Calculating moment of inertia of new orientation.
    !    Should be in the x, y and z directions.
    !    Itsr = Sum_i [ai**T.ai - ai.ai**T]
         Itsr=0.0d0
@@ -653,7 +677,7 @@ end program read_gaus
            outp = matmul(ai,transpose(ai))
            Itsr=Itsr+innp-outp
         end do
-        
+
         Ixx = 0d0
         Ixy = 0d0
         Ixz = 0d0
@@ -758,7 +782,7 @@ end program read_gaus
             end do
           end do
           nmodes(:,nm)=outvec
-        end do 
+        end do
 
 
   end subroutine

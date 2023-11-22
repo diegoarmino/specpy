@@ -32,7 +32,7 @@ def read_table2(path):
         sn1.append(lsn1[i].split())
     tsn1=np.transpose(np.array(sn1))
     colums=tsn1.astype(float)
-    return  colums 
+    return  colums
 
 
 
@@ -130,9 +130,9 @@ def uvvis_multi_electronic_state(delta_nm,omega_nm_in,omega0_in,gamma_in,trans_d
     inv2pi= 1/pi2
 
 #    dt = 1e-2/np.amax(omega_nm)
-    dt = 1e-2/np.amax(omega_nm)
+    dt = 5e-2/np.amax(omega_nm)
     period = pi2/np.amin(omega_nm)
-    tmax = 10.*period
+    tmax = 5.*period
 
 #    ovlap=np.array([])
     ovlap=[]
@@ -284,7 +284,7 @@ def raman_amplitude_mes(delta_nm,omega_nm_in,omega0_in,gamma_in,state,trans_dip)
     inv2pi= 1/pi2
 
 #    dt = 1e-2/np.amax(omega_nm)
-    dt = 2e-2/np.amax(omega_nm_in)
+    dt = 5e-2/np.amax(omega_nm_in)
     period = pi2/np.amin(omega_nm)
     tmax = 5.*period
 
